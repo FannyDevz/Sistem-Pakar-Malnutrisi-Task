@@ -5,9 +5,12 @@
 
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+            <ol class="breadcrumb"><li class="breadcrumb-item">
+                <a href="{{route('home-utama')}}">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="{{route('konsultasi')}}">Konsultasi</a>
+            </li>
             </ol>
         </div>
     </div>
@@ -18,7 +21,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        
+
                         <div class="form-validation">
                         <form class="form-valide" action="{{route('pasien.registrasi')}}" method="POST">
                             @csrf
@@ -30,10 +33,14 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="val-email">Usia Kehamilan (Minggu) <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="val-email">Jenis Kelamin <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control"  name="usia_kehamilan" placeholder="Masukan Usia Kehamilan">
+                                        <select class="form-select form-control" name="jenis_kelamin" id="jenis_kelamin">
+                                            <option selected>Open this select menu</option>
+                                            <option  value="Laki-Laki">Laki-Laki</option>
+                                            <option  value="Perempuan">Perempuan</option>
+                                          </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -57,7 +64,7 @@
                                         <input type="text" class="form-control" name="phone" placeholder="Masukan No. Hp Anda">
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
                                         <button type="submit" class="btn btn-outline-pink">Konsultasi</button>

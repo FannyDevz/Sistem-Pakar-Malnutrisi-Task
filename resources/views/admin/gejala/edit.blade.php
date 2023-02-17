@@ -6,8 +6,9 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('admin.gejala')}}">Gejala</a></li>
+                <li class="breadcrumb-item active"><a href="#">Edit</a></li>
             </ol>
         </div>
     </div>
@@ -29,7 +30,7 @@
                                         <input type="text" class="form-control" value="{{$data->kd_gejala}}"  name="kd_gejala" readonly>
                                     </div>
                                 </div>
-                              
+
                                 <div class="form-group row">
                                     <label class="col-lg-4 col-form-label" for="val-email">Gejala<span class="text-danger">*</span>
                                     </label>
@@ -37,8 +38,13 @@
                                     <textarea name="gejala" class="form-control"  cols="30" rows="5" placeholder="Masukan Gejala">{{$data->gejala}}</textarea>
                                     </div>
                                 </div>
-                                
-                                
+                                <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <input type="hidden" class="form-control"  value="1" name="nilai"  readonly>
+                                    </div>
+                                </div>
+
+
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
                                         <button type="submit" class="btn btn-outline-pink">Simpan</button>

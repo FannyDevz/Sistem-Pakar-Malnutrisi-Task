@@ -1,4 +1,4 @@
-<div class="nk-sidebar">           
+<div class="nk-sidebar">
     <div class="nk-nav-scroll">
         <ul class="metismenu" id="menu">
             <li class="nav-label">Home</li>
@@ -9,11 +9,21 @@
             </li>
 
             <li>
-                <a class="has-arrow" href="{{route('admin.kelola')}}" aria-expanded="false">
-                        <i class="icon-globe menu-icon"></i><span class="nav-text">Kelola</span>
-                    </a>
-                </li>
-    
+                <a class="drpodown-menu has-arrow" href="{{route('admin.penyakit')}}" aria-expanded="false">
+                        <i class="icon-globe menu-icon"></i><span class="nav-text">Daftar Penyakit</span>
+                </a>
+            </li>
+            <li>
+                <a class="drpodown-menu has-arrow" href="{{route('admin.gejala')}}" aria-expanded="false">
+                        <i class="icon-globe menu-icon"></i><span class="nav-text">Daftar Gejala</span>
+                </a>
+            </li>
+            <li>
+                <a class="drpodown-menu has-arrow" href="{{route('admin.relasi')}}" aria-expanded="false">
+                        <i class="icon-globe menu-icon"></i><span class="nav-text">Relasi</span>
+                </a>
+            </li>
+
 
             {{-- <li>
                 <a class="has-arrow" href="{{route('admin.informasi')}}" aria-expanded="false">
@@ -21,13 +31,13 @@
                 </a>
             </li> --}}
 
-           
+
             <li>
                 <a class="has-arrow" href="{{route('admin.log-konsultasi')}}" aria-expanded="false">
                     <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Konsultasi Pasien</span>
                 </a>
             </li>
-           
+
             <li>
                 <a class="has-arrow" href="{{route('admin.reset-password')}}" aria-expanded="false">
                         <i class="icon-key menu-icon"></i><span class="nav-text">Reset Password</span>
@@ -38,15 +48,15 @@
                 onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();" aria-expanded="false" >
                     <i class="icon-user menu-icon"></i><span class="nav-text"> {{ __('Logout') }}</span>
-                    
+
                 </a>
-             
+
 
              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                  @csrf
              </form>
             </li>
-           
+
         </ul>
     </div>
 </div>

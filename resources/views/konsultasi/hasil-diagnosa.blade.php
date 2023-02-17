@@ -8,10 +8,13 @@
         <div class="col p-md-0">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="javascript:void(0)">Dashboard</a>
+                    <a href="{{route('home-utama')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <a href="javascript:void(0)">Home</a>
+                    <a href="{{route('konsultasi')}}">Konsutasi</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <a href="#">Hasil Diagnosa</a>
                 </li>
             </ol>
         </div>
@@ -21,7 +24,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                
+
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Hasil Diagnosa</h4>
@@ -33,9 +36,9 @@
                                <th>{{$pasien->nama_lengkap}}</th>
                            </tr>
                            <tr>
-                                <th>Usia Kehamilan</th>
+                                <th>Jenis Kelamin</th>
                                 <th>:</th>
-                                <th>{{$pasien->usia_kehamilan}} Hari</th>
+                                <th>{{$pasien->jenis_kelamin}}</th>
                             </tr>
                             <tr>
                                 <th>Umur </th>
@@ -55,7 +58,7 @@
                        </table>
                        <hr>
                        <h5>Keterangan : </h5>
-                       
+
                        <h6>Deskripsi : </h6>
                         <p>{{$penyakit->deskripsi}}</p>
 
@@ -63,23 +66,30 @@
                         <p>
                             <div class="bootstrap-label">
                                 @foreach ($gejala as $item)
-                                
+
                                    <span class="label label-pink"> {{$item->gejala->gejala}}</span>
                                 @endforeach
                                </div>
-                      
+
                         </p>
 
-                        <h6>Pengobatan/Solusi : </h6>
+                        <h6>Pengobatan : </h6>
                         <p>
-                            <textarea readonly cols="150" rows="10">  {{$penyakit->solusi}}</textarea>
-                           
+                            <textarea readonly cols="150" rows="5">  {{$penyakit->pengobatan}}</textarea>
                         </p>
-                               
+                        <h6>Penyebab : </h6>
+                        <p>
+                            <textarea readonly cols="150" rows="5">  {{$penyakit->penyebab}}</textarea>
+                        </p>
+                        <h6>Pencegahan : </h6>
+                        <p>
+                            <textarea readonly cols="150" rows="5">  {{$penyakit->pencegahan}}</textarea>
+                        </p>
+
                         <div class="col-md-12 text-right">
-                            <a href="{{route('export', ['pasien' => $pasien, 'penyakit' => $penyakit])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a> 
+                            <a href="{{route('export', ['pasien' => $pasien, 'penyakit' => $penyakit])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
                           </div>
-   
+
                     </div>
                 </div>
             </div>
@@ -87,6 +97,6 @@
     </div>
     <!-- #/ container -->
 </div>
-    
+
 @endsection
 

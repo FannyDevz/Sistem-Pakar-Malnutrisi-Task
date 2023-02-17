@@ -64,7 +64,7 @@ class GejalaController extends Controller
         $data->id        = Uuid::uuid4() -> getHex();
         $data->kd_gejala = $request->kd_gejala;
         $data->gejala    = $request->gejala;
-        $data->nilai    = $request->gejala;
+        $data->nilai    = $request->nilai;
         $data->save();
 
         return redirect()->route('admin.gejala')->with('success','Berhasil menambahkan data');
@@ -107,7 +107,7 @@ class GejalaController extends Controller
         $data            = Gejala::findOrFail($id);
         $data->kd_gejala = $request->kd_gejala;
         $data->gejala    = $request->gejala;
-        $data->nilai    = $request->gejala;
+        $data->nilai    = $request->nilai;
         $data->save();
 
         return redirect()->route('admin.gejala')->with('success','Berhasil memperbaharui data');

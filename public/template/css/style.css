@@ -119,7 +119,7 @@ body {
   line-height: 1.5;
   color: #76838f;
   text-align: left;
-  background-color: rgb(228, 139, 154); }
+  background-color: rgb(255, 255, 255); }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -4214,7 +4214,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4234,7 +4234,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4251,7 +4251,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4280,7 +4280,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -7335,8 +7335,8 @@ body {
   opacity: 0;
   transition: all 0.25s ease-in;
   overflow: hidden;
-  position: relative; 
-  
+  position: relative;
+
 }
 
 #main-wrapper.show {
@@ -7442,7 +7442,7 @@ sub {
   border-radius: 100%; }
 
 .content-body .container-fluid {
-  padding: 15px 30px 0; }
+  padding: 0px 10px 0; }
 
 @media (max-width: 767px) {
   .content-body .container-fluid {
@@ -7581,9 +7581,9 @@ sub {
   color: #abafb3; }
 
 .footer {
-  padding-left: 15.1875rem;
   background-color: #fff; }
   .footer .copyright {
+
     padding: 0.9375rem;
     background: white; }
     .footer .copyright p {
@@ -8183,6 +8183,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   .nk-sidebar .metismenu {
     display: -webkit-box;
     display: -ms-flexbox;
+    margin-left: 40px;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -9568,10 +9569,10 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
     font-size: 15px; }
   .login-input .form-group .form-control {
     background: transparent;
-    border: 0;
-    border-radius: 0;
+    border: 1;
+    border-radius: 2px;
     border-bottom: 1px solid #f5f5f5;
-    padding-left: 0;
+    padding-left: 10px;
     color: #7A88A1; }
 
 .form-control:focus {
@@ -9892,7 +9893,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
   /* Firefox 18- */
   color: #777 !important; }
 
-/*    
+/*
 Input Style
 ------------------------*/
 .form-group {
@@ -10968,7 +10969,7 @@ table.dataTable thead .sorting::after {
   .label-pink {
     background-color: #e48b9a;
     color: #fff; }
-  
+
 
 .label-primary {
   background-color: #9097c4;

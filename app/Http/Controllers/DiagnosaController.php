@@ -17,8 +17,11 @@ class DiagnosaController extends Controller
 
     public function index()
     {
-
-         $gejala = Relasi::with('gejala')->orderBy('kd_gejala', 'ASC')->get();
+        $gejala = Relasi::select('kd_gejala')
+        ->distinct()
+        ->with('gejala')
+        ->orderBy('kd_gejala', 'ASC')
+        ->get();
 
         return view('konsultasi.pertanyaan', compact('gejala'));
     }

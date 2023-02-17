@@ -63,8 +63,8 @@ class PenyakitController extends Controller
         $data->nama_penyakit = $request->nama_penyakit;
         $data->deskripsi     = $request->deskripsi;
         $data->pencegahan        = $request->pencegahan;
-        $data->penyebab        = $request->pencegahan;
-        $data->pengobatan        = $request->pencegahan;
+        $data->penyebab        = $request->penyebab;
+        $data->pengobatan        = $request->pengobatan;
         $data->save();
 
         return redirect()->route('admin.penyakit')->with('success','Berhasil menambahkan data');
@@ -112,8 +112,8 @@ class PenyakitController extends Controller
         $data->nama_penyakit = $request->nama_penyakit;
         $data->deskripsi     = $request->deskripsi;
         $data->pencegahan        = $request->pencegahan;
-        $data->penyebab        = $request->pencegahan;
-        $data->pengobatan        = $request->pencegahan;
+        $data->penyebab        = $request->penyebab;
+        $data->pengobatan        = $request->pengobatan;
         $data->save();
 
         return redirect()->route('admin.penyakit')->with('success','Berhasil memperbaharui data');

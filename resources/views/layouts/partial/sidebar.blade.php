@@ -1,20 +1,21 @@
- <div class="nk-sidebar">           
+ <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                  
+
                     <li>
                     <a class="has-arrow" href="{{route('home-utama')}}" aria-expanded="false">
                             <i class="icon-home menu-icon"></i><span class="nav-text">Home</span>
                         </a>
                     </li>
+
                     <li>
-                        <a class="has-arrow" href="{{route('info-penyakit')}}" aria-expanded="false">
-                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Info Penyakit</span>
+                        <a class="has-arrow" href="{{route('konsultasi')}}" aria-expanded="false">
+                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Konsultasi Berdasarkan Gejala</span>
                         </a>
                     </li>
                     <li>
-                        <a class="has-arrow" href="{{route('konsultasi')}}" aria-expanded="false">
-                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Konsultasi</span>
+                        <a class="has-arrow" href="#" aria-expanded="false">
+                            <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Konsultasi Berdasarkan Penyakit</span>
                         </a>
                     </li>
                     <li>
@@ -22,22 +23,33 @@
                             <i class="icon-info menu-icon"></i><span class="nav-text">Info Petunjuk</span>
                         </a>
                     </li>
+
                     <li>
-                        <a class="has-arrow" href="{{route('kontak')}}" aria-expanded="false">
-                            <i class="icon-phone menu-icon"></i><span class="nav-text">Kontak</span>
+                        <a class="has-arrow" href="{{route('login-admin')}}" aria-expanded="false">
+                            <i class="icon-user menu-icon"></i><span class="nav-text">Login Admin</span>
                         </a>
                     </li>
+                    <!--
+
                     <li>
+                        <a class="has-arrow" href="{{route('info-penyakit')}}" aria-expanded="false">
+                            <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Info Penyakit</span>
+                        </a>
+                    </li>
+
+                        <li>
                         <a class="has-arrow" href="{{route('tentang')}}" aria-expanded="false">
                                 <i class="fa fa-desktop
                                  menu-icon"></i><span class="nav-text">Tentang Kami</span>
                             </a>
                         </li>
                     <li>
-                        <a class="has-arrow" href="{{route('login-admin')}}" aria-expanded="false">
-                            <i class="icon-user menu-icon"></i><span class="nav-text">Login Admin</span>
+                        <a class="has-arrow" href="{{route('kontak')}}" aria-expanded="false">
+                            <i class="icon-phone menu-icon"></i><span class="nav-text">Kontak</span>
                         </a>
                     </li>
+
+                -->
 
                     {{-- <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -52,15 +64,15 @@
                             <li><a href="./layout-horizontal.html">Horizontal</a></li>
                             <li><a href="./layout-boxed.html">Boxed</a></li>
                             <li><a href="./layout-wide.html">Wide</a></li>
-                            
-                            
+
+
                             <li><a href="./layout-fixed-header.html">Fixed Header</a></li>
                             <li><a href="layout-fixed-sidebar.html">Fixed Sidebar</a></li>
                         </ul>
                     </li> --}}
-                   
-                  
-                   
+
+
+
                 </ul>
             </div>
         </div>

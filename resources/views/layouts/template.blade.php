@@ -5,17 +5,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Forward Chaining</title>
+    <title>MalNutrisi Online</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="{{asset('template/image/png')}}" sizes="16x16" href="{{asset('template/images/BaktiHusada.png')}}">
+    <link rel="icon" type="{{asset('template/images/favicon')}}" sizes="16x16" href="{{asset('template/images/favicon.png')}}">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{asset('template/plugins/highlightjs/styles/darkula.css')}}">
     <link href="{{asset('template/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('template/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="{{asset('template/plugins/summernote/dist/summernote.css')}}" rel="stylesheet">
     <style>
-        table.dataTable tr.even { background-color: #ffdfdf; }
-        table.dataTable thead { background-color: #e48b9a; }
+        table.dataTable tr.even { background-color: #7affa6; }
+        table.dataTable thead { background-color: #00ff6a; }
 
     </style>
 </head>
@@ -48,13 +49,10 @@
         <div class="nav-header">
             <div class="brand-logo">
 
-                    <img src="{{asset('template/images/baktihusada.jpeg')}}" width="150" height="80">
-
-
+                    <img src="{{asset('template/images/logo.jpg')}}" width="150" height="80">
                 {{-- <a href="index.html">
                     <b class="logo-abbr"><img src="{{asset('template/images/logo.png')}}" alt=""> </b>
                     <span class="logo-compact"><img src="{{asset('template/images/logo-compact.png')}}" alt=""></span>
-
                 </a> --}}
             </div>
         </div>
@@ -125,8 +123,8 @@
             Footer start
         ***********************************-->
         <div class="footer">
-            <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+            <div class="copyright text-center t ">
+                <p>Copyright &copy; Designed & Developed by <a href="instagram.com/abrinsaputri">Abrinsa Putri</a> 2023</p>
             </div>
         </div>
         <!--**********************************
@@ -151,6 +149,12 @@
     <script src="{{asset('template/plugins/tables/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('template/plugins/tables/js/datatable/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('template/plugins/tables/js/datatable-init/datatable-basic.min.js')}}"></script>
+
+    <script src="{{asset('template/plugins/summernote/dist/summernote.min.js')}}"></script>
+    <script src="{{asset('template/plugins/summernote/dist/summernote-init.js')}}"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
 
     <script>
         (function($) {

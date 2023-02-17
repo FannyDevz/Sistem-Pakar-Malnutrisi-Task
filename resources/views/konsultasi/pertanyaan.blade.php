@@ -13,7 +13,7 @@
       margin-top: -30px;
       min-width: 300px;
     }
-    
+
     /* Style the input fields */
     input {
       padding: 10px;
@@ -22,34 +22,34 @@
       font-family: Raleway;
       border: 1px solid #aaaaaa;
     }
-    
+
     /* Mark input boxes that gets an error on validation: */
     input.invalid {
       background-color: #ffdddd;
     }
-    
+
     /* Hide all steps by default: */
     .tab {
       display: none;
     }
-    
+
     /* Make circles that indicate the steps of the form: */
     .step {
       height: 15px;
       width: 15px;
       margin: 0 2px;
       background-color: #bbbbbb;
-      border: none; 
+      border: none;
       border-radius: 50%;
       display: inline-block;
       opacity: 0.5;
     }
-    
+
     /* Mark the active step: */
     .step.active {
       opacity: 1;
     }
-    
+
     /* Mark the steps that are finished and valid: */
     .step.finish {
       background-color: #4CAF50;
@@ -63,10 +63,13 @@
         <div class="col p-md-0">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="javascript:void(0)">Dashboard</a>
+                    <a href="{{route('home-utama')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <a href="javascript:void(0)">Home</a>
+                    <a href="{{route('konsultasi')}}">Konsutasi</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <a href="#">Pertanyaan</a>
                 </li>
             </ol>
         </div>
@@ -85,7 +88,7 @@
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-outline-pink">Diagnosa</button>
                               </div>
-       
+
                      <div class="table-responsive">
                             <table id="table-diagnosa" class="table table-striped table-bordered zero-configuration">
                                 <thead>
@@ -100,22 +103,16 @@
                                     <tr>
                                         <td class="text-center">{{$loop->iteration}}</td>
                                         <td width="500px"><span class="css-control-indicator"></span> {{$item->gejala->gejala}}</label></td>
-                                    <td width="100px" class="text-left">  <input type="checkbox" class="css-control-input" value="{{$item->kd_gejala}}" name="gejala[]"></td> 
+                                    <td width="100px" class="text-left">  <input type="checkbox" class="css-control-input" value="{{$item->kd_gejala}}" name="gejala[]"></td>
                                     </tr>
                                     @empty
                                     <tr>
                                         <td colspan="12" class="text-center"><i>Belum ada data.</i></td>
                                     </tr>
                                     @endforelse
-                                   
+
                                 </tbody>
-                                <tfoot class="text-center">
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Gejala</th>
-                                        <th>Checklist</th>
-                                    </tr>
-                                </tfoot>
+
                             </table>
                         </div>
                     </form>
@@ -129,7 +126,7 @@
 </div>
 
 
-    
+
 @endsection
 @section('script')
 <script>

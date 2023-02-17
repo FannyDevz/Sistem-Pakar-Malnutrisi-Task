@@ -6,8 +6,9 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('admin.relasi')}}">Relasi</a></li>
+                <li class="breadcrumb-item active"><a href="#">Tambah</a></li>
             </ol>
         </div>
     </div>
@@ -47,13 +48,13 @@
                                         </select>
                                     </div>
                                 </div>
-                               
 
-                           
 
-                               
-                                
-                                
+
+
+
+
+
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
                                         <button type="submit" class="btn btn-outline-pink">Simpan</button>
