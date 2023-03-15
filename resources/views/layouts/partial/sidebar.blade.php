@@ -8,7 +8,7 @@
                         </a>
                     </li>
 
-                    <li>
+                    {{-- <li>
                         <a class="has-arrow" href="{{route('konsultasi')}}" aria-expanded="false">
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Konsultasi Berdasarkan Gejala</span>
                         </a>
@@ -17,7 +17,7 @@
                         <a class="has-arrow" href="#" aria-expanded="false">
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Konsultasi Berdasarkan Penyakit</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a class="has-arrow" href="{{route('info-petunjuk')}}" aria-expanded="false">
                             <i class="icon-info menu-icon"></i><span class="nav-text">Info Petunjuk</span>
@@ -27,6 +27,11 @@
                     <li>
                         <a class="has-arrow" href="{{route('login-admin')}}" aria-expanded="false">
                             <i class="icon-user menu-icon"></i><span class="nav-text">Login Admin</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="{{route('register')}}" aria-expanded="false">
+                            <i class="icon-user menu-icon"></i><span class="nav-text">Register</span>
                         </a>
                     </li>
                     <!--

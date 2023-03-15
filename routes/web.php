@@ -20,29 +20,28 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
 Route::get('/', 'UmumController@home')->name('home-utama');
 Route::get('/penyakit', 'UmumController@infoPenyakit')->name('info-penyakit');
-Route::get('/konsultasi', 'UmumController@konsultasi')->name('konsultasi');
 Route::get('/info-petunjuk', 'UmumController@infoPetunjuk')->name('info-petunjuk');
 Route::get('/kontak', 'UmumController@kontak')->name('kontak');
 Route::get('/login-admin', 'UmumController@loginAdmin')->name('login-admin');
 Route::get('/tentang-kami', 'UmumController@tentang')->name('tentang');
+
+Route::get('/register', 'UmumController@registrasi')->name('register');
+Route::post('/registrasi', 'RegisterController@registrasi')->name('registrasi');
+
  //Pasien
  Route::group(['prefix' => '/pasien'], function() {
-    Route::post('/registrasi', 'PasienController@registrasi')->name('pasien.registrasi');
+    Route::post('/registrasi', 'RegisterController@registrasi')->name('pasien.registrasi');
 });
 
  //Diagnosa
  Route::group(['prefix' => '/diagnosa'], function() {
-   
+
     Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');
     Route::post('/hasil', 'DiagnosaController@diagnosa')->name('diagnosa');
     Route::get('/export/{pasien}/{penyakit}', 'DiagnosaController@export')->name('export');
 });
-
-
-
 
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function(){
@@ -55,7 +54,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Adm
     Route::get('/reset-password', 'MenuController@resetPassword')->name('admin.reset-password');
     Route::post('/reset', 'MenuController@updatePassword')->name('admin.reset-password.store');
 
-     
+
     //Penyakit
     Route::group(['prefix' => '/penyakit'], function() {
         Route::get('/', 'PenyakitController@index')->name('admin.penyakit');
@@ -64,10 +63,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Adm
         Route::get('/edit/{id}', 'PenyakitController@edit')->name('admin.penyakit.edit');
         Route::post('/update/{id}', 'PenyakitController@update')->name('admin.penyakit.update');
         Route::get('/destroy/{id}', 'PenyakitController@destroy')->name('admin.penyakit.destroy');
-    
+
     });
 
-      
+
     //Gejala
     Route::group(['prefix' => '/gejala'], function() {
         Route::get('/', 'GejalaController@index')->name('admin.gejala');
@@ -76,7 +75,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Adm
         Route::get('/edit/{id}', 'GejalaController@edit')->name('admin.gejala.edit');
         Route::post('/update/{id}', 'GejalaController@update')->name('admin.gejala.update');
         Route::get('/destroy/{id}', 'GejalaController@destroy')->name('admin.gejala.destroy');
-    
+
     });
 
      //Relasi
@@ -87,9 +86,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Adm
         Route::get('/edit/{id}', 'RelasiController@edit')->name('admin.relasi.edit');
         Route::post('/update/{id}', 'RelasiController@update')->name('admin.relasi.update');
         Route::get('/destroy/{id}', 'RelasiController@destroy')->name('admin.relasi.destroy');
-    
+
     });
 
 
-    
+
 });

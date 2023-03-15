@@ -40,11 +40,11 @@ class LoginController extends Controller
 
     public function login(Request $request)
 
-    {   
+    {
 
         $input = $request->all();
 
-  
+
 
         $this->validate($request, [
 
@@ -54,25 +54,20 @@ class LoginController extends Controller
 
         ]);
 
-  
+
 
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-
         if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
-
         {
-
-            return redirect()->route('admin.home');
-
-        }else{
-
-            return redirect()->route('login-admin')
-
+            $user = auth()->user();
+            if ($user->level == 'admin') {
+                return redirect()->route('admin.home');
+            } else {
+                return redirect()->route('home');
+            }
+        } else {
+            return redirect()->route('login')
                 ->with('error','Email-Address And Password Are Wrong.');
-
         }
-
     }
-
-
 }

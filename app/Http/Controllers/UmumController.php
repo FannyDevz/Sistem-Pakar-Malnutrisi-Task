@@ -8,7 +8,7 @@ use Validator;
 use Ramsey\Uuid\Uuid;
 
 class UmumController extends Controller
-{   
+{
     public function home()
     {
         return view('umum.home');
@@ -20,9 +20,14 @@ class UmumController extends Controller
         return view('umum.info-penyakit', compact('data'));
     }
 
-    public function konsultasi()
+    // public function konsultasi()
+    // {
+    //     return view('umum.konsultasi');
+    // }
+
+    public function registrasi()
     {
-        return view('umum.konsultasi');
+        return view('umum.register');
     }
 
     public function infoPetunjuk()
