@@ -42,7 +42,7 @@ class UmumController extends Controller
 
     public function loginAdmin()
     {
-        return view('umum.login-admin');
+        return view('umum.login');
     }
 
     public function tentang()

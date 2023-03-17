@@ -24,9 +24,10 @@
                         <div class="alert alert-success">
                             <h3>Petunjuk</h3>
                             <p>
-                           1. Sebelum anda mendiagnosa penyakit anda, silahkan daftar terlebih dahulu <a href="{{route('konsultasi')}}"><i>DISINI</i></a> <br>
-                           2. Jika sudah selesai silahkan klik tombol konsultasi, <br>
-                           3. Pilihlah gejala penyakit sesuai yang anda rasakan, <br>
+                           1. Sebelum anda mendiagnosa penyakit anda, silahkan daftar terlebih dahulu <a href="{{route('register')}}"><i>DISINI</i></a> <br>
+                           2. Jika sudah selesai silahkan login disini <a href="{{route('login')}}"><i>DISINI</i></a> <br>
+                           3. Setelah berhasil login silakan pilih menu diagnosa berdasarkan penyakit atau gejala,<br>
+                           4. Ikuti dan berikan jawaban sesuai dengan apa yang dirasakan, <br>
                            4. Klik tombol diagnosa,  <br>
                            5. Hasil diagnosa, pada halaman ini anda bisa export hasil dalam format PDF
                             </p>

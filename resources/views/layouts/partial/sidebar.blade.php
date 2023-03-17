@@ -25,8 +25,8 @@
                     </li>
 
                     <li>
-                        <a class="has-arrow" href="{{route('login-admin')}}" aria-expanded="false">
-                            <i class="icon-user menu-icon"></i><span class="nav-text">Login Admin</span>
+                        <a class="has-arrow" href="{{route('login')}}" aria-expanded="false">
+                            <i class="icon-user menu-icon"></i><span class="nav-text">Login</span>
                         </a>
                     </li>
                     <li>

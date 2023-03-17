@@ -45,13 +45,9 @@ class LoginController extends Controller
         $input = $request->all();
 
 
-
         $this->validate($request, [
-
             'username' => 'required',
-
             'password' => 'required',
-
         ]);
 
 
@@ -63,7 +59,7 @@ class LoginController extends Controller
             if ($user->level == 'admin') {
                 return redirect()->route('admin.home');
             } else {
-                return redirect()->route('home');
+                return redirect()->route('user.home');
             }
         } else {
             return redirect()->route('login')

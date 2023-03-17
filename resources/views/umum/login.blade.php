@@ -27,7 +27,7 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="#"> <h4>Login Admin</h4></a>
+                                <a class="text-center" href="#"> <h4>Login</h4></a>
 
                                 <form class="mt-5 mb-5 login-input" method="post" action="{{ route('login') }}">
                                     @csrf

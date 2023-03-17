@@ -24,7 +24,7 @@ Route::get('/', 'UmumController@home')->name('home-utama');
 Route::get('/penyakit', 'UmumController@infoPenyakit')->name('info-penyakit');
 Route::get('/info-petunjuk', 'UmumController@infoPetunjuk')->name('info-petunjuk');
 Route::get('/kontak', 'UmumController@kontak')->name('kontak');
-Route::get('/login-admin', 'UmumController@loginAdmin')->name('login-admin');
+Route::get('/login', 'UmumController@loginAdmin')->name('login');
 Route::get('/tentang-kami', 'UmumController@tentang')->name('tentang');
 
 Route::get('/register', 'UmumController@registrasi')->name('register');
@@ -41,6 +41,13 @@ Route::post('/registrasi', 'RegisterController@registrasi')->name('registrasi');
     Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');
     Route::post('/hasil', 'DiagnosaController@diagnosa')->name('diagnosa');
     Route::get('/export/{pasien}/{penyakit}', 'DiagnosaController@export')->name('export');
+});
+
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User'], function(){
+
+    Route::get('/home', 'HomeController@index')->name('user.home');
+
 });
 
 
