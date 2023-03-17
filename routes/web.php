@@ -50,7 +50,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User
 
 });
 
-
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function(){
 
     Route::get('/home', 'HomeController@index')->name('admin.home');

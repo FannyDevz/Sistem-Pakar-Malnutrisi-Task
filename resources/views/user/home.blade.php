@@ -11,7 +11,7 @@
                     <a href="{{route('user.home')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <a href="{{route('user.home')}}">Home</a>
+                    <a href="{{route('user.home')}}">Home User</a>
                 </li>
             </ol>
         </div>

@@ -11,7 +11,7 @@
  Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 15/03/2023 05:44:59
+ Date: 18/03/2023 06:29:33
 */
 
 SET NAMES utf8mb4;
@@ -33,6 +33,14 @@ CREATE TABLE `balita`  (
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of balita
+-- ----------------------------
+INSERT INTO `balita` VALUES ('2d4ac37f83fc4d4cb64760a0f587af11', '7', 'RIZA NIKO ALVIYANSYAH', 'laki-laki', '24', '2019-10-28', '2023-03-17 12:32:24', '2023-03-17 12:32:24', NULL);
+INSERT INTO `balita` VALUES ('49a998f3dc3348cfac1ce4d70dbb4562', '8', 'RIZA NIKO ALVIYANSYAH', 'laki-laki', '24', '2021-11-30', '2023-03-17 23:26:52', '2023-03-17 23:26:52', NULL);
+INSERT INTO `balita` VALUES ('774e63f1abcc4a0e813dbef86f2453d7', '4', 'LIANA LULU FAUZIAH, A. Md. Aktr', 'perempuan', '23', '2016-12-29', '2023-03-15 23:17:05', '2023-03-15 23:17:05', NULL);
+INSERT INTO `balita` VALUES ('cd58d657227f4976818fb03eb2ce0a78', '5', 'Putri', 'perempuan', '5', '2018-01-02', '2023-03-15 23:18:57', '2023-03-15 23:18:57', NULL);
 
 -- ----------------------------
 -- Table structure for diagnosa
@@ -191,7 +199,7 @@ CREATE TABLE `penyakit`  (
 -- ----------------------------
 INSERT INTO `penyakit` VALUES ('044c58c2f7904a5aa08eb77cf1b49827', 'P04', 'Stunting', 'test 1', 'test2', 'test34', 'test5', '2023-02-14 14:06:58', '2023-02-17 14:07:32', NULL);
 INSERT INTO `penyakit` VALUES ('08c77376794a4909b1b6b2d01f8fb211', 'P03', 'MaramusKwashiorkor', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
-INSERT INTO `penyakit` VALUES ('1d06af2592da46dbb609bd6a64a116f5', 'P01', 'Kwashiorkor', 'Kwashiorkor adalah salah satu bentuk malnutrisi protein berat atau kekurangan protein yang disebabkan oleh intake protein yang inade kuat dengan intake karbohidrat yang normal atau tinggi.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Karena anak tidak memeroleh makanan dengan kandungan energi dan protein yang cukup.', 'Memberikan makanan bergizi seimbang yaitu makanan yang mengandung karbohidrat seperti nasi, kentang, jagung, dan makanan yang mengandung protein yaitu telur, ikan, daging, tahu, tempe, dll. Serta memberikan makanan yang mengandung vitamin dan mineral seperti buah-buahan dan sayursayuran.', '2023-02-14 14:06:58', '2023-02-17 14:11:09', NULL);
+INSERT INTO `penyakit` VALUES ('1d06af2592da46dbb609bd6a64a116f5', 'P01', 'Kwashiorkor', '12', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Karena anak tidak memeroleh makanan dengan kandungan energi dan protein yang cukup.', 'Memberikan makanan bergizi seimbang yaitu makanan yang mengandung karbohidrat seperti nasi, kentang, jagung, dan makanan yang mengandung protein yaitu telur, ikan, daging, tahu, tempe, dll. Serta memberikan makanan yang mengandung vitamin dan mineral seperti buah-buahan dan sayursayuran.', '2023-02-14 14:06:58', '2023-03-17 12:43:11', NULL);
 INSERT INTO `penyakit` VALUES ('5f7a15c56f1740b686750462b09b6818', 'P07', 'Anemia', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `penyakit` VALUES ('80faccc93cd044019d00c6217ac39d0a', 'P05', 'Beri-beri', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `penyakit` VALUES ('866e0aca8d6249809614566252c0521d', 'P06', 'Skorbut', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
@@ -289,7 +297,7 @@ CREATE TABLE `users`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jenis_kelamin` enum('Laki - Laki','Perempuan') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_kelamin` enum('Laki-Laki','Perempuan') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `no_hp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `level` enum('admin','user') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -301,11 +309,15 @@ CREATE TABLE `users`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', 'admin', 'Laki - Laki', '', '', 'admin', 'admin@gmail.com', '2023-02-14 14:06:58', '$2y$10$6RISAUkNKhBGNfUo9UsJq.TcqNNi3Pcj4UObc47js8mM3reVUAtNu', 'frA9bdxpuh0KWL9iBYEIl3ipTcN7Y17uylhLIkI9HfQyOyJCsZ6OcKZd93QB', '2023-02-14 14:06:58', '2023-02-14 14:06:58');
+INSERT INTO `users` VALUES (1, 'admin', 'admin', 'Laki-Laki', '', '', 'admin', 'admin@gmail.com', '2023-02-14 14:06:58', '$2y$10$6RISAUkNKhBGNfUo9UsJq.TcqNNi3Pcj4UObc47js8mM3reVUAtNu', 'Uc2GSKY24TkfMX6qqEVUkQ0sMQpkbnrNeGnDCF82Azu21EM7I7hs4UkGrMJ2', '2023-02-14 14:06:58', '2023-02-14 14:06:58');
+INSERT INTO `users` VALUES (4, 'fanny12', 'Fanny Bagus Ramadhan', 'Laki-Laki', 'sdad', '+6282163213123', 'user', 'flopsboard@gmail.com', NULL, '$2y$10$b3.KIw9UStBJ3rWyi3qyzuuEA74kYUjzQgO//odKCLBEKthMt7YIy', NULL, '2023-03-15 23:17:03', '2023-03-15 23:17:03');
+INSERT INTO `users` VALUES (5, 'abrinsa', 'Abrinsa Putri', 'Perempuan', 'Gurah', '+6282163213123', 'user', 'abrinsa@gmail.com', NULL, '$2y$10$/HsIBrUyoeSKaHqjbu2UrudOupvUQ8uQQ6TX9gge1QGLA.Q4M5wJa', NULL, '2023-03-15 23:18:57', '2023-03-15 23:18:57');
+INSERT INTO `users` VALUES (7, 'fanny22', 'khanzaq_sikc', 'Laki-Laki', 'da', '+6282163213123', 'user', 'dindaa17@rocketmail.com', NULL, '$2y$10$Qa6xMVN/ilTRXe.niPN0S.07BXTcD95i9tfydVtAGfXlPtiWV8AJ6', NULL, '2023-03-17 12:32:22', '2023-03-17 12:32:22');
+INSERT INTO `users` VALUES (8, 'fanny22', 'Fanny Bagus Ramadhan', 'Laki-Laki', 'as', '+6282338206740', 'user', 'fannybagus9f@gmail.com', NULL, '$2y$10$dme6H8BrWxA49/wIbGwO4evI8Q48.le1zvhaDE334Na/rtKLdJ2zq', NULL, '2023-03-17 23:26:51', '2023-03-17 23:26:51');
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -53,17 +53,22 @@ class LoginController extends Controller
 
 
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-        if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
-        {
-            $user = auth()->user();
-            if ($user->level == 'admin') {
-                return redirect()->route('admin.home');
+        if (auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
+            {
+                $user = auth()->user();
+                if ($user->level == 'admin') {
+                    return redirect()->route('admin.home');
+                } else if ($user->level == 'user') {
+                    return redirect()->route('user.home');
+                } else {
+                    // Jika level tidak dikenali, maka redirect ke halaman login
+                    auth()->logout();
+                    return redirect()->route('login')
+                        ->with('error','Level tidak dikenali.');
+                }
             } else {
-                return redirect()->route('user.home');
+                return redirect()->route('login')
+                    ->with('error','Email-Address And Password Are Wrong.');
             }
-        } else {
-            return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
-        }
     }
 }
