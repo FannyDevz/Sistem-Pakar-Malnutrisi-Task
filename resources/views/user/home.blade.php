@@ -1,6 +1,6 @@
-@extends('layouts.template-pakar')
+@extends('layouts.template-user')
 
-@section('contents-pakar')
+@section('contents-user')
 
 <div class="content-body">
 

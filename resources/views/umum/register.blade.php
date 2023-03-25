@@ -19,11 +19,14 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-12">
-                <div class="card">
+                <div class="card ">
                     <div class="card-body">
-
                         <div class="form-validation">
                         <form class="form-valide" action="{{route('registrasi')}}" method="POST">
+
+                        <div  class="alert alert-success">
+
+                            <h3 class="text-center "><b>Data User</b></h3></br>
                             @csrf
                                 <div class="form-group row">
                                     <label class="col-lg-4 col-form-label" for="username">Username<span class="text-danger">*</span>
@@ -79,6 +82,11 @@
                                         <input type="text" class="form-control" name="phone" placeholder="Masukan No. Hp Anda">
                                     </div>
                                 </div>
+                        </div>
+
+                        <div  class="alert alert-success">
+
+                            <h3 class="text-center "><b>Data Balita</b></h3></br>
                                 <div class="form-group row">
                                     <label class="col-lg-4 col-form-label" for="nama">Nama Balita<span class="text-danger">*</span>
                                     </label>
@@ -111,6 +119,7 @@
                                         <input type="date" class="form-control"  name="ttl" id="ttl" placeholder="">
                                     </div>
                                 </div>
+                        </div>
 
                                 @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -129,6 +138,7 @@
                                 </div>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>

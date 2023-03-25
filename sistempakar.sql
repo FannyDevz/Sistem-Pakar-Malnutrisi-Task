@@ -11,7 +11,7 @@
  Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 18/03/2023 06:29:33
+ Date: 25/03/2023 12:10:16
 */
 
 SET NAMES utf8mb4;
@@ -37,10 +37,8 @@ CREATE TABLE `balita`  (
 -- ----------------------------
 -- Records of balita
 -- ----------------------------
-INSERT INTO `balita` VALUES ('2d4ac37f83fc4d4cb64760a0f587af11', '7', 'RIZA NIKO ALVIYANSYAH', 'laki-laki', '24', '2019-10-28', '2023-03-17 12:32:24', '2023-03-17 12:32:24', NULL);
-INSERT INTO `balita` VALUES ('49a998f3dc3348cfac1ce4d70dbb4562', '8', 'RIZA NIKO ALVIYANSYAH', 'laki-laki', '24', '2021-11-30', '2023-03-17 23:26:52', '2023-03-17 23:26:52', NULL);
-INSERT INTO `balita` VALUES ('774e63f1abcc4a0e813dbef86f2453d7', '4', 'LIANA LULU FAUZIAH, A. Md. Aktr', 'perempuan', '23', '2016-12-29', '2023-03-15 23:17:05', '2023-03-15 23:17:05', NULL);
-INSERT INTO `balita` VALUES ('cd58d657227f4976818fb03eb2ce0a78', '5', 'Putri', 'perempuan', '5', '2018-01-02', '2023-03-15 23:18:57', '2023-03-15 23:18:57', NULL);
+INSERT INTO `balita` VALUES ('75e8bb218cc5472e9b5323ac2af1fa94', '9', 'Test', 'laki-laki', '5', '2017-11-25', '2023-03-25 03:25:50', '2023-03-25 03:25:50', NULL);
+INSERT INTO `balita` VALUES ('a9ef5677e5d54f2a96f093b94d6829e0', '10', 'LIANA LULU FAUZIAH, A. Md. Aktr', 'laki-laki', '4', '2018-05-26', '2023-03-25 03:27:15', '2023-03-25 03:27:15', NULL);
 
 -- ----------------------------
 -- Table structure for diagnosa
@@ -95,6 +93,7 @@ INSERT INTO `gejala` VALUES ('15632e1241b44a6faf5f60a44ec9b30d', 'G30', 'Mata be
 INSERT INTO `gejala` VALUES ('17a4f0df13df4d9b80af8a81ceec3738', 'G42', 'Tubuh lemah dan lesu', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('1fd00ec4c3f64c74ad643baecfa30533', 'G36', 'Halusinasi', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('2e24af6fca7b4816bc52a98e4db36a56', 'G22', 'Pendiam/kurang aktif', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `gejala` VALUES ('2e2d172a61ce4877b06d7c97f43cc3ed', 'G51', 'testa', 1, '2023-03-25 03:49:11', '2023-03-25 03:50:54', '2023-03-25 03:50:54');
 INSERT INTO `gejala` VALUES ('396f87196b0b47da8a8af318f3125526', 'G10', 'Berkurangnya jumlah lemak dalam tubuh', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('3c96e9220394401a946d032f881835b3', 'G41', 'Demam', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('3f9939c28813441796a6e4f492e19120', 'G46', 'Tangan dan kaki dingin', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
@@ -201,9 +200,10 @@ INSERT INTO `penyakit` VALUES ('044c58c2f7904a5aa08eb77cf1b49827', 'P04', 'Stunt
 INSERT INTO `penyakit` VALUES ('08c77376794a4909b1b6b2d01f8fb211', 'P03', 'MaramusKwashiorkor', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `penyakit` VALUES ('1d06af2592da46dbb609bd6a64a116f5', 'P01', 'Kwashiorkor', '12', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Karena anak tidak memeroleh makanan dengan kandungan energi dan protein yang cukup.', 'Memberikan makanan bergizi seimbang yaitu makanan yang mengandung karbohidrat seperti nasi, kentang, jagung, dan makanan yang mengandung protein yaitu telur, ikan, daging, tahu, tempe, dll. Serta memberikan makanan yang mengandung vitamin dan mineral seperti buah-buahan dan sayursayuran.', '2023-02-14 14:06:58', '2023-03-17 12:43:11', NULL);
 INSERT INTO `penyakit` VALUES ('5f7a15c56f1740b686750462b09b6818', 'P07', 'Anemia', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `penyakit` VALUES ('674c09fe3aeb46e6beb300b118406b4f', 'P08', 'TEst', 'tes', 'test', 'test', 'test', '2023-03-25 03:48:56', '2023-03-25 03:51:06', '2023-03-25 03:51:06');
 INSERT INTO `penyakit` VALUES ('80faccc93cd044019d00c6217ac39d0a', 'P05', 'Beri-beri', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `penyakit` VALUES ('866e0aca8d6249809614566252c0521d', 'P06', 'Skorbut', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
-INSERT INTO `penyakit` VALUES ('db347863f15a4c8987ad4848d9b3b2c8', 'P02', 'Marasmus', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `penyakit` VALUES ('db347863f15a4c8987ad4848d9b3b2c8', 'P02', 'Marasmus', 'tes', 'tes', 'tes', 'tes', '2023-02-14 14:06:58', '2023-03-25 03:39:55', NULL);
 
 -- ----------------------------
 -- Table structure for relasi
@@ -255,6 +255,7 @@ INSERT INTO `relasi` VALUES ('60c3321dfc5b41da9124b2b9d580d6b3', 'P07', 'G48', '
 INSERT INTO `relasi` VALUES ('6485fbf006c74d9da0aebd37c47d7038', 'P06', 'G06', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('6ddd0f7536d04e509883b8a402ceef19', 'P05', 'G32', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('72ec9df2798e4fb6870583ea3bbc70f5', 'P07', 'G39', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
+INSERT INTO `relasi` VALUES ('873e19e5d459412c889cc04e49d8aad6', 'P01', 'G19', '2023-03-25 03:41:00', '2023-03-25 04:00:22', '2023-03-25 04:00:22');
 INSERT INTO `relasi` VALUES ('8cfdc8c1091b4881af4c76cc8a8010bb', 'P05', 'G36', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('8d046231ab284ac2a1613cd750eba59f', 'P04', 'G17', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('8e68182fc0224d43a2783a1f5abea548', 'P05', 'G29', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
@@ -309,15 +310,12 @@ CREATE TABLE `users`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', 'admin', 'Laki-Laki', '', '', 'admin', 'admin@gmail.com', '2023-02-14 14:06:58', '$2y$10$6RISAUkNKhBGNfUo9UsJq.TcqNNi3Pcj4UObc47js8mM3reVUAtNu', 'Uc2GSKY24TkfMX6qqEVUkQ0sMQpkbnrNeGnDCF82Azu21EM7I7hs4UkGrMJ2', '2023-02-14 14:06:58', '2023-02-14 14:06:58');
-INSERT INTO `users` VALUES (4, 'fanny12', 'Fanny Bagus Ramadhan', 'Laki-Laki', 'sdad', '+6282163213123', 'user', 'flopsboard@gmail.com', NULL, '$2y$10$b3.KIw9UStBJ3rWyi3qyzuuEA74kYUjzQgO//odKCLBEKthMt7YIy', NULL, '2023-03-15 23:17:03', '2023-03-15 23:17:03');
-INSERT INTO `users` VALUES (5, 'abrinsa', 'Abrinsa Putri', 'Perempuan', 'Gurah', '+6282163213123', 'user', 'abrinsa@gmail.com', NULL, '$2y$10$/HsIBrUyoeSKaHqjbu2UrudOupvUQ8uQQ6TX9gge1QGLA.Q4M5wJa', NULL, '2023-03-15 23:18:57', '2023-03-15 23:18:57');
-INSERT INTO `users` VALUES (7, 'fanny22', 'khanzaq_sikc', 'Laki-Laki', 'da', '+6282163213123', 'user', 'dindaa17@rocketmail.com', NULL, '$2y$10$Qa6xMVN/ilTRXe.niPN0S.07BXTcD95i9tfydVtAGfXlPtiWV8AJ6', NULL, '2023-03-17 12:32:22', '2023-03-17 12:32:22');
-INSERT INTO `users` VALUES (8, 'fanny22', 'Fanny Bagus Ramadhan', 'Laki-Laki', 'as', '+6282338206740', 'user', 'fannybagus9f@gmail.com', NULL, '$2y$10$dme6H8BrWxA49/wIbGwO4evI8Q48.le1zvhaDE334Na/rtKLdJ2zq', NULL, '2023-03-17 23:26:51', '2023-03-17 23:26:51');
+INSERT INTO `users` VALUES (9, 'admin', 'Admin', 'Laki-Laki', 'admin', '+6282163213123', 'admin', 'admin@gmail.com', NULL, '$2y$10$iDOwf9AKwEIruJuy1XVp4.zajGGbvI6y1XnEKlRquqvVun2rg10U6', NULL, '2023-03-25 03:25:49', '2023-03-25 03:25:49');
+INSERT INTO `users` VALUES (10, 'fanny', 'Fanny Bagus Ramadhan', 'Laki-Laki', 'Jl Tegalan', '+6282338206740', 'user', 'fannybagus9f@gmail.com', NULL, '$2y$10$HBW3oJuwrGowRzhm3iXq5O4crV9NGSFmn5xRAMqxKJrphUnYzHsW.', NULL, '2023-03-25 03:27:15', '2023-03-25 03:27:15');
 
 SET FOREIGN_KEY_CHECKS = 1;

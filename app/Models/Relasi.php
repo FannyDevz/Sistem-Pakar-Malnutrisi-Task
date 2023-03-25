@@ -9,7 +9,7 @@ class Relasi extends Model
 {
     use SoftDeletes;
 
-    public $incrementing = true;
+    public $incrementing = false;
 
     public $table = 'relasi';
 

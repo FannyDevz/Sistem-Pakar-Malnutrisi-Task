@@ -20,6 +20,10 @@ class UserSeeder extends Seeder
                 'id'        => '1',
                 'username'  => 'admin',
                 'name'      => 'admin',
+                'jenis_kelamin' => 'Laki-Laki',
+                'alamat' => 'admin',
+                'no_hp' => '',
+                'level' => 'admin',
                 'email'     => 'admin'.'@gmail.com',
                 'email_verified_at' => date('Y-m-d H:i:s'),
                 'password'  => Hash::make('admin'),
@@ -27,6 +31,7 @@ class UserSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
+
         ]);
     }
 }

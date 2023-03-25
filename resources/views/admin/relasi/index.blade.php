@@ -41,7 +41,7 @@
                                         <td class="text-center">
                                             <div class="btn-group" discount="group">
                                             <a href="{{route('admin.relasi.edit', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Edit Data"> <i class='pe-7s-pen'></i> Ubah</a>
-                                            <a href="{{route('admin.relasi.destroy', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Edit Data"  onclick="return confirm('Hapus data?');"> <i class='pe-7s-trash'></i> Hapus</a>
+                                            <a href="{{route('admin.relasi.destroy', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Hapus Data"  onclick="return confirm('Hapus data?');"> <i class='pe-7s-trash'></i> Hapus</a>
                                             </div>
                                         </td>
                                     </tr>

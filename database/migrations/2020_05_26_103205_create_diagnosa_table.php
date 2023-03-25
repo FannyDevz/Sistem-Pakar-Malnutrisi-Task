@@ -15,7 +15,7 @@ class CreateDiagnosaTable extends Migration
     {
         Schema::create('diagnosa', function (Blueprint $table) {
             $table->string('id',32)->primary();
-            $table->string('pasien_id');
+            $table->string('balita_id');
             $table->string('kd_penyakit', 5);
             $table->string('tanggal_konsultasi');
             $table->softDeletes();
