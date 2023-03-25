@@ -19,9 +19,9 @@ class RegisterController extends Controller
         $input = $request->except('_token');
 
         $validation = Validator::make($input,[
-            'username'       => 'required',
+            'username'       => 'required|unique:users,username',
             'password'       => 'required',
-            'email'          => 'required|email',
+            'email'          => 'required|email|unique:users,email',
             'name'           => 'required',
             'jku'            => 'required',
             'alamat'         => 'required',
@@ -34,8 +34,15 @@ class RegisterController extends Controller
 
         if ($validation->fails()) {
             $errors = $validation->errors();
+            if ($errors->has('username')) {
+                return redirect()->back()->with('warning', 'Username sudah digunakan.');
+            }
+            if ($errors->has('email')) {
+                return redirect()->back()->with('warning', 'Email sudah digunakan.');
+            }
             return redirect()->back()->with('warning',implode("\n", $errors->all()));
         }
+
 
         $data                 = new User;
         $data->username       = $request->username;
@@ -48,6 +55,8 @@ class RegisterController extends Controller
         $data->level          = 'user';
         $data->save();
 
+
+
         $databalita                      = new Balita;
         $databalita->id                  = Uuid::uuid4() -> getHex();
         $databalita->user_id             = $data->id;
@@ -56,6 +65,8 @@ class RegisterController extends Controller
         $databalita->umur                = $request->umur;
         $databalita->ttl                 = $request->ttl;
         $databalita->save();
+
+
 
         // $request->session()->put('id',$data->id);
         // $request->session()->put('nama',$data->name);
