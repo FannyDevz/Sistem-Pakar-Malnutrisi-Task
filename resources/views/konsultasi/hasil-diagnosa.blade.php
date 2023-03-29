@@ -1,6 +1,6 @@
-@extends('layouts.template')
+@extends('layouts.template-user')
 
-@section('contents')
+@section('contents-user')
 
 <div class="content-body">
 
@@ -9,9 +9,6 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="{{route('home-utama')}}">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    <a href="{{route('konsultasi')}}">Konsutasi</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <a href="#">Hasil Diagnosa</a>
@@ -33,23 +30,19 @@
                            <tr>
                                <th width="150px">Nama</th>
                                <th width="30px">:</th>
-                               <th>{{$pasien->nama_lengkap}}</th>
+                               <th>{{$balita->nama_lengkap}}</th>
                            </tr>
                            <tr>
                                 <th>Jenis Kelamin</th>
                                 <th>:</th>
-                                <th>{{$pasien->jenis_kelamin}}</th>
+                                <th>{{$balita->jenis_kelamin}}</th>
                             </tr>
                             <tr>
                                 <th>Umur </th>
                                 <th>:</th>
-                                <th>{{$pasien->umur}} tahun</th>
+                                <th>{{$balita->umur}} tahun</th>
                             </tr>
-                            <tr>
-                                <th>Alamat</th>
-                                <th>:</th>
-                                <th>{{$pasien->alamat}}</th>
-                            </tr>
+
                             <tr>
                                 <th>Nama Penyakit</th>
                                 <th>:</th>
@@ -87,7 +80,7 @@
                         </p>
 
                         <div class="col-md-12 text-right">
-                            <a href="{{route('export', ['pasien' => $pasien, 'penyakit' => $penyakit])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
+                            <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
                           </div>
 
                     </div>

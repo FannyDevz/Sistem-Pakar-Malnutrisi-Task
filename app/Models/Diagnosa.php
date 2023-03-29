@@ -22,9 +22,9 @@ class Diagnosa extends Model
         'tanggal_konsultasi',
     ];
 
-    public function pasien()
+    public function balita()
     {
-        return $this->belongsTo('App\Models\Pasien', 'pasien_id', 'id');
+        return $this->belongsTo('App\Models\Balita', 'balita_id', 'id');
     }
 
     public function penyakit()

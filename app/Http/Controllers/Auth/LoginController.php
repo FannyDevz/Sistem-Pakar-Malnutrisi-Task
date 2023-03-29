@@ -56,6 +56,9 @@ class LoginController extends Controller
         if (auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
             {
                 $user = auth()->user();
+                $id = $user->id;
+                $user_username = $user->username;
+
                 if ($user->level == 'admin') {
                     return redirect()->route('admin.home')->with('success','Berhasil Login');
                 } else if ($user->level == 'user') {

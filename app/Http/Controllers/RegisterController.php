@@ -68,8 +68,6 @@ class RegisterController extends Controller
 
 
 
-        // $request->session()->put('id',$data->id);
-        // $request->session()->put('nama',$data->name);
 
         return redirect()->route('home-utama')->with('success','Berhasil Registrasi');
     }

@@ -35,18 +35,19 @@ Route::post('/registrasi', 'RegisterController@registrasi')->name('registrasi');
     Route::post('/registrasi', 'RegisterController@registrasi')->name('pasien.registrasi');
 });
 
- //Diagnosa
- Route::group(['prefix' => '/diagnosa'], function() {
 
-    Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');
-    Route::post('/hasil', 'DiagnosaController@diagnosa')->name('diagnosa');
-    Route::get('/export/{pasien}/{penyakit}', 'DiagnosaController@export')->name('export');
-});
 
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User'], function(){
 
     Route::get('/home', 'HomeController@index')->name('user.home');
+
+    //Diagnosa
+    Route::group(['prefix' => '/diagnosa'], function() {
+    Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');
+    Route::post('/hasil', 'DiagnosaController@diagnosa')->name('diagnosa');
+    Route::get('/export/{balita}/{penyakit}', 'DiagnosaController@export')->name('export');
+});
 
 });
 

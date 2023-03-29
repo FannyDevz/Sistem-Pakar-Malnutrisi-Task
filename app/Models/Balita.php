@@ -22,4 +22,8 @@ class Balita extends Model
         'jenis_kelamin',
         'umur'
     ];
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'id', 'user_id');
+    }
 }

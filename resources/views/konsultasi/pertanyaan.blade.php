@@ -1,6 +1,6 @@
-@extends('layouts.template')
+@extends('layouts.template-user')
 
-@section('contents')
+@section('contents-user')
 
 <style>
 
@@ -66,7 +66,6 @@
                     <a href="{{route('home-utama')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">
-                    <a href="{{route('konsultasi')}}">Konsutasi</a>
                 </li>
                 <li class="breadcrumb-item active">
                     <a href="#">Pertanyaan</a>

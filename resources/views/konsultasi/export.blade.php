@@ -20,22 +20,22 @@
                        <tr>
                            <th width="150px">Nama</th>
                            <th width="30px">:</th>
-                           <th>{{$pasien->nama_lengkap}}</th>
+                           <th>{{$balita->nama_lengkap}}</th>
                        </tr>
                        <tr>
                             <th>Usia Kehamilan</th>
                             <th>:</th>
-                            <th>{{$pasien->usia_kehamilan}} Hari</th>
+                            <th>{{$balita->usia_kehamilan}} Hari</th>
                         </tr>
                         <tr>
                             <th>Umur </th>
                             <th>:</th>
-                            <th>{{$pasien->umur}} tahun</th>
+                            <th>{{$balita->umur}} tahun</th>
                         </tr>
                         <tr>
                             <th>Alamat</th>
                             <th>:</th>
-                            <th>{{$pasien->alamat}}</th>
+                            <th>{{$balita->alamat}}</th>
                         </tr>
                         <tr>
                             <th>Nama Penyakit</th>
@@ -99,22 +99,22 @@
         <tr >
             <th >Nama</th>
             <th >:</th>
-            <th>{{$pasien->nama_lengkap}}</th>
+            <th>{{$balita->nama_lengkap}}</th>
         </tr>
         <tr>
              <th>Usia Kehamilan</th>
              <th>:</th>
-             <th>{{$pasien->usia_kehamilan}} Hari</th>
+             <th>{{$balita->usia_kehamilan}} Hari</th>
          </tr>
          <tr>
              <th>Umur </th>
              <th>:</th>
-             <th>{{$pasien->umur}} tahun</th>
+             <th>{{$balita->umur}} tahun</th>
          </tr>
          <tr>
              <th>Alamat</th>
              <th>:</th>
-             <th>{{$pasien->alamat}}</th>
+             <th>{{$balita->alamat}}</th>
          </tr>
          <tr>
              <th>Nama Penyakit</th>
@@ -218,23 +218,19 @@
                            <tr>
                                <th width="140px">Nama</th>
                                <th width="30px">:</th>
-                               <th>{{$pasien->nama_lengkap}}</th>
+                               <th>{{$balita->nama_lengkap}}</th>
                            </tr>
                            <tr>
                                 <th>Usia Kehamilan</th>
                                 <th>:</th>
-                                <th>{{$pasien->jenis_kelamin}}</th>
+                                <th>{{$balita->jenis_kelamin}}</th>
                             </tr>
                             <tr>
                                 <th>Umur </th>
                                 <th>:</th>
-                                <th>{{$pasien->umur}} tahun</th>
+                                <th>{{$balita->umur}} tahun</th>
                             </tr>
-                            <tr>
-                                <th>Alamat</th>
-                                <th>:</th>
-                                <th>{{$pasien->alamat}}</th>
-                            </tr>
+
                             <tr>
                                 <th>Nama Penyakit</th>
                                 <th>:</th>
