@@ -33,9 +33,9 @@ class MenuController extends Controller
         $data     = Diagnosa::where('id', $id)->first();
         $penyakit = Penyakit::where('kd_penyakit', $data->kd_penyakit)->first();
         $gejala   = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
-        $balita   = User::where('id', $data->balita_id)->first();
+        $balita   = Balita::where('id', $data->balita_id)->first();
 
-        return view('admin.menu.detail-log', compact('gejala','penyakit','pasien'));
+        return view('admin.menu.detail-log', compact('gejala','penyakit','balita'));
     }
 
     public function informasi()

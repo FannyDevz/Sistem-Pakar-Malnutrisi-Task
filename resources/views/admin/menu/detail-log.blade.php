@@ -37,23 +37,19 @@
                            <tr>
                                <th width="150px">Nama</th>
                                <th width="30px">:</th>
-                               <th>{{$pasien->nama_lengkap}}</th>
+                               <th>{{$balita->nama_lengkap}}</th>
                            </tr>
                            <tr>
                                 <th>Jenis Kelamin</th>
                                 <th>:</th>
-                                <th>{{$pasien->jenis_kelamin}}</th>
+                                <th>{{$balita->jenis_kelamin}}</th>
                             </tr>
                             <tr>
                                 <th>Umur </th>
                                 <th>:</th>
-                                <th>{{$pasien->umur}} tahun</th>
+                                <th>{{$balita->umur}} tahun</th>
                             </tr>
-                            <tr>
-                                <th>Alamat</th>
-                                <th>:</th>
-                                <th>{{$pasien->alamat}}</th>
-                            </tr>
+
                             <tr>
                                 <th>Nama Penyakit</th>
                                 <th>:</th>
@@ -91,7 +87,7 @@
                         </p>
 
                         <div class="col-md-12 text-right">
-                            <a href="{{route('export', ['pasien' => $pasien, 'penyakit' => $penyakit])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
+                            <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
                         </div>
 
                     </div>
