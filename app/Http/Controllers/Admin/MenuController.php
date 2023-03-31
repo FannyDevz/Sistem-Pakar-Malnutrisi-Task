@@ -23,16 +23,10 @@ class MenuController extends Controller
 
     public function logKonsultasi()
     {
-        $data = Diagnosa::with('balita','penyakit')->orderBy('created_at', 'DESC')->get();
+
+        $data = Diagnosa::with('balita.user','penyakit')->orderBy('created_at', 'DESC')->get();
 
         return view('admin.menu.log-konsultasi',compact('data'));
-    }
-
-    public function logKonsultasiUser()
-    {
-        $data = Diagnosa::with('balita','penyakit')->orderBy('created_at', 'DESC')->get();
-
-        return view('user.log-konsultasi',compact('data'));
     }
 
     public function detailLog($id)
@@ -43,15 +37,6 @@ class MenuController extends Controller
         $balita   = Balita::where('id', $data->balita_id)->first();
 
         return view('admin.menu.detail-log', compact('gejala','penyakit','balita'));
-    }
-    public function detailLogUser($id)
-    {
-        $data     = Diagnosa::where('id', $id)->first();
-        $penyakit = Penyakit::where('kd_penyakit', $data->kd_penyakit)->first();
-        $gejala   = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
-        $balita   = Balita::where('id', $data->balita_id)->first();
-
-        return view('user.detail-log', compact('gejala','penyakit','balita'));
     }
 
     public function informasi()

@@ -42,14 +42,21 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User
 
     Route::get('/home', 'HomeController@index')->name('user.home');
 
+    Route::get('/log-konsultasi', 'MenuController@logKonsultasiUser')->name('user.log-konsultasi');
+    Route::get('/log-konsultasi/detail/{id}', 'MenuController@detailLog')->name('user.log-konsultasi.detail');
+
+    Route::get('/balita', 'BalitaController@index')->name('user.balita');
+    Route::get('/balita/edit/{id}', 'BalitaController@edit')->name('user.balitaedit');
+    Route::post('/balita/update/{id}', 'BalitaController@update')->name('user.balita.update');
+
+
+    Route::get('/reset-password', 'MenuController@resetPassword')->name('user.reset-password');
+    Route::post('/reset', 'MenuController@updatePassword')->name('user.reset-password.store');
     //Diagnosa
     Route::group(['prefix' => '/diagnosa'], function() {
     Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');
     Route::post('/hasil', 'DiagnosaController@diagnosa')->name('diagnosa');
     Route::get('/export/{balita}/{penyakit}', 'DiagnosaController@export')->name('export');
-
-    Route::get('/log-konsultasi', 'MenuController@logKonsultasiUser')->name('user.log-konsultasi');
-    Route::get('/log-konsultasi/detail/{id}', 'MenuController@detailLog')->name('user.log-konsultasi.detail');
 
 
 });

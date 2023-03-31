@@ -31,6 +31,7 @@
                                     <tr class="text-center">
                                         <th width="10px">No.</th>
                                         <th>User</th>
+                                        <th>Nama Bayi</th>
                                         <th>Penyakit</th>
                                         <th>Tanggal Konsultasi</th>
                                         <th>Aksi</th>
@@ -42,6 +43,7 @@
                                     @forelse ($data as $item)
                                     <tr>
                                         <td class="text-center">{{$loop->iteration}}</td>
+                                        <td>{{$item->balita->user->name}}</td>
                                         <td>{{$item->balita->nama_lengkap}}</td>
                                         <td class="text-center">{{$item->penyakit->nama_penyakit}}</td>
                                         <td class="text-center">{{date('d/m/Y',strtotime($item->tanggal_konsultasi))}}</td>

@@ -14,7 +14,13 @@
             </li>
 
             <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="{{route('user.balita')}}" aria-expanded="false">
+                    <i class="icon-globe menu-icon"></i><span class="nav-text">Data Balita</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="has-arrow" href="{{route('user.reset-password')}}" aria-expanded="false">
                         <i class="icon-key menu-icon"></i><span class="nav-text">Reset Password</span>
                     </a>
                 </li>

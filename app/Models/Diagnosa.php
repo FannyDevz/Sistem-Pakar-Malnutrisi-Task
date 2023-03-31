@@ -27,6 +27,7 @@ class Diagnosa extends Model
         return $this->belongsTo('App\Models\Balita', 'balita_id', 'id');
     }
 
+
     public function penyakit()
     {
         return $this->belongsTo('App\Models\Penyakit', 'kd_penyakit', 'kd_penyakit');

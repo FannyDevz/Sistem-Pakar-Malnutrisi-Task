@@ -49,14 +49,14 @@ class MenuController extends Controller
 
     public function resetPassword()
     {
-        return view('admin.menu.reset-password');
+        return view('user.reset-password');
     }
 
     public function updatePassword(request $request)
     {
 
         if (!Hash::check($request->password_old, Auth::user()->password)) {
-            return redirect()->route('admin.menu.reset-password')->with('warning', 'Kata sandi lama tidak sesuai');
+            return redirect()->route('user.reset-password')->with('warning', 'Kata sandi lama tidak sesuai');
         }
 
         $input = $request->except('_token');
@@ -79,7 +79,7 @@ class MenuController extends Controller
 
         $data->save();
 
-        return redirect()->route('admin.reset-password')->with('success','Berhasil memperbaharui data');
+        return redirect()->route('user.reset-password')->with('success','Berhasil memperbaharui data');
     }
 
 }
