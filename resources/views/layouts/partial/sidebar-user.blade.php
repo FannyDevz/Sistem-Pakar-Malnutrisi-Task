@@ -8,7 +8,7 @@
                 </a>
             </li>
             <li>
-                <a class="has-arrow" href="#" aria-expanded="false">
+                <a class="has-arrow" href="{{route('user.log-konsultasi')}}" aria-expanded="false">
                     <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Konsultasi</span>
                 </a>
             </li>

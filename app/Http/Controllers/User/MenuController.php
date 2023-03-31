@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -21,30 +21,16 @@ class MenuController extends Controller
         return view('admin.menu.kelola');
     }
 
-    public function logKonsultasi()
-    {
-        $data = Diagnosa::with('balita','penyakit')->orderBy('created_at', 'DESC')->get();
-
-        return view('admin.menu.log-konsultasi',compact('data'));
-    }
-
     public function logKonsultasiUser()
     {
-        $data = Diagnosa::with('balita','penyakit')->orderBy('created_at', 'DESC')->get();
+        $user      = auth()->user();
+        $balita   = Balita::where('user_id', $user->id)->first();
+        $data = Diagnosa::with('balita','penyakit')->where('balita_id', $balita->id)->orderBy('created_at', 'DESC')->get();
 
         return view('user.log-konsultasi',compact('data'));
     }
 
     public function detailLog($id)
-    {
-        $data     = Diagnosa::where('id', $id)->first();
-        $penyakit = Penyakit::where('kd_penyakit', $data->kd_penyakit)->first();
-        $gejala   = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
-        $balita   = Balita::where('id', $data->balita_id)->first();
-
-        return view('admin.menu.detail-log', compact('gejala','penyakit','balita'));
-    }
-    public function detailLogUser($id)
     {
         $data     = Diagnosa::where('id', $id)->first();
         $penyakit = Penyakit::where('kd_penyakit', $data->kd_penyakit)->first();

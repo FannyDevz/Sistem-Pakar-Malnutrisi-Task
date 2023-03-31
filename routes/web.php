@@ -47,6 +47,11 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User
     Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');
     Route::post('/hasil', 'DiagnosaController@diagnosa')->name('diagnosa');
     Route::get('/export/{balita}/{penyakit}', 'DiagnosaController@export')->name('export');
+
+    Route::get('/log-konsultasi', 'MenuController@logKonsultasiUser')->name('user.log-konsultasi');
+    Route::get('/log-konsultasi/detail/{id}', 'MenuController@detailLog')->name('user.log-konsultasi.detail');
+
+
 });
 
 });

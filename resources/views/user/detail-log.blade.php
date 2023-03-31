@@ -7,12 +7,16 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="{{route('user.home')}}">Dashboard</a>
-                </li>
-                <li class="breadcrumb-item active">
-                    <a href="#">Hasil Diagnosa</a>
-                </li>
+
+            <li class="breadcrumb-item">
+                <a href="{{route('user.home')}}">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="{{route('user.log-konsultasi')}}">Hasil Konsultasi</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="#">Detail</a>
+            </li>
             </ol>
         </div>
     </div>
@@ -24,6 +28,9 @@
 
                 <div class="card">
                     <div class="card-body">
+                        <div class="col-md-12 text-right">
+                            <button type="submit" class="btn btn-outline-pink" onclick="window.history.back()"> Kembali</button>
+                        </div>
                         <h4 class="card-title">Hasil Diagnosa</h4>
                         <div class="alert alert-success">Berdasarkan diagnosa yang dikumpulkan bahwa sistem meyimpulkan:</div>
                         <table class="table table-striped">
@@ -60,9 +67,9 @@
                             <div class="bootstrap-label">
                                 @foreach ($gejala as $item)
 
-                                   <span class="label label-pink"> {{$item->gejala->gejala}}</span>
+                                <span class="label label-pink"> {{$item->gejala->gejala}}</span>
                                 @endforeach
-                               </div>
+                            </div>
 
                         </p>
 
@@ -81,7 +88,7 @@
 
                         <div class="col-md-12 text-right">
                             <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
-                          </div>
+                        </div>
 
                     </div>
                 </div>
