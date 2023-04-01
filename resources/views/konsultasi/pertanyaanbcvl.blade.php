@@ -76,15 +76,17 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-            <div class="alert alert-success">Hallo {{session()->get('nama')}}, Silahkan Pilih Gejala penyakit sesuai yang anda rasakan, terimakasih.</div>
+            <div class="alert alert-success">Hallo, Silahkan Pilih Gejala sesuai yang anda rasakan, terimakasih.</div>
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Diagnosis Penyakit Berdasarkan Gejala</h4>
-                        <form class="form-valide" action="{{route('diagnosa')}}" method="post">
+                        <form class="form-valide" action="{{route('diagnosaakhir')}}" method="post">
                             @csrf
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-outline-pink">Diagnosa</button>
                               </div>
+
+                              <input type="hidden" name="penyakit" value="{{$penyakit}}">
 
                      <div class="table-responsive">
                             <table id="table-diagnosa" class="table table-striped table-bordered zero-configuration">
@@ -111,7 +113,9 @@
                                 </tbody>
 
                             </table>
+
                         </div>
+
                     </form>
 
                     </div>

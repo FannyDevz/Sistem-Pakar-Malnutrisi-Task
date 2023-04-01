@@ -76,14 +76,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-            <div class="alert alert-success">Hallo {{session()->get('nama')}}, Silahkan Pilih Cek Berdasarkan Penyakit, Terimakasih.</div>
+            <div class="alert alert-success">Hallo, Silahkan Pilih Cek Berdasarkan Penyakit, Terimakasih.</div>
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Diagnosis Berdasarkan Penyakit</h4>
-                        <form class="form-valide" action="{{route('diagnosabcvl.list')}}" method="post">
+                        <form class="form-valide" action="{{route('diagnosabc')}}" method="post">
                             @csrf
                             <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-outline-pink">Diagnosa</button>
+                                <button type="submit" class="btn btn-outline-pink">Lanjutkan</button>
                               </div>
 
                      <div class="table-responsive">
@@ -102,10 +102,12 @@
                                         <td width="500px"><span class="css-control-indicator"></span> {{$item->penyakit->nama_penyakit}}</label></td>
                                         <td width="100px" class="text-left">
                                             <label>
-                                                <input type="radio" class="css-control-input" value="{{$item->kd_penyakit}}" name="gejala_radio">
+                                                <input type="radio" class="css-control-input" value="{{$item->kd_penyakit}}" name="penyakit">
                                             </label>
                                         </td>
                                     </tr>
+
+
                                     @empty
                                     <tr>
                                         <td colspan="12" class="text-center"><i>Belum ada data.</i></td>

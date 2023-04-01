@@ -62,8 +62,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User
             //DiagnosaBC
             Route::group(['prefix' => '/diagnosabc'], function() {
                 Route::get('/', 'DiagnosaController@indexbc')->name('diagnosabc.list');
-                Route::get('/vl', 'DiagnosaController@indexbcvl')->name('diagnosabcvl.list');
-                Route::post('/hasil', 'DiagnosaController@diagnosabc')->name('diagnosabc');
+                Route::post('/vl', 'DiagnosaController@diagnosabc')->name('diagnosabc');
+                Route::post('/hasil', 'DiagnosaController@diagnosaakhir')->name('diagnosaakhir');
             });
 
 });
