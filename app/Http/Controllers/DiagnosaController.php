@@ -26,6 +26,9 @@ class DiagnosaController extends Controller
         return view('konsultasi.pertanyaan', compact('gejala'));
     }
 
+
+
+
     public function diagnosa(request $request)
     {
         if($request->gejala == null){

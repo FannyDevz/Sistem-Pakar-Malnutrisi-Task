@@ -57,7 +57,7 @@
                             . Program aplikasi ini menganalisa data penyakit malnutrisi, anamnesis awal serta gejala-gejala dari suatu penyakit.</p></br>
                         <div class="text-center ">
                         <a  type="button" class="btn btn-primary col-md-4" href="{{route('diagnosa.list')}}">DIAGNOSA BERDASARKAN GEJALA</a>
-                        <a  type="button" class="btn btn-primary col-md-4" href="{{route('diagnosa.list')}}">DIAGNOSA BERDASARKAN PERSENTASE PENYAKIT</a>
+                        <a  type="button" class="btn btn-primary col-md-4" href="{{route('diagnosabc.list')}}">DIAGNOSA BERDASARKAN PERSENTASE PENYAKIT</a>
                             </div>
                         </br>
                         </div>

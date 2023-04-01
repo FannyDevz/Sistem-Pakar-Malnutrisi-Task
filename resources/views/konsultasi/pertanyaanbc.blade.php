@@ -76,11 +76,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-            <div class="alert alert-success">Hallo {{session()->get('nama')}}, Silahkan Pilih Cek Berdasarkan Penyakit Apa, Terimakasih.</div>
+            <div class="alert alert-success">Hallo {{session()->get('nama')}}, Silahkan Pilih Cek Berdasarkan Penyakit, Terimakasih.</div>
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Diagnosis Berdasarkan Penyakit</h4>
-                        <form class="form-valide" action="{{route('diagnosa')}}" method="post">
+                        <form class="form-valide" action="{{route('diagnosabcvl.list')}}" method="post">
                             @csrf
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-outline-pink">Diagnosa</button>
@@ -91,16 +91,20 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th width="10px">No.</th>
-                                        <th>Gejala</th>
-                                        <th>Checklist</th>
+                                        <th>Penyakit</th>
+                                        <th>Pilih</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($gejala as $item)
+                                    @forelse ($penyakit as $item)
                                     <tr>
                                         <td class="text-center">{{$loop->iteration}}</td>
-                                        <td width="500px"><span class="css-control-indicator"></span> {{$item->gejala->gejala}}</label></td>
-                                    <td width="100px" class="text-left">  <input type="checkbox" class="css-control-input" value="{{$item->kd_gejala}}" name="gejala[]"></td>
+                                        <td width="500px"><span class="css-control-indicator"></span> {{$item->penyakit->nama_penyakit}}</label></td>
+                                        <td width="100px" class="text-left">
+                                            <label>
+                                                <input type="radio" class="css-control-input" value="{{$item->kd_penyakit}}" name="gejala_radio">
+                                            </label>
+                                        </td>
                                     </tr>
                                     @empty
                                     <tr>

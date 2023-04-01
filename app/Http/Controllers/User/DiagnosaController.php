@@ -29,6 +29,30 @@ class DiagnosaController extends Controller
         return view('konsultasi.pertanyaan', compact('gejala'));
     }
 
+    public function indexbc()
+    {
+        $penyakit = Relasi::select('kd_penyakit')
+        ->distinct()
+        ->with('penyakit')
+        ->orderBy('kd_penyakit', 'ASC')
+        ->get();
+
+        return view('konsultasi.pertanyaanbc', compact('penyakit'));
+    }
+
+    public function indexbcvl($penyakit)
+    {
+
+        $gejala = Relasi::select('kd_gejala')
+        ->distinct()
+        ->with('gejala')
+        ->where('kd_penyakit', $penyakit)
+        ->orderBy('kd_gejala', 'ASC')
+        ->get();
+
+        return view('konsultasi.pertanyaanbcvl', compact('gejala'));
+    }
+
     public function diagnosa(request $request)
     {
         if($request->gejala == null){
