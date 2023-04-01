@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Gejala;
 use App\Models\Penyakit;
 use App\Models\Relasi;
-use App\Models\Pasien;
+use App\Models\Balita;
 use App\Models\Diagnosa;
 use Validator;
 use Ramsey\Uuid\Uuid;
@@ -138,8 +138,6 @@ class DiagnosaController extends Controller
 
         }
 
-
-
         $data = $role;
         asort($data);
         foreach($data as $x => $x_value) {
@@ -149,13 +147,14 @@ class DiagnosaController extends Controller
           return $hasil;
     }
 
-    public function export($pasien, $penyakit)
+    public function export($balita, $penyakit, $diagnosa)
     {
 
         $data['penyakit'] = Penyakit::where('id', $penyakit)->first();
-
         $data['gejala']   = Relasi::with('gejala')->where('kd_penyakit', $data['penyakit']->kd_penyakit)->get();
-        $data['pasien']   = Pasien::where('id', $pasien)->first();
+        $data['balita']   = Balita::where('id', $balita)->first();
+        $data['diagnosa'] = Diagnosa::where('id', $diagnosa)->first();
+
 
         // return $data;
 

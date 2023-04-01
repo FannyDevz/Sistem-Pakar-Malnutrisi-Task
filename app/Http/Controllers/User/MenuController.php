@@ -37,7 +37,7 @@ class MenuController extends Controller
         $gejala   = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
         $balita   = Balita::where('id', $data->balita_id)->first();
 
-        return view('user.detail-log', compact('gejala','penyakit','balita'));
+        return view('user.detail-log', compact('gejala','penyakit','balita','data'));
     }
 
     public function informasi()

@@ -20,6 +20,8 @@ class Diagnosa extends Model
         'balita_id',
         'kd_penyakit',
         'tanggal_konsultasi',
+        'jenis',
+        'persen',
     ];
 
     public function balita()

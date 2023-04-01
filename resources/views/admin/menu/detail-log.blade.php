@@ -55,6 +55,16 @@
                                 <th>:</th>
                                 <th> {{$penyakit->nama_penyakit}}</th>
                             </tr>
+                            <tr>
+                                <th>Persentase Penyakit</th>
+                                <th>:</th>
+                                <th> {{$data->persen}} %</th>
+                            </tr>
+                            <tr>
+                                <th>Tipe Diagnosa Berdasarkan</th>
+                                <th>:</th>
+                                <th> {{$data->jenis}}</th>
+                            </tr>
                        </table>
                        <hr>
                        <h5>Keterangan : </h5>
@@ -62,14 +72,14 @@
                        <h6>Deskripsi : </h6>
                         <p>{{$penyakit->deskripsi}}</p>
 
-                        <h6>Gejala : </h6>
+                        <h6>Gejala Yang Biasanya Terjadi pada Penyakit {{$penyakit->nama_penyakit}} : </h6>
                         <p>
                             <div class="bootstrap-label">
                                 @foreach ($gejala as $item)
 
-                                <span class="label label-pink"> {{$item->gejala->gejala}}</span>
+                                   <span class="label label-pink"> {{$item->gejala->gejala}}</span>
                                 @endforeach
-                            </div>
+                               </div>
 
                         </p>
 
@@ -87,7 +97,7 @@
                         </p>
 
                         <div class="col-md-12 text-right">
-                            <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
+                            <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit, 'diagnosa' => $data])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
                         </div>
 
                     </div>

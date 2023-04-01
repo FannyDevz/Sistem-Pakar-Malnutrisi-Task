@@ -30,7 +30,7 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th width="10px">No.</th>
-                                        <th>User</th>
+                                        <th>Nama Balita</th>
                                         <th>Penyakit</th>
                                         <th>Tanggal Konsultasi</th>
                                         <th>Aksi</th>

@@ -221,7 +221,7 @@
                                <th>{{$balita->nama_lengkap}}</th>
                            </tr>
                            <tr>
-                                <th>Usia Kehamilan</th>
+                                <th>Jenis Kelamin</th>
                                 <th>:</th>
                                 <th>{{$balita->jenis_kelamin}}</th>
                             </tr>
@@ -236,6 +236,16 @@
                                 <th>:</th>
                                 <th> {{$penyakit->nama_penyakit}}</th>
                             </tr>
+                            <tr>
+                                <th>Persentase Penyakit</th>
+                                <th>:</th>
+                                <th> {{$diagnosa->persen}} %</th>
+                            </tr>
+                            <tr>
+                                <th>Tipe Diagnosa Berdasarkan</th>
+                                <th>:</th>
+                                <th> {{$diagnosa->jenis}}</th>
+                            </tr>
                        </table>
 
                     <h5 style="font-style: sans-serif">Keterangan : </h5>
@@ -245,7 +255,7 @@
                 <h6>Deskripsi : </h6>
                  <p>{{$penyakit->deskripsi}}</p>
 
-                 <h6>Gejala : </h6>
+                 <h6>Gejala Yang Biasanya Terjadi pada Penyakit {{$penyakit->nama_penyakit}} : </h6>
                <p>
 
                     @php

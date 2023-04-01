@@ -56,7 +56,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User
     Route::group(['prefix' => '/diagnosa'], function() {
     Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');
     Route::post('/hasil', 'DiagnosaController@diagnosa')->name('diagnosa');
-    Route::get('/export/{balita}/{penyakit}', 'DiagnosaController@export')->name('export');
+    Route::get('/export/{balita}/{penyakit}/{diagnosa}', 'DiagnosaController@export')->name('export');
 
 
 });
