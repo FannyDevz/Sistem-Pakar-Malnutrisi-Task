@@ -11,7 +11,7 @@
  Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 25/03/2023 12:10:16
+ Date: 01/04/2023 14:44:51
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,9 @@ CREATE TABLE `balita`  (
 -- Records of balita
 -- ----------------------------
 INSERT INTO `balita` VALUES ('75e8bb218cc5472e9b5323ac2af1fa94', '9', 'Test', 'laki-laki', '5', '2017-11-25', '2023-03-25 03:25:50', '2023-03-25 03:25:50', NULL);
-INSERT INTO `balita` VALUES ('a9ef5677e5d54f2a96f093b94d6829e0', '10', 'LIANA LULU FAUZIAH, A. Md. Aktr', 'laki-laki', '4', '2018-05-26', '2023-03-25 03:27:15', '2023-03-25 03:27:15', NULL);
+INSERT INTO `balita` VALUES ('9da83c4b21ca483fb4546171b7befae0', '12', 'LIANA LULU FAUZIAH', 'perempuan', '5', '2017-08-22', '2023-03-25 05:31:43', '2023-03-25 05:31:43', NULL);
+INSERT INTO `balita` VALUES ('a9ef5677e5d54f2a96f093b94d6829e0', '10', 'LIANA LULU FAUZIAH, A. Md. Aktr', 'perempuan', '4', '2018-05-26', '2023-03-25 03:27:15', '2023-03-31 14:37:40', NULL);
+INSERT INTO `balita` VALUES ('f2b39417adfd49ab91c3382b03c965b6', '16', 'RIZA NIKO ALVIYANSYAH', 'perempuan', '4', '2018-12-24', '2023-04-01 01:49:06', '2023-04-01 01:50:44', NULL);
 
 -- ----------------------------
 -- Table structure for diagnosa
@@ -49,11 +51,25 @@ CREATE TABLE `diagnosa`  (
   `balita_id` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `kd_penyakit` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal_konsultasi` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis` enum('penyakit','gejala') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `persen` double(10, 0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of diagnosa
+-- ----------------------------
+INSERT INTO `diagnosa` VALUES ('08654a3ecfd04ba8bfcd308cf5b78a5f', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P02', '2023-04-01 04:46:35', 'gejala', 83, NULL, '2023-04-01 04:46:35', '2023-04-01 04:46:35');
+INSERT INTO `diagnosa` VALUES ('1d74adfa3c7d4cacb7e5a22e1d545750', '9da83c4b21ca483fb4546171b7befae0', 'P07', '2023-04-01 07:39:48', 'penyakit', 20, NULL, '2023-04-01 07:39:48', '2023-04-01 07:39:48');
+INSERT INTO `diagnosa` VALUES ('4bce130649fc4af9beacbe9782001b4c', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P01', '2023-04-01 04:08:22', 'gejala', 37, NULL, '2023-04-01 04:08:22', '2023-04-01 04:08:22');
+INSERT INTO `diagnosa` VALUES ('6789cfa166b44da6b6187889f977e119', '9da83c4b21ca483fb4546171b7befae0', 'P01', '2023-04-01 07:40:34', 'penyakit', 50, NULL, '2023-04-01 07:40:34', '2023-04-01 07:40:34');
+INSERT INTO `diagnosa` VALUES ('69e256c4c8e54e988d91ac40d2cf7fcd', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P01', '2023-04-01 04:12:19', 'gejala', 37, NULL, '2023-04-01 04:12:19', '2023-04-01 04:12:19');
+INSERT INTO `diagnosa` VALUES ('85b71ea2ab0d491089766fe0308f45bd', '9da83c4b21ca483fb4546171b7befae0', 'P01', '2023-04-01 07:18:14', 'gejala', 25, NULL, '2023-04-01 07:18:14', '2023-04-01 07:18:14');
+INSERT INTO `diagnosa` VALUES ('9d1e22879f4840aeb5b0ad0539931c91', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P02', '2023-04-01 04:47:25', 'gejala', 83, NULL, '2023-04-01 04:47:25', '2023-04-01 04:47:25');
+INSERT INTO `diagnosa` VALUES ('b410a1d0d8bc4076bb555941de508514', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P02', '2023-04-01 04:47:48', 'gejala', 83, NULL, '2023-04-01 04:47:48', '2023-04-01 04:47:48');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -107,6 +123,7 @@ INSERT INTO `gejala` VALUES ('668d3269411e43ad8703cdb0d09db480', 'G20', 'Sedikit
 INSERT INTO `gejala` VALUES ('674003d776474c0bb925c48441162414', 'G34', 'Koordinasi otot-otot tubuh menurun', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('67f4ed225dfb4eb3a815d31d1b8822e8', 'G15', 'Perut buncit', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('6e065877d32b47b790d87acfde15fc81', 'G48', 'Sakit dada', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `gejala` VALUES ('6e0e1749642946459d587d932845f6a5', 'G51', 'Test 1', 1, '2023-04-01 01:54:30', '2023-04-01 04:56:25', '2023-04-01 04:56:25');
 INSERT INTO `gejala` VALUES ('75d3b52719cf4aba9b7d81a0dcb819c7', 'G49', 'Insomnia', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('769494894f804a94b5dec90e3d74f752', 'G04', 'Terjadinya pembengkakan', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('7903e91aed704263889d0b71c5ef710d', 'G32', 'Kesulitan berjalan, bahkan lumpuh sindrom WernickeKorsakoff', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
@@ -121,7 +138,7 @@ INSERT INTO `gejala` VALUES ('a89a0d88f4674dc8b8a400fe89df2351', 'G38', 'Perdara
 INSERT INTO `gejala` VALUES ('a8ffa7ca5fcf49ab828fae4a8540d58d', 'G09', 'Kulit kelihatan kering dan berkeriput', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('b1074ce9c7d5435b995a6b751fb42f70', 'G47', 'Pusing atau sakit kepala', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('b24b3e8d6d214cdfb83f9f5235534853', 'G29', 'Mata bergerak tak terkontrol', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
-INSERT INTO `gejala` VALUES ('b736d571ffc24e70a51ef15ce2fad791', 'G01', 'Sering rewel', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `gejala` VALUES ('b736d571ffc24e70a51ef15ce2fad791', 'G01', 'Sering rewel', 1, '2023-02-14 14:06:58', '2023-03-31 14:33:19', NULL);
 INSERT INTO `gejala` VALUES ('b8fa50033a9243bbb868de9c8e7423f7', 'G33', 'Kemampuan mengingat berkurang', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('b93a2b52b6714d08a1df744f25438467', 'G40', 'Berat badan turun', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `gejala` VALUES ('b96f2086c839468da6365afc174af25a', 'G26', 'Tangan dan kaki kesemutan atau mati rasa', 1, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
@@ -199,6 +216,7 @@ CREATE TABLE `penyakit`  (
 INSERT INTO `penyakit` VALUES ('044c58c2f7904a5aa08eb77cf1b49827', 'P04', 'Stunting', 'test 1', 'test2', 'test34', 'test5', '2023-02-14 14:06:58', '2023-02-17 14:07:32', NULL);
 INSERT INTO `penyakit` VALUES ('08c77376794a4909b1b6b2d01f8fb211', 'P03', 'MaramusKwashiorkor', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `penyakit` VALUES ('1d06af2592da46dbb609bd6a64a116f5', 'P01', 'Kwashiorkor', '12', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Karena anak tidak memeroleh makanan dengan kandungan energi dan protein yang cukup.', 'Memberikan makanan bergizi seimbang yaitu makanan yang mengandung karbohidrat seperti nasi, kentang, jagung, dan makanan yang mengandung protein yaitu telur, ikan, daging, tahu, tempe, dll. Serta memberikan makanan yang mengandung vitamin dan mineral seperti buah-buahan dan sayursayuran.', '2023-02-14 14:06:58', '2023-03-17 12:43:11', NULL);
+INSERT INTO `penyakit` VALUES ('1fc5770aa7db47089b3ca093ee590d43', 'P08', 'Test', 'Test', 'Test', 'Test', 'Test', '2023-04-01 01:54:14', '2023-04-01 04:56:41', '2023-04-01 04:56:41');
 INSERT INTO `penyakit` VALUES ('5f7a15c56f1740b686750462b09b6818', 'P07', 'Anemia', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
 INSERT INTO `penyakit` VALUES ('674c09fe3aeb46e6beb300b118406b4f', 'P08', 'TEst', 'tes', 'test', 'test', 'test', '2023-03-25 03:48:56', '2023-03-25 03:51:06', '2023-03-25 03:51:06');
 INSERT INTO `penyakit` VALUES ('80faccc93cd044019d00c6217ac39d0a', 'P05', 'Beri-beri', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
@@ -248,6 +266,7 @@ INSERT INTO `relasi` VALUES ('5390ad17d861470aa53b26cab3a4098e', 'P05', 'G30', '
 INSERT INTO `relasi` VALUES ('592db6982f45475c879902fb89d1671f', 'P07', 'G42', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('5a3e50662ccc438b87b67b7f87ac7811', 'P01', 'G03', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('5afb5e3dc7d04616a1244bdebffbe94a', 'P03', 'G14', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
+INSERT INTO `relasi` VALUES ('5b900d008f3f436e9f4160b76252532e', 'P08', 'G51', '2023-04-01 01:54:56', '2023-04-01 04:55:45', '2023-04-01 04:55:45');
 INSERT INTO `relasi` VALUES ('5c2ed482e0f949fb8fa5a51ba9625f4d', 'P07', 'G44', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('5d4814ebcc0f45618855042c270340d9', 'P03', 'G07', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('60509b5caca045ec8e2f01ce47ea7747', 'P01', 'G04', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
@@ -310,12 +329,14 @@ CREATE TABLE `users`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (9, 'admin', 'Admin', 'Laki-Laki', 'admin', '+6282163213123', 'admin', 'admin@gmail.com', NULL, '$2y$10$iDOwf9AKwEIruJuy1XVp4.zajGGbvI6y1XnEKlRquqvVun2rg10U6', NULL, '2023-03-25 03:25:49', '2023-03-25 03:25:49');
-INSERT INTO `users` VALUES (10, 'fanny', 'Fanny Bagus Ramadhan', 'Laki-Laki', 'Jl Tegalan', '+6282338206740', 'user', 'fannybagus9f@gmail.com', NULL, '$2y$10$HBW3oJuwrGowRzhm3iXq5O4crV9NGSFmn5xRAMqxKJrphUnYzHsW.', NULL, '2023-03-25 03:27:15', '2023-03-25 03:27:15');
+INSERT INTO `users` VALUES (9, 'admin', 'Admin', 'Laki-Laki', 'admin', '+6282163213123', 'admin', 'admin@gmail.com', NULL, '$2y$10$jU4lPD6eOx4PJ0h2xSUbG.ly7qT12ge2mRahIqKPPdmZ8FWY7oaRe', NULL, '2023-03-25 03:25:49', '2023-03-28 16:44:55');
+INSERT INTO `users` VALUES (10, 'fanny', 'Fanny Bagus Ramadhan', 'Laki-Laki', 'Jl Tegalan', '+6282338206740', 'user', 'fannybagus9f@gmail.com', NULL, '$2y$10$wslGueXMVo5eKJNbsQF1SO/iaJEJyJLTPe8lMBiRChwXHdBXf1tzq', NULL, '2023-03-25 03:27:15', '2023-03-31 14:49:34');
+INSERT INTO `users` VALUES (12, 'abrinsa', 'Abrinsa Putri', 'Perempuan', 'Gurah', '+6282163213123', 'user', 'abrinsa@gmail.com', NULL, '$2y$10$dWVurz4M/dz84TnRE0c52.P9Umbd2jbUcKzaOiZDeeXw2lxPdoIAC', NULL, '2023-03-25 05:31:43', '2023-03-25 05:31:43');
+INSERT INTO `users` VALUES (16, 'bagus', 'Bagus', 'Laki-Laki', 'Jl Tegalan Ds Ngasem Kec Ngasem Kediri', '+628213621736', 'user', 'bagus@gmail.com', NULL, '$2y$10$Gd2xVOMLmg.9L.fbfmxxheo0lXEL6N6WAHEOwzVv3aYTxZhyLMXyS', NULL, '2023-04-01 01:49:04', '2023-04-01 01:50:17');
 
 SET FOREIGN_KEY_CHECKS = 1;
