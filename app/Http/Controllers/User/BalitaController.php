@@ -13,11 +13,47 @@ class BalitaController extends Controller
 {
     public function index()
     {
+
         $user    = auth()->user();
         $data   = Balita::where('user_id', $user->id)->first();
 
+        if (!$data) {
+        return redirect()->route('user.register');
+    }
 
         return view('user.balita', compact('data'));
+    }
+
+    public function insert(Request $request)
+    {
+        $input = $request->except('_token');
+
+        $validation = Validator::make($input,[
+
+            'nama'           => 'required',
+            'jkb'            => 'required',
+            'umur'           => 'required|integer',
+            'ttl'            => 'required',
+        ]);
+
+        if ($validation->fails()) {
+            $errors = $validation->errors();
+            return redirect()->back()->with('warning',implode("\n", $errors->all()));
+        }
+
+
+        $data = auth()->user();
+
+        $databalita                      = new Balita;
+        $databalita->id                  = Uuid::uuid4() -> getHex();
+        $databalita->user_id             = $data->id;
+        $databalita->nama_lengkap        = $request->nama;
+        $databalita->jenis_kelamin       = $request->jkb;
+        $databalita->umur                = $request->umur;
+        $databalita->ttl                 = $request->ttl;
+        $databalita->save();
+
+        return redirect()->route('user.home')->with('success','Berhasil Registrasi');
     }
 
     public function edit($id)

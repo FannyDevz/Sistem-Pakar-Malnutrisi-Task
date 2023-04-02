@@ -26,10 +26,10 @@ class RegisterController extends Controller
             'jku'            => 'required',
             'alamat'         => 'required',
             'phone'          => 'required|phone:'.$this->isoCode,
-            'nama'           => 'required',
-            'jkb'            => 'required',
-            'umur'           => 'required|integer',
-            'ttl'            => 'required',
+            // 'nama'           => 'required',
+            // 'jkb'            => 'required',
+            // 'umur'           => 'required|integer',
+            // 'ttl'            => 'required',
         ]);
 
         if ($validation->fails()) {
@@ -57,18 +57,20 @@ class RegisterController extends Controller
 
 
 
-        $databalita                      = new Balita;
-        $databalita->id                  = Uuid::uuid4() -> getHex();
-        $databalita->user_id             = $data->id;
-        $databalita->nama_lengkap        = $request->nama;
-        $databalita->jenis_kelamin       = $request->jkb;
-        $databalita->umur                = $request->umur;
-        $databalita->ttl                 = $request->ttl;
-        $databalita->save();
+        // $databalita                      = new Balita;
+        // $databalita->id                  = Uuid::uuid4() -> getHex();
+        // $databalita->user_id             = $data->id;
+        // $databalita->nama_lengkap        = $request->nama;
+        // $databalita->jenis_kelamin       = $request->jkb;
+        // $databalita->umur                = $request->umur;
+        // $databalita->ttl                 = $request->ttl;
+        // $databalita->save();
 
 
 
 
         return redirect()->route('home-utama')->with('success','Berhasil Registrasi');
     }
+
+
 }

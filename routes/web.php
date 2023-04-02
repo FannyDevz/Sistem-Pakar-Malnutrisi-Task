@@ -50,6 +50,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User
     Route::post('/balita/update/{id}', 'BalitaController@update')->name('user.balita.update');
 
 
+    Route::get('/register', 'HomeController@registrasi')->name('user.register');
+    Route::post('/registrasi', 'BalitaController@insert')->name('user.registrasi');
+
     Route::get('/reset-password', 'MenuController@resetPassword')->name('user.reset-password');
     Route::post('/reset', 'MenuController@updatePassword')->name('user.reset-password.store');
             //Diagnosa
@@ -57,6 +60,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User
             Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');
             Route::post('/hasil', 'DiagnosaController@diagnosa')->name('diagnosa');
             Route::get('/export/{balita}/{penyakit}/{diagnosa}', 'DiagnosaController@export')->name('export');
+
             });
 
             //DiagnosaBC

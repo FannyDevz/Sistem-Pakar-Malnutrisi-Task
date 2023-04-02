@@ -20,6 +20,13 @@ class DiagnosaController extends Controller
 
     public function index()
     {
+        $user    = auth()->user();
+        $data   = Balita::where('user_id', $user->id)->first();
+
+        if (!$data) {
+        return redirect()->route('user.register')->with('warning', 'Lengkapi Data Balita Terlebih Dahulu');
+    }
+
         $gejala = Relasi::select('kd_gejala')
         ->distinct()
         ->with('gejala')
@@ -31,6 +38,13 @@ class DiagnosaController extends Controller
 
     public function indexbc()
     {
+        $user    = auth()->user();
+        $data   = Balita::where('user_id', $user->id)->first();
+
+        if (!$data) {
+        return redirect()->route('user.register')->with('warning', 'Lengkapi Data Balita Terlebih Dahulu');
+    }
+
         $penyakit = Relasi::select('kd_penyakit')
         ->distinct()
         ->with('penyakit')
