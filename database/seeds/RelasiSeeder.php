@@ -2,10 +2,13 @@
 
 use Illuminate\Database\Seeder;
 use Ramsey\Uuid\Uuid;
-use Illuminate\Support\Facades\DB;
 
-class RelasiTableSeeder extends Seeder
-{
+class RelasiSeeder extends Seeder
+{  /**
+    * Seed the application's database.
+    *
+    * @return void
+    */
     public function run()
     {
         DB::table('relasi') -> insert([
