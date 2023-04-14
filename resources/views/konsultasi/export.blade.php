@@ -228,7 +228,7 @@
                             <tr>
                                 <th>Umur </th>
                                 <th>:</th>
-                                <th>{{$balita->umur}} tahun</th>
+                                <th>{{$balita->umur}} Bulan</th>
                             </tr>
 
                             <tr>

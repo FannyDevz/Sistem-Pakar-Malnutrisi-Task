@@ -6,8 +6,8 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
-                <li class="breadcrumb-item active"><a href="{{route('admin.relasi')}}">Relasi</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Beranda</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('admin.relasi')}}">Aturan</a></li>
                 <li class="breadcrumb-item active"><a href="#">Index</a></li>
             </ol>
         </div>
@@ -19,8 +19,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Daftar Relasi</h4>
-                            <a href="{{route('admin.relasi.create')}}"><button type="button" class="btn mb-1 btn-outline-pink">Tambah</button></a>
+                        <h4 class="card-title">Daftar Aturan</h4>
+                            <a href="{{route('admin.relasi.create')}}"><button type="button" class="btn mb-1 button-tambah">Tambah</button></a>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
@@ -40,8 +40,8 @@
 
                                         <td class="text-center">
                                             <div class="btn-group" discount="group">
-                                            <a href="{{route('admin.relasi.edit', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Edit Data"> <i class='pe-7s-pen'></i> Ubah</a>
-                                            <a href="{{route('admin.relasi.destroy', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Hapus Data"  onclick="return confirm('Hapus data?');"> <i class='pe-7s-trash'></i> Hapus</a>
+                                            <a href="{{route('admin.relasi.edit', $item->id)}}" class="span6 btn btn-small button-edit btn-sm" title="Edit Data"> <i class='pe-7s-pen'></i> Ubah</a>
+                                            <a href="{{route('admin.relasi.destroy', $item->id)}}" class="span6 btn btn-small button-hapus btn-sm" title="Hapus Data"  onclick="return confirm('Hapus data?');"> <i class='pe-7s-trash'></i> Hapus</a>
                                             </div>
                                         </td>
                                     </tr>

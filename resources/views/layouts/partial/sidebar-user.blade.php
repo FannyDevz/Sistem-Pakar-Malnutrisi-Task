@@ -4,7 +4,7 @@
             <li class="nav-label">Home</li>
             <li>
                 <a class="has-arrow" href="{{route('user.home')}}" aria-expanded="false">
-                    <i class="icon-home menu-icon"></i><span class="nav-text">Home</span>
+                    <i class="icon-home menu-icon"></i><span class="nav-text">Beranda</span>
                 </a>
             </li>
             <li>

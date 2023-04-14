@@ -4,7 +4,7 @@
             <li class="nav-label">Home</li>
             <li>
                 <a class="has-arrow" href="{{route('admin.home')}}" aria-expanded="false">
-                    <i class="icon-home menu-icon"></i><span class="nav-text">Home</span>
+                    <i class="icon-home menu-icon"></i><span class="nav-text">Beranda</span>
                 </a>
             </li>
 
@@ -20,7 +20,7 @@
             </li>
             <li>
                 <a class="drpodown-menu has-arrow" href="{{route('admin.relasi')}}" aria-expanded="false">
-                        <i class="icon-globe menu-icon"></i><span class="nav-text">Relasi</span>
+                        <i class="icon-globe menu-icon"></i><span class="nav-text">Aturan</span>
                 </a>
             </li>
 
@@ -34,7 +34,7 @@
 
             <li>
                 <a class="has-arrow" href="{{route('admin.log-konsultasi')}}" aria-expanded="false">
-                    <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Konsultasi Pasien</span>
+                    <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Konsultasi</span>
                 </a>
             </li>
 

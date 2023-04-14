@@ -6,7 +6,7 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb"><li class="breadcrumb-item">
-                <a href="{{route('user.home')}}">Dashboard</a>
+                <a href="{{route('user.home')}}">Beranda</a>
             </li>
             <li class="breadcrumb-item active">
                 <a href="#">Balita</a>
@@ -22,9 +22,11 @@
                 <div class="card ">
                     <div class="card-body">
 
-                        <div  class="alert alert-success">
+                        <div  class="alert alert-">
+                        </br>
+                          <b>  <h3 class="card-title">Data Balita</h3></b>
+                        </br>
 
-                            <h4 class="card-title">Data Balita</h4>
                             <table class="table table-striped">
 
                                <tr>
@@ -40,7 +42,7 @@
                                 <tr>
                                     <th>Umur </th>
                                     <th>:</th>
-                                    <th>{{$data->umur}} tahun</th>
+                                    <th>{{$data->umur}} Bulan</th>
                                 </tr>
 
                                 <tr>
@@ -50,7 +52,7 @@
                                 </tr>
                            </table>
                            <div class="col-md-12 text-right">
-                            <a href="{{route('user.balitaedit', $data->id)}}" class="btn btn-large btn-outline-pink btn-lg" title="Edit Data"> <i class='pe-7s-pen'></i> Ubah</a> </div>
+                            <a href="{{route('user.balitaedit', $data->id)}}" class="btn btn-large button-edit btn-lg" title="Edit Data"> <i class='pe-7s-pen'></i> Ubah</a> </div>
                         </div>
                 </div>
             </div>

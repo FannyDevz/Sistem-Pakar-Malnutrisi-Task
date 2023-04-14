@@ -7,7 +7,7 @@
         <div class="col p-md-0">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                <a href="{{route('admin.home')}}">Dashboard</a>
+                <a href="{{route('admin.home')}}">Beranda</a>
             </li>
             <li class="breadcrumb-item active">
                 <a href="{{route('admin.log-konsultasi')}}">Hasil Konsultasi</a>
@@ -48,8 +48,27 @@
                                         <td class="text-center">{{$item->penyakit->nama_penyakit}}</td>
                                         <td class="text-center">{{date('d/m/Y',strtotime($item->tanggal_konsultasi))}}</td>
                                         <td class="text-center">
+                                            <style>
+                                                button {
+                                                    background-color: #000;
+                                                    color: #fff;
+                                                    border: none;
+                                                    padding: 10px 20px;
+                                                    border-radius: 5px;
+                                                    font-size: 16px;
+                                                    cursor: pointer;
+                                                    transition: background-color 0.3s ease-in-out,
+                                                    color 0.3s ease-in-out;
+                                                }
+
+                                                button:hover {
+                                                    background-color: #fff;
+                                                    color: #000;
+                                                    outline: 2px solid #000;
+                                                }
+                                                </style>
                                             <div class="btn-group" discount="group">
-                                                <a href="{{route('admin.log-konsultasi.detail', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Edit Data"> <i class='pe-7s-pen'></i>Detail</a>
+                                                <a href="{{route('admin.log-konsultasi.detail', $item->id)}}" class="span6 btn button-tambah btn-small btn-sm" title="Detail"> <i class='pe-7s-pen'></i>Detail</a>
 
                                             </div>
                                         </td>

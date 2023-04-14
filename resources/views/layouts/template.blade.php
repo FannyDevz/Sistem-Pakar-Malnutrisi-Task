@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>MalNutrisi Online</title>
+    <title>Sispar Malnutrisi</title>
     <!-- Favicon icon -->
     <link rel="icon" type="{{asset('template/images/favicon')}}" sizes="16x16" href="{{asset('template/images/favicon.png')}}">
     <!-- Custom Stylesheet -->
@@ -15,10 +15,56 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="{{asset('template/plugins/summernote/dist/summernote.css')}}" rel="stylesheet">
     <style>
-        table.dataTable tr.even { background-color: #7affa6; }
-        table.dataTable thead { background-color: #00ff6a; }
+        table.dataTable tr.even { background-color: #cbe0ff; }
+        table.dataTable thead { background-color: #afcefd; }
 
     </style>
+    	  <style>
+            .button-tambah {
+              background-color: #00b300;
+              color: #ffffff;
+              padding: 10px 20px;
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+            }
+
+            .button-tambah:hover {
+              background-color: transparent;
+              color: #00b300;
+              border: 2px solid #00b300;
+            }
+
+            .button-edit {
+              background-color: #ffcc00;
+              color: #ffffff;
+              padding: 10px 20px;
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+            }
+
+            .button-edit:hover {
+              background-color: transparent;
+              color: #ffcc00;
+              border: 2px solid #ffcc00;
+            }
+
+            .button-hapus {
+              background-color: #cc0000;
+              color: #ffffff;
+              padding: 10px 20px;
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+            }
+
+            .button-hapus:hover {
+              background-color: transparent;
+              color: #cc0000;
+              border: 2px solid #cc0000;
+            }
+          </style>
 </head>
 
 <body>
@@ -73,27 +119,9 @@
                 </div>
                 <div class="header-left">
                     <br>
-                    <H2>Sistem Pakar Diagnosa Malnutrisi Pada Balita</H2>
+                    <H2>Sistem Pakar Malnutrisi</H2>
                 </div>
 
-                {{-- <div class="header-right">
-                    <ul class="clearfix">
-
-                        <li class="icons dropdown">
-                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
-                                <span class="activity active"></span>
-                                <img src="{{asset('template/images/user/1.png')}}" height="40" width="40" alt="">
-                            </div>
-                            <div class="drop-down dropdown-profile   dropdown-menu">
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div> --}}
             </div>
         </div>
         <!--**********************************

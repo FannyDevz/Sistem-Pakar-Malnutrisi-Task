@@ -6,7 +6,7 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb"><li class="breadcrumb-item">
-                <a href="{{route('user.home')}}">Dashboard</a>
+                <a href="{{route('user.home')}}">Beranda</a>
             </li>
             <li class="breadcrumb-item active">
                 <a href="#">Balita</a>
@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="umur">Umur <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="umur">Umur (Bulan)<span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control"  name="umur" id="umur"  value="{{$data->umur}}">
@@ -62,8 +62,8 @@
 
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
-                                        <button type="submit" class="btn btn-outline-pink">Simpan</button>
-                                        <button type="submit" class="btn btn-outline-pink" onclick="window.history.back()"> Kembali</button>
+                                        <button type="submit" class="btn button-tambah">Simpan</button>
+                                        <button type="submit" class="btn button-edit" onclick="window.history.back()"> Kembali</button>
                                     </div>
                                 </div>
                             </form>

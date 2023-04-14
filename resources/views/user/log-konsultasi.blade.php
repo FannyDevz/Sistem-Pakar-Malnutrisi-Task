@@ -47,7 +47,7 @@
                                         <td class="text-center">{{date('d/m/Y',strtotime($item->tanggal_konsultasi))}}</td>
                                         <td class="text-center">
                                             <div class="btn-group" discount="group">
-                                                <a href="{{route('user.log-konsultasi.detail', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Edit Data"> <i class='pe-7s-pen'></i>Detail</a>
+                                                <a href="{{route('user.log-konsultasi.detail', $item->id)}}" class="span6 btn btn-small button-tambah btn-sm" title="Detail"> <i class='pe-7s-pen'></i>Detail</a>
 
                                             </div>
                                         </td>

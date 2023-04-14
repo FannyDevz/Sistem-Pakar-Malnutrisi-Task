@@ -6,7 +6,7 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Beranda</a></li>
                 <li class="breadcrumb-item active"><a href="{{route('admin.gejala')}}">Gejala</a></li>
                 <li class="breadcrumb-item active"><a href="#">Index</a></li>
             </ol>
@@ -20,7 +20,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h3 class="card-title">Daftar Gejala</h3>
-                            <a href="{{route('admin.gejala.create')}}"><button type="button" class="btn mb-1 btn-outline-pink">Tambah</button></a>
+                            <a href="{{route('admin.gejala.create')}}"><button type="button" class="btn mb-1 button-tambah">Tambah</button></a>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead class="text-center">
@@ -42,8 +42,8 @@
 
                                         <td class="text-center">
                                             <div class="btn-group" discount="group">
-                                                <a href="{{route('admin.gejala.edit', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Edit Data"> <i class='pe-7s-pen'></i> Ubah</a>
-                                                <a href="{{route('admin.gejala.destroy', $item->id)}}" class="span6 btn btn-small btn-outline-pink btn-sm" title="Edit Data"  onclick="return confirm('Hapus data?');"> <i class='pe-7s-trash'></i> Hapus</a>
+                                                <a href="{{route('admin.gejala.edit', $item->id)}}" class="span6 btn btn-small button-edit btn-sm" title="Edit Data"> <i class='pe-7s-pen'></i> Ubah</a>
+                                                <a href="{{route('admin.gejala.destroy', $item->id)}}" class="span6 btn btn-small button-hapus btn-sm" title="Edit Data"  onclick="return confirm('Hapus data?');"> <i class='pe-7s-trash'></i> Hapus</a>
                                             </div>
 
                                         </td>

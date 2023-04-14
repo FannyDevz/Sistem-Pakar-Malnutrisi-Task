@@ -7,7 +7,7 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb"><li class="breadcrumb-item">
-                <a href="{{route('user.home')}}">Dashboard</a>
+                <a href="{{route('user.home')}}">Beranda</a>
             </li>
             <li class="breadcrumb-item active">
                 <a href="{{route('user.register')}}">Register</a>
@@ -41,7 +41,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <select class="form-select form-control" name="jkb" id="jkb">
-                                            <option selected>Open this select menu</option>
+                                            <option selected>Pilih Jenis Kelamin</option>
                                             <option  value="Laki-Laki">Laki-Laki</option>
                                             <option  value="Perempuan">Perempuan</option>
                                           </select>
@@ -51,7 +51,7 @@
                                     <label class="col-lg-4 col-form-label" for="umur">Umur <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
-                                        <input type="text" class="form-control"  name="umur" id="umur" placeholder="Masukan Umur Anda">
+                                        <input type="text" class="form-control"  name="umur" id="umur" placeholder="Masukan Umur Balita (Bulan) ">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -74,7 +74,26 @@
                                 @endif
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
-                                        <button type="submit" class="btn btn-outline-pink">Tambah Data Balita</button>
+                                        <style>
+                                            button {
+                                                background-color: #000;
+                                                color: #fff;
+                                                border: none;
+                                                padding: 10px 20px;
+                                                border-radius: 5px;
+                                                font-size: 16px;
+                                                cursor: pointer;
+                                                transition: background-color 0.3s ease-in-out,
+                                                color 0.3s ease-in-out;
+                                            }
+
+                                            button:hover {
+                                                background-color: #fff;
+                                                color: #000;
+                                                outline: 2px solid #000;
+                                            }
+                                            </style>
+                                        <button type="submit" class="btn">Tambah Data Balita</button>
                                     </div>
                                 </div>
                             </form>

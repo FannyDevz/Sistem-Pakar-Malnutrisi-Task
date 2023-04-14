@@ -9,7 +9,7 @@
             <ol class="breadcrumb">
 
             <li class="breadcrumb-item">
-                <a href="{{route('admin.home')}}">Dashboard</a>
+                <a href="{{route('admin.home')}}">Beranda</a>
             </li>
             <li class="breadcrumb-item active">
                 <a href="{{route('admin.log-konsultasi')}}">Hasil Konsultasi</a>
@@ -29,7 +29,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-outline-pink" onclick="window.history.back()"> Kembali</button>
+                            <button type="submit" class="btn button-edit" onclick="window.history.back()"> Kembali</button>
                         </div>
                         <h4 class="card-title">Hasil Diagnosa</h4>
                         <div class="alert alert-success">Berdasarkan diagnosa yang dikumpulkan bahwa sistem meyimpulkan:</div>
@@ -47,7 +47,7 @@
                             <tr>
                                 <th>Umur </th>
                                 <th>:</th>
-                                <th>{{$balita->umur}} tahun</th>
+                                <th>{{$balita->umur}} Bulan</th>
                             </tr>
 
                             <tr>
@@ -67,37 +67,35 @@
                             </tr>
                        </table>
                        <hr>
-                       <h5>Keterangan : </h5>
+                       <h4><b>Keterangan : </b></h4>
+                    </br>
+                       <h6><b>Gejala Yang Biasanya Terjadi pada Penyakit {{$penyakit->nama_penyakit}} : </b></h6>
+                       <p>
+                           <div class="bootstrap-label">
+                               @foreach ($gejala as $item)
+                                  <span class="label label-pink"> {{$item->gejala->gejala}}</span>
+                               @endforeach
+                              </div>
 
-                       <h6>Deskripsi : </h6>
-                        <p>{{$penyakit->deskripsi}}</p>
+                       </p>
+                       <h6><b>Deskripsi : </b></h6>
+                        <p> <textarea readonly cols="150" rows="3">{{$penyakit->deskripsi}}</textarea></p>
 
-                        <h6>Gejala Yang Biasanya Terjadi pada Penyakit {{$penyakit->nama_penyakit}} : </h6>
+                        <h6><b>Pengobatan : </b></h6>
                         <p>
-                            <div class="bootstrap-label">
-                                @foreach ($gejala as $item)
-
-                                   <span class="label label-pink"> {{$item->gejala->gejala}}</span>
-                                @endforeach
-                               </div>
-
+                            <textarea readonly cols="150" rows="3">  {{$penyakit->pengobatan}}</textarea>
                         </p>
-
-                        <h6>Pengobatan : </h6>
+                        <h6><b>Penyebab : </b></h6>
                         <p>
-                            <textarea readonly cols="150" rows="5">  {{$penyakit->pengobatan}}</textarea>
+                            <textarea readonly cols="150" rows="3">  {{$penyakit->penyebab}}</textarea>
                         </p>
-                        <h6>Penyebab : </h6>
+                        <h6><b>Pencegahan : </b></h6>
                         <p>
-                            <textarea readonly cols="150" rows="5">  {{$penyakit->penyebab}}</textarea>
-                        </p>
-                        <h6>Pencegahan : </h6>
-                        <p>
-                            <textarea readonly cols="150" rows="5">  {{$penyakit->pencegahan}}</textarea>
+                            <textarea readonly cols="150" rows="3">  {{$penyakit->pencegahan}}</textarea>
                         </p>
 
                         <div class="col-md-12 text-right">
-                            <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit, 'diagnosa' => $data])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
+                            <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit, 'diagnosa' => $data])}}"> <button type="submit" class="btn button-hapus">Export PDF</button></a>
                         </div>
 
                     </div>

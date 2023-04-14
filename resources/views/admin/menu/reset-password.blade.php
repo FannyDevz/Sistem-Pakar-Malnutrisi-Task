@@ -7,7 +7,7 @@
         <div class="col p-md-0">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                <a href="{{route('admin.home')}}">Dashboard</a>
+                <a href="{{route('admin.home')}}">Beranda</a>
             </li>
             <li class="breadcrumb-item active">
                 <a href="{{route('admin.reset-password')}}">Reset-Password</a>
@@ -31,7 +31,9 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="#"> <h4>Reset Password</h4></a>
+                            </br>
+                                <a class="text-center" href="#"> <h3>Reset Password</h3></a>
+                            </br>
                             <form method="POST" action="{{route('admin.reset-password.store')}}">
                                     @csrf
 
@@ -72,11 +74,29 @@
                                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                         </div>
                                     </div>
+                                    <style>
+                                        button {
+                                            background-color: #000;
+                                            color: #fff;
+                                            border: none;
+                                            padding: 10px 20px;
+                                            border-radius: 5px;
+                                            font-size: 16px;
+                                            cursor: pointer;
+                                            transition: background-color 0.3s ease-in-out,
+                                            color 0.3s ease-in-out;
+                                        }
 
+                                        button:hover {
+                                            background-color: #fff;
+                                            color: #000;
+                                            outline: 2px solid #000;
+                                        }
+                                        </style>
                                     <div class="form-group row mb-0">
                                         <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-outline-pink">
-                                                {{ __('simpan') }}
+                                            <button type="submit" class="btn ">
+                                                {{ __('Simpan') }}
                                             </button>
                                         </div>
                                     </div>

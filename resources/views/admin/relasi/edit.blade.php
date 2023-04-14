@@ -6,8 +6,8 @@
     <div class="row page-titles mx-0">
         <div class="col p-md-0">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Dashboard</a></li>
-                <li class="breadcrumb-item active"><a href="{{route('admin.relasi')}}">Relasi</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Beranda</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('admin.relasi')}}">Aturan</a></li>
                 <li class="breadcrumb-item active"><a href="#">Edit</a></li>
             </ol>
         </div>
@@ -19,7 +19,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Edit Relasi</h4>
+                        <h4 class="card-title">Edit Aturan</h4>
                         <div class="form-validation">
                             <form class="form-valide" action="{{route('admin.relasi.update', $data->id)}}" method="post">
                                 @csrf
@@ -51,8 +51,8 @@
 
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
-                                        <button type="submit" class="btn btn-outline-pink">Simpan</button>
-                                        <button type="submit" class="btn btn-outline-pink" onclick="window.history.back()"> Kembali</button>
+                                        <button type="submit" class="btn button-tambah">Simpan</button>
+                                        <button type="submit" class="btn button-edit" onclick="window.history.back()"> Kembali</button>
                                     </div>
                                 </div>
                             </form>

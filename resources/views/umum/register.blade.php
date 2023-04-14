@@ -3,18 +3,7 @@
 @section('contents')
 <div class="content-body">
 
-    <div class="row page-titles mx-0">
-        <div class="col p-md-0">
-            <ol class="breadcrumb"><li class="breadcrumb-item">
-                <a href="{{route('home-utama')}}">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">
-                <a href="{{route('registrasi')}}">Register</a>
-            </li>
-            </ol>
-        </div>
-    </div>
-    <!-- row -->
+
 
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -24,9 +13,9 @@
                         <div class="form-validation">
                         <form class="form-valide" action="{{route('registrasi')}}" method="POST">
 
-                        <div  class="alert alert-success">
-
-                            <h3 class="text-center "><b>Data User</b></h3></br>
+                        <div  class="alert alert-alert">
+                        </br>
+                            <h3 class="text-center "><b>Register</b></h3></br>
                             @csrf
                                 <div class="form-group row">
                                     <label class="col-lg-4 col-form-label" for="username">Username<span class="text-danger">*</span>
@@ -95,8 +84,27 @@
                                 @endif
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
-                                        <button type="submit" class="btn btn-outline-pink">Register</button>
-                                        <button type="submit" class="btn btn-outline-pink" onclick="window.history.back()"> Kembali</button>
+                                        <style>
+                                        button {
+                                            background-color: #000;
+                                            color: #fff;
+                                            border: none;
+                                            padding: 10px 20px;
+                                            border-radius: 5px;
+                                            font-size: 16px;
+                                            cursor: pointer;
+                                            transition: background-color 0.3s ease-in-out,
+                                            color 0.3s ease-in-out;
+                                        }
+
+                                        button:hover {
+                                            background-color: #fff;
+                                            color: #000;
+                                            outline: 2px solid #000;
+                                        }
+                                        </style>
+                                        <button type="submit"  class="btn button-tambah">Register</button>
+                                        <a href='{{route('home-utama')}}'  class="btn button-edit"> Kembali</a>
                                     </div>
                                 </div>
                             </form>
