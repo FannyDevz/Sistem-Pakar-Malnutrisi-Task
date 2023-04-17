@@ -83,9 +83,9 @@
                         <form class="form-valide" action="{{route('diagnosabc')}}" method="post">
                             @csrf
                             <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-outline-pink">Lanjutkan</button>
+                                <button type="submit" class="btn button-edit">Lanjutkan</button>
                               </div>
-
+                            </br>
                      <div class="table-responsive">
                             <table id="table-diagnosa" class="table table-striped table-bordered zero-configuration">
                                 <thead>
@@ -118,6 +118,11 @@
 
                             </table>
                         </div>
+
+                    </br>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" class="btn button-edit">Lanjutkan</button>
+                          </div>
                     </form>
 
                     </div>

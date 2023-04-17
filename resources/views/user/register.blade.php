@@ -25,7 +25,7 @@
                         <div class="form-validation">
                         <form class="form-valide" action="{{route('user.registrasi')}}" method="POST">
 
-                        <div  class="alert alert-success">
+                        <div  class="alert alert-">
 
                             <h3 class="text-center "><b>Data Balita</b></h3></br>
                             @csrf
@@ -93,7 +93,7 @@
                                                 outline: 2px solid #000;
                                             }
                                             </style>
-                                        <button type="submit" class="btn">Tambah Data Balita</button>
+                                        <button type="submit" class="btn button-tambah">Tambah Data Balita</button>
                                     </div>
                                 </div>
                             </form>

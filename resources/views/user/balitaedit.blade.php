@@ -9,7 +9,10 @@
                 <a href="{{route('user.home')}}">Beranda</a>
             </li>
             <li class="breadcrumb-item active">
-                <a href="#">Balita</a>
+                <a href="#">Data Balita</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="#">Edit Balita</a>
             </li>
             </ol>
         </div>

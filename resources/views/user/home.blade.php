@@ -10,9 +10,6 @@
                 <li class="breadcrumb-item">
                     <a href="{{route('user.home')}}">Beranda</a>
                 </li>
-                <li class="breadcrumb-item active">
-                    <a href="{{route('user.home')}}">Home User</a>
-                </li>
             </ol>
         </div>
     </div>

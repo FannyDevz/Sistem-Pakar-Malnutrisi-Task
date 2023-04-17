@@ -8,7 +8,6 @@
             <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Beranda</a></li>
                     <li class="breadcrumb-item active"><a href="{{route('admin.penyakit')}}">Penyakit</a></li>
-                    <li class="breadcrumb-item active"><a href="#">Index</a></li>
             </ol>
         </div>
     </div>

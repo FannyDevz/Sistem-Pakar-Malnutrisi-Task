@@ -50,7 +50,7 @@
                                     </label>
                                     <div class="col-lg-6">
                                         <select class="form-select form-control" name="jku" id="jku">
-                                            <option selected>Open this select menu</option>
+                                            <option selected>Pilih Jenis Kelamin</option>
                                             <option  value="Laki-Laki">Laki-Laki</option>
                                             <option  value="Perempuan">Perempuan</option>
                                           </select>

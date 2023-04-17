@@ -12,9 +12,6 @@
             <li class="breadcrumb-item active">
                 <a href="{{route('admin.reset-password')}}">Reset-Password</a>
             </li>
-            <li class="breadcrumb-item active">
-                <a href="#">Detail</a>
-            </li>
             </ol>
         </div>
     </div>
