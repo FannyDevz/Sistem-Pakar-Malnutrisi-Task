@@ -4,7 +4,7 @@
             <li class="nav-label">Home</li>
             <li>
                 <a class="has-arrow" href="{{route('admin.home')}}" aria-expanded="false">
-                    <i class="icon-home menu-icon"></i><span class="nav-text">Beranda</span>
+                    <i class="icon-home menu-icon"></i><span id="user-name" class="nav-text">Beranda {{ $userName }}</span>
                 </a>
             </li>
 
@@ -20,11 +20,15 @@
             </li>
             <li>
                 <a class="drpodown-menu has-arrow" href="{{route('admin.relasi')}}" aria-expanded="false">
-                        <i class="icon-globe menu-icon"></i><span class="nav-text">Aturan</span>
+                        <i class="icon-globe menu-icon"></i><span class="nav-text">Rules</span>
                 </a>
             </li>
 
-
+            <li>
+                <a class="drpodown-menu has-arrow" href="{{route('admin.pengguna')}}" aria-expanded="false">
+                        <i class="icon-globe menu-icon"></i><span class="nav-text">Daftar Pengguna</span>
+                </a>
+            </li>
             {{-- <li>
                 <a class="has-arrow" href="{{route('admin.informasi')}}" aria-expanded="false">
                     <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Informasi</span>
@@ -34,7 +38,7 @@
 
             <li>
                 <a class="has-arrow" href="{{route('admin.log-konsultasi')}}" aria-expanded="false">
-                    <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Konsultasi</span>
+                    <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Diagnosa</span>
                 </a>
             </li>
 

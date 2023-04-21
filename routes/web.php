@@ -38,7 +38,7 @@ Route::post('/registrasi', 'RegisterController@registrasi')->name('registrasi');
 
 
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User'], function(){
+Route::group(['middleware' => ['auth',  'user.name'], 'prefix' => 'user', 'namespace' => 'User'], function(){
 
     Route::get('/home', 'HomeController@index')->name('user.home');
 
@@ -72,7 +72,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'namespace' => 'User
 
 });
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin'], function(){
+Route::group(['middleware' => ['auth',  'user.name'], 'prefix' => 'admin', 'namespace' => 'Admin'], function(){
 
     Route::get('/home', 'HomeController@index')->name('admin.home');
     Route::get('/kelola', 'MenuController@kelola')->name('admin.kelola');
@@ -91,6 +91,17 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Adm
         Route::get('/edit/{id}', 'PenyakitController@edit')->name('admin.penyakit.edit');
         Route::post('/update/{id}', 'PenyakitController@update')->name('admin.penyakit.update');
         Route::get('/destroy/{id}', 'PenyakitController@destroy')->name('admin.penyakit.destroy');
+
+    });
+
+       //Pengguna
+       Route::group(['prefix' => '/pengguna'], function() {
+        Route::get('/', 'PenggunaController@index')->name('admin.pengguna');
+        Route::get('/create', 'PenggunaController@create')->name('admin.pengguna.create');
+        Route::post('/store', 'PenggunaController@store')->name('admin.pengguna.store');
+        Route::get('/detail/{id}', 'PenggunaController@detail')->name('admin.pengguna.detail');
+        Route::post('/update/{id}', 'PenggunaController@update')->name('admin.pengguna.update');
+        Route::get('/destroy/{id}', 'PenggunaController@destroy')->name('admin.pengguna.destroy');
 
     });
 

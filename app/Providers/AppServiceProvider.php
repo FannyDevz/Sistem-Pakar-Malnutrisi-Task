@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if (Auth::check()) {
             $user_id = Auth::id();
+
             // Gunakan $user_id untuk melakukan operasi dengan ID pengguna
         }
     }

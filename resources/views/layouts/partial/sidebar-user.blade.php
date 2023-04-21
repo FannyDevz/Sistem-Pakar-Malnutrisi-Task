@@ -4,12 +4,12 @@
             <li class="nav-label">Home</li>
             <li>
                 <a class="has-arrow" href="{{route('user.home')}}" aria-expanded="false">
-                    <i class="icon-home menu-icon"></i><span class="nav-text">Beranda</span>
+                    <i class="icon-home menu-icon"></i><span id="user-name" class="nav-text">Beranda {{ $userName }}</span>
                 </a>
             </li>
             <li>
                 <a class="has-arrow" href="{{route('user.log-konsultasi')}}" aria-expanded="false">
-                    <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Konsultasi</span>
+                    <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Diagnosa</span>
                 </a>
             </li>
 

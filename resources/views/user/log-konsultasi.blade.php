@@ -10,7 +10,7 @@
                 <a href="{{route('user.home')}}">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">
-                <a href="{{route('user.log-konsultasi')}}">Hasil Konsultasi</a>
+                <a href="{{route('user.log-konsultasi')}}">Hasil Diagnosa</a>
             </li>
             </ol>
         </div>
@@ -23,7 +23,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Hasil Konsultasi</h4>
+                        <h4 class="card-title">Hasil Diagnosa</h4>
 
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
@@ -32,7 +32,7 @@
                                         <th width="10px">No.</th>
                                         <th>Nama Balita</th>
                                         <th>Penyakit</th>
-                                        <th>Tanggal Konsultasi</th>
+                                        <th>Tanggal Diagnosa</th>
                                         <th>Aksi</th>
 
 

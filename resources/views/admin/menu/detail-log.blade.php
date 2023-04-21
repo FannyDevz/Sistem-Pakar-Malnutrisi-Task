@@ -12,7 +12,7 @@
                 <a href="{{route('admin.home')}}">Beranda</a>
             </li>
             <li class="breadcrumb-item active">
-                <a href="{{route('admin.log-konsultasi')}}">Hasil Konsultasi</a>
+                <a href="{{route('admin.log-konsultasi')}}">Hasil Diagnosa</a>
             </li>
             <li class="breadcrumb-item active">
                 <a href="#">Detail</a>
