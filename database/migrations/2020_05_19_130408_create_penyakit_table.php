@@ -21,6 +21,7 @@ class CreatePenyakitTable extends Migration
             $table->mediumText('pencegahan')->nullable();
             $table->mediumText('penyebab')->nullable();
             $table->mediumText('pengobatan')->nullable();
+            $table->string('gambar')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

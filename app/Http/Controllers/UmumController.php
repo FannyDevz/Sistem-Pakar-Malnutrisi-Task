@@ -6,13 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\Penyakit;
 use Validator;
 use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Str;
+
 
 class UmumController extends Controller
 {
     public function home()
     {
-        return view('umum.home');
+
+        $penyakits = Penyakit::paginate(3);
+
+        return view('umum.home', compact('penyakits'));
     }
+
     public function infoPenyakit()
     {
         $data = Penyakit::orderBy('kd_penyakit', 'ASC')->get();
@@ -24,6 +30,12 @@ class UmumController extends Controller
     // {
     //     return view('umum.konsultasi');
     // }
+    public function show($id)
+    {
+        $penyakit = Penyakit::findOrFail($id);
+        return view('umum.show', compact('penyakit'));
+    }
+
 
     public function registrasi()
     {

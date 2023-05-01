@@ -66,7 +66,7 @@
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
                                         <button type="submit" class="btn button-tambah">Simpan</button>
-                                        <button type="submit" class="btn button-edit" onclick="window.history.back()"> Kembali</button>
+                                        <a href="{{route('user.balita')}}" class="btn button-edit">Kembali</a>
                                     </div>
                                 </div>
                             </form>

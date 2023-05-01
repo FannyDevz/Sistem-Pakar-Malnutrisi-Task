@@ -21,7 +21,8 @@ class Penyakit extends Model
         'deskripsi',
         'pencegahan',
         'penyebab',
-        'pengobatan'
+        'pengobatan',
+        'gambar'
     ];
 
     public function relasi()

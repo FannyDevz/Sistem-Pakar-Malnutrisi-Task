@@ -24,6 +24,7 @@ class MenuController extends Controller
     public function logKonsultasi()
     {
 
+
         $data = Diagnosa::with('balita.user','penyakit')->orderBy('created_at', 'DESC')->get();
 
         return view('admin.menu.log-konsultasi',compact('data'));
@@ -79,6 +80,41 @@ class MenuController extends Controller
         $data->save();
 
         return redirect()->route('admin.reset-password')->with('success','Berhasil memperbaharui data');
+    }
+
+    public function resetPasswordUser()
+    {
+        return view('user.reset-password');
+    }
+
+    public function updatePasswordUser(request $request)
+    {
+
+        if (!Hash::check($request->password_old, Auth::user()->password)) {
+            return redirect()->route('user.reset-password')->with('warning', 'Kata sandi lama tidak sesuai');
+        }
+
+        $input = $request->except('_token');
+
+        $validation = Validator::make($input,[
+            'password_old'             => 'required',
+            'password'                 => 'required',
+            'password_confirmation'    => 'same:password',
+        ]);
+
+        if ($validation->fails()) {
+
+            $errors = $validation->errors();
+
+            return redirect()->back()->with('warning',implode("\n", $errors->all()));
+        }
+
+        $data = User::findOrFail(Auth::user()->id);
+		$data->password           = Hash::make($request->password);
+
+        $data->save();
+
+        return redirect()->route('user.reset-password')->with('success','Berhasil memperbaharui data');
     }
 
 }

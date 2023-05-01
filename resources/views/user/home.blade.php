@@ -17,38 +17,37 @@
 
     <div class="container-fluid">
         <div class="row">
-            <!--<div class="col-md-4">
-                <div class="card">
-                    <div class="card">
-                        <style type="text/css">
-                            .image-body {
-                                display: block;
-                                margin-left: auto;
-                                margin-right: auto;
-                                width: 60%;
-                                border-radius: 8px;
-                            }
-                        </style>
-                        <img class="image-body" src="{{asset('template/images/food.png')}}" alt="..." class="img-thumbnail">
-                </div>
-            </div>-->
             <div class="">
                 <div class="card">
                     <div class="card-body ">
                         <br>
-                        <div class="alert alert-success">
-                            <style type="text/css">
-                                .image-body {
+                        <div class="alert alert">
+                            <style>
+                                .card-body img {
+                                 display: block;
+                                 margin: 0 auto;
+
+                               }
+                               .btn.button-tambah {
+                                   width: 100%;
+                                   padding: 5px 20px;
+                               }
+                               .card-link {
+
+                                 display: block;
+                                 margin: 0 auto;
+                               }
+                               .image-body {
                                     display: block;
                                     margin-left: auto;
                                     margin-right: auto;
-                                    width: 15%;
+                                    width: 100%;
                                     border-radius: 8px;
                                 }
-                            </style>
-                            <img class="image-body" src="{{asset('template/images/food.png')}}" alt="..." class="img-thumbnail">
-                            </br>
+                                   </style>
                             <h1 class="text-center "><b>Sistem Pakar Diagnosa Malnutrisi Pada Balita</b></h1></br>
+
+                            <img class="image-body" src="{{asset('images/cOBA.jpg')}}" alt="..." class="img-thumbnail"></br>
                             <p class="text-center">Aplikasi <b>Sistem Pakar</b> ini meniru cara berfikir seorang ahli kesehatan dalam melakukan
                             diagnosis suatu kasus penyakit. Aplikasi ini membantu dalam mecari kesimpulan akan penyakit yang diderira beserta pencegahan dan pengobatan yang sesuai
                             . Program aplikasi ini menganalisa data penyakit malnutrisi, anamnesis awal serta gejala-gejala dari suatu penyakit.</p></br>

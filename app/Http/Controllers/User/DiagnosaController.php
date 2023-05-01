@@ -10,6 +10,7 @@ use App\Models\Balita;
 use App\User;
 use App\Models\Diagnosa;
 use Validator;
+use Illuminate\Support\Facades\DB;
 
 use Auth;
 use Ramsey\Uuid\Uuid;
@@ -139,6 +140,7 @@ class DiagnosaController extends Controller
         $role['P05'] = 0;
         $role['P06'] = 0;
         $role['P07'] = 0;
+
         $jumlahP01 = 0;
         $jumlahP02 = 0;
         $jumlahP03 = 0;

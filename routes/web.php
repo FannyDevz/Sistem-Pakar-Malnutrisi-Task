@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/penyakit/{id}', 'PenyakitController@show')->name('show');
 
 
 Route::get('/', 'UmumController@home')->name('home-utama');
@@ -53,8 +54,9 @@ Route::group(['middleware' => ['auth',  'user.name'], 'prefix' => 'user', 'names
     Route::get('/register', 'HomeController@registrasi')->name('user.register');
     Route::post('/registrasi', 'BalitaController@insert')->name('user.registrasi');
 
-    Route::get('/reset-password', 'MenuController@resetPassword')->name('user.reset-password');
-    Route::post('/reset', 'MenuController@updatePassword')->name('user.reset-password.store');
+    Route::get('/reset-password', 'MenuController@resetPasswordUser')->name('user.reset-password');
+    Route::post('/reset', 'MenuController@updatePasswordUser')->name('user.reset-password.store');
+
             //Diagnosa
             Route::group(['prefix' => '/diagnosa'], function() {
             Route::get('/', 'DiagnosaController@index')->name('diagnosa.list');

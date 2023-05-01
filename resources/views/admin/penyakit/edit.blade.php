@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Edit Penyakit</h4>
                         <div class="form-validation">
-                            <form class="form-valide" action="{{route('admin.penyakit.update', $data->id)}}" method="post">
+                            <form class="form-valide" action="{{route('admin.penyakit.update', $data->id)}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-lg-4 col-form-label" for="val-username">Kode Penyakit<span class="text-danger">*</span>
@@ -68,12 +68,24 @@
                                     <textarea name="pengobatan" class="form-control" cols="30" rows="10" placeholder="Masukkan Pengobatan">{{$data->pengobatan}}</textarea>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-email">Gambar</label>
+                                    <div class="col-lg-6">
+                                        @if ($data->gambar)
+                                            <img src="{{ asset('images/' . $data->gambar) }}" alt="Gambar {{ $data->nama_penyakit }}" width="200px">
+                                        @else
+                                            <img src="{{ asset('images/no_image.png') }}" alt="No Image" width="200px">
+                                        @endif
+                                        <input type="file" name="gambar" class="form-control-file mt-3">
+                                    </div>
+                                </div>
+
 
 
                                 <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
                                         <button type="submit" class="btn button-tambah">Simpan</button>
-                                        <button type="submit" class="btn button-edit" onclick="window.history.back()"> Kembali</button>
+                                        <a href="{{route('admin.penyakit')}}" class="btn button-edit">Kembali</a>
                                     </div>
                                 </div>
                             </form>

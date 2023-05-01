@@ -18,11 +18,11 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Konsultasi Berdasarkan Penyakit</span>
                         </a>
                     </li> --}}
-                    {{-- <li>
-                        <a class="has-arrow" href="{{route('info-petunjuk')}}" aria-expanded="false">
-                            <i class="icon-info menu-icon"></i><span class="nav-text">Info Petunjuk</span>
+                    <li>
+                        <a class="has-arrow" href="{{route('info-penyakit')}}" aria-expanded="false">
+                            <i class="icon-info menu-icon"></i><span class="nav-text">Info Penyakit</span>
                         </a>
-                    </li> --}}
+                    </li>
 
                     <li>
                         <a class="has-arrow" href="{{route('login')}}" aria-expanded="false">

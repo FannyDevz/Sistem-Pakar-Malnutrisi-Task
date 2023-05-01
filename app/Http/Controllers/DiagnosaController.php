@@ -9,6 +9,7 @@ use App\Models\Relasi;
 use App\Models\Balita;
 use App\Models\Diagnosa;
 use Validator;
+use Illuminate\Support\Facades\DB;
 use Ramsey\Uuid\Uuid;
 use PDF;
 
@@ -52,94 +53,32 @@ class DiagnosaController extends Controller
 
     function knowlage($gejala)
     {
-        $role['P01'] = 0;
-        $role['P02'] = 0;
-        $role['P03'] = 0;
-        $role['P04'] = 0;
-        $role['P05'] = 0;
-        $role['P06'] = 0;
-        $role['P07'] = 0;
 
-        for($i=0;$i<count($gejala); $i++) {
+          // Mendefinisikan array gejala yang dipilih
+          $gejala = $gejala;
 
-            //role 1 (P01)
-            if($gejala[$i] == 'G01' || $gejala[$i] == 'G02'
-            || $gejala[$i] == 'G03' || $gejala[$i] == 'G04'
-            || $gejala[$i] == 'G05'  || $gejala[$i] == 'G06'
-            || $gejala[$i] == 'G07' || $gejala[$i] == 'G08'){
+          // Mendefinisikan array role untuk setiap penyakit
+          $role = [];
 
-                $role['P01'] = $role['P01'] + 1;
+          // Mendapatkan daftar penyakit dari database
+          $penyakit = Penyakit::all();
 
-            }
+          // Looping untuk setiap penyakit
+          foreach ($penyakit as $p) {
+              // Mendefinisikan nilai awal role untuk penyakit tersebut
+              $role[$p->kd_penyakit] = 0;
 
+              // Mendapatkan daftar gejala dari database untuk penyakit tersebut
+              $gejala_penyakit = Gejala::where('kd_penyakit', $p->kd_penyakit)->get();
 
-            //role 2 (P02)
-            if($gejala[$i] == 'G01' || $gejala[$i] == 'G09'
-            || $gejala[$i] == 'G10' || $gejala[$i] == 'G11'
-            || $gejala[$i] == 'G12' || $gejala[$i] == 'G13'){
-
-                $role['P02'] = $role['P02'] + 1;
-
-            }
-
-            //role 3 (P03)
-            if($gejala[$i] == 'G01' || $gejala[$i] == 'G07'
-            || $gejala[$i] == 'G08' || $gejala[$i] == 'G09'
-            || $gejala[$i] == 'G11' || $gejala[$i] == 'G14'
-            || $gejala[$i] == 'G15' || $gejala[$i] == 'G16'  ){
-
-                $role['P03'] = $role['P03'] + 1;
-
-            }
-
-            //role 4 (P04)
-            if($gejala[$i] == 'G17' || $gejala[$i] == 'G18'
-            || $gejala[$i] == 'G19' || $gejala[$i] == 'G20'
-            || $gejala[$i] == 'G21' || $gejala[$i] == 'G22' ){
-
-                $role['P04'] = $role['P04'] + 1;
-
-            }
-
-            //role 5 (P05)
-            if($gejala[$i] == 'G23' || $gejala[$i] == 'G24'
-            || $gejala[$i] == 'G25' || $gejala[$i] == 'G26'
-            || $gejala[$i] == 'G27' || $gejala[$i] == 'G28'
-            || $gejala[$i] == 'G29' || $gejala[$i] == 'G30'
-            || $gejala[$i] == 'G31' || $gejala[$i] == 'G32'
-            || $gejala[$i] == 'G33' || $gejala[$i] == 'G34'
-            || $gejala[$i] == 'G35' || $gejala[$i] == 'G36'){
-
-                $role['P05'] = $role['P05'] + 1;
-
-            }
-
-            //role 6 (P06)
-            if($gejala[$i] == 'G06' || $gejala[$i] == 'G27'
-            || $gejala[$i] == 'G28' || $gejala[$i] == 'G37'
-            || $gejala[$i] == 'G38' || $gejala[$i] == 'G39'
-            || $gejala[$i] == 'G40' || $gejala[$i] == 'G41'){
-
-                $role['P06'] = $role['P06'] + 1;
-
-            }
-
-
-            //role 7 (P07)
-            if($gejala[$i] == 'G12' || $gejala[$i] == 'G24'
-            || $gejala[$i] == 'G25' || $gejala[$i] == 'G26'
-            || $gejala[$i] == 'G27' || $gejala[$i] == 'G39'
-            || $gejala[$i] == 'G42' || $gejala[$i] == 'G43'
-            || $gejala[$i] == 'G44' || $gejala[$i] == 'G45'
-            || $gejala[$i] == 'G46' || $gejala[$i] == 'G47'
-            || $gejala[$i] == 'G48' || $gejala[$i] == 'G49'
-            || $gejala[$i] == 'G50' ){
-
-                $role['P07'] = $role['P07'] + 1;
-
-            }
-
-        }
+              // Looping untuk setiap gejala penyakit
+              foreach ($gejala_penyakit as $gp) {
+                  // Jika gejala dipilih, maka increment nilai role untuk penyakit tersebut
+                  if (in_array($gp->kd_gejala, $gejala)) {
+                    $role[$p->kd_penyakit] += 1;
+                  }
+              }
+          }
 
         $data = $role;
         asort($data);

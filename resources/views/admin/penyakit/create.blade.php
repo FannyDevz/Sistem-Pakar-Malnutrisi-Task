@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Tambah Penyakit</h4>
                         <div class="form-validation">
-                            <form class="form-valide" action="{{route('admin.penyakit.store')}}" method="post">
+                            <form class="form-valide" action="{{route('admin.penyakit.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-lg-4 col-form-label" for="val-username">Kode Penyakit<span class="text-danger">*</span>
@@ -72,9 +72,18 @@
                                 </div>
 
                                 <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-email">Gambar<span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="file" name="gambar" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
                                     <div class="col-lg-8 ml-auto">
                                         <button type="submit" class="btn button-tambah">Simpan</button>
-                                        <button type="submit" class="btn button-edit" onclick="window.history.back()"> Kembali</button>
+                                        <a href="{{route('admin.penyakit')}}" class="btn button-edit">Kembali</a>
                                     </div>
                                 </div>
                             </form>
