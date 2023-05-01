@@ -20,8 +20,8 @@
             </li>
 
             <li>
-                <a class="has-arrow" href="{{route('user.reset-password')}}" aria-expanded="false">
-                        <i class="icon-key menu-icon"></i><span class="nav-text">Reset Password</span>
+                <a class="has-arrow" href="{{route('user.data-user')}}" aria-expanded="false">
+                        <i class="icon-key menu-icon"></i><span class="nav-text">Data Pengguna</span>
                     </a>
                 </li>
             <li>

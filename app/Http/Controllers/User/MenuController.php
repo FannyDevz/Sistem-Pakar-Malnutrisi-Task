@@ -45,41 +45,42 @@ class MenuController extends Controller
         return view('admin.menu.informasi');
 
     }
-
-
-    public function resetPassword()
-    {
-        return view('user.reset-password');
-    }
-
-    public function updatePassword(request $request)
+    public function DataUser()
     {
 
-        if (!Hash::check($request->password_old, Auth::user()->password)) {
-            return redirect()->route('user.reset-password')->with('warning', 'Kata sandi lama tidak sesuai');
-        }
-
-        $input = $request->except('_token');
-
-        $validation = Validator::make($input,[
-            'password_old'             => 'required',
-            'password'                 => 'required',
-            'password_confirmation'    => 'same:password',
-        ]);
-
-        if ($validation->fails()) {
-
-            $errors = $validation->errors();
-
-            return redirect()->back()->with('warning',implode("\n", $errors->all()));
-        }
-
-        $data = User::findOrFail(Auth::user()->id);
-		$data->password           = Hash::make($request->password);
-
-        $data->save();
-
-        return redirect()->route('user.reset-password')->with('success','Berhasil memperbaharui data');
+        $user      = auth()->user();
+        $data   = User::where('id', $user->id)->first();
+        return view('user.datauser',compact('data'));
     }
+
+    public function DataUserUpdate(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'username' => 'required|string|max:255|unique:users,username,' . $id,
+        'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+        'jenis_kelamin' => 'required|string|max:20',
+        'no_hp' => 'required|string|max:15',
+        'alamat' => 'required|string|max:255',
+    ]);
+
+    $user = User::findOrFail($id);
+
+    $user->name = $request->name;
+    $user->username = $request->username;
+    $user->email = $request->email;
+    $user->jenis_kelamin = $request->jenis_kelamin;
+    $user->no_hp = $request->no_hp;
+    $user->alamat = $request->alamat;
+
+    // Cek apakah input password tidak kosong
+    if ($request->filled('password')) {
+        $user->password = Hash::make($request->password);
+    }
+
+    $user->save();
+
+    return redirect()->route('user.data-user')->with('success', 'Data pengguna berhasil diperbarui.');
+}
 
 }

@@ -54,8 +54,10 @@ Route::group(['middleware' => ['auth',  'user.name'], 'prefix' => 'user', 'names
     Route::get('/register', 'HomeController@registrasi')->name('user.register');
     Route::post('/registrasi', 'BalitaController@insert')->name('user.registrasi');
 
-    Route::get('/reset-password', 'MenuController@resetPasswordUser')->name('user.reset-password');
-    Route::post('/reset', 'MenuController@updatePasswordUser')->name('user.reset-password.store');
+    Route::get('/data-user', 'MenuController@DataUser')->name('user.data-user');
+    Route::post('user/data-user/update/{id}', 'MenuController@DataUserUpdate')->name('user.data-user.update');
+
+
 
             //Diagnosa
             Route::group(['prefix' => '/diagnosa'], function() {
