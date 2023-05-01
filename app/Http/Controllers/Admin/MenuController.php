@@ -9,6 +9,7 @@ use App\Models\Penyakit;
 use App\Models\Relasi;
 use App\Models\Balita;
 use App\User;
+use Carbon\Carbon;
 use Validator;
 use Auth;
 use Hash;
@@ -21,14 +22,29 @@ class MenuController extends Controller
         return view('admin.menu.kelola');
     }
 
-    public function logKonsultasi()
+    public function logKonsultasi(Request $request)
     {
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
 
+        $data = Diagnosa::with('balita.user','penyakit')
+            ->when($start_date, function($query, $start_date) {
+                return $query->where('tanggal_konsultasi', '>=', $start_date);
+            })
+            ->when($end_date, function($query, $end_date) {
+                $end_date = Carbon::parse($end_date)->addDays(1)->format('Y-m-d');
+                return $query->where('tanggal_konsultasi', '<=', $end_date);
+            })
+            ->orderBy('created_at', 'DESC')
+            ->get();
 
-        $data = Diagnosa::with('balita.user','penyakit')->orderBy('created_at', 'DESC')->get();
+        if ($request->ajax()) {
+            return view('admin.menu.log-konsultasi-data', compact('data'));
+        }
 
-        return view('admin.menu.log-konsultasi',compact('data'));
+        return view('admin.menu.log-konsultasi', compact('data'));
     }
+
 
     public function detailLog($id)
     {

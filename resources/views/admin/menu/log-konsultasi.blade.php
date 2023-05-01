@@ -25,6 +25,23 @@
 
                         <h4 class="card-title">Hasil Diagnosa</h4>
 
+                        <form id="filter-form">
+                            <div class="form-row">
+                              <div class="col-md-4">
+                                <label for="start_date">Tanggal Awal</label>
+                                <input type="date" name="start_date" id="start_date" class="form-control">
+                              </div>
+                              <div class="col-md-4">
+                                <label for="end_date">Tanggal Akhir</label>
+                                <input type="date" name="end_date" id="end_date" class="form-control">
+                              </div>
+                              <div class="col-md-4">
+                                <label>&nbsp;</label>
+                                <button type="submit" class="btn btn-primary btn-block">Filter</button>
+                              </div>
+                            </div>
+                          </form>
+
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
@@ -91,5 +108,33 @@
     </div>
     <!-- #/ container -->
 </div>
+<script>
+    $(document).ready(function() {
+  // Ketika tombol submit di klik
+  $('#filter-form').submit(function(e) {
+    e.preventDefault();
+
+    // Ambil nilai tanggal awal dan akhir
+    var start_date = $('#start_date').val();
+    var end_date = $('#end_date').val();
+
+    // Kirim data tanggal awal dan akhir ke server
+    $.ajax({
+      url: '{{ route("admin.log-konsultasi") }}',
+      type: 'GET',
+      data: {
+        start_date: start_date,
+        end_date: end_date
+      },
+      success: function(response) {
+        // Perbarui isi tabel dengan data yang sudah difilter
+        $('tbody').html(response);
+      }
+    });
+  });
+});
+
+
+</script>
 
 @endsection
