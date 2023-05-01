@@ -11,7 +11,7 @@
  Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 01/04/2023 14:44:51
+ Date: 01/05/2023 18:33:06
 */
 
 SET NAMES utf8mb4;
@@ -37,6 +37,10 @@ CREATE TABLE `balita`  (
 -- ----------------------------
 -- Records of balita
 -- ----------------------------
+INSERT INTO `balita` VALUES ('1a011172cd4045f6870fd4d44c302aa9', '17', 'bellvania adevaa', 'laki-laki', '19', '2013-08-14', '2023-04-02 01:42:38', '2023-04-21 03:25:03', NULL);
+INSERT INTO `balita` VALUES ('40df9c096d30476b9dedca6c2885b6c4', '19', 'LIANA LULU FAUZIAH', 'perempuan', '29', '2020-11-23', '2023-04-21 02:12:56', '2023-04-21 02:12:56', NULL);
+INSERT INTO `balita` VALUES ('5cd81f3c61744ec1858141be517356c3', '18', 'Fanny', 'laki-laki', '5', '2022-12-29', '2023-04-14 11:32:10', '2023-04-14 11:32:10', NULL);
+INSERT INTO `balita` VALUES ('6dd2e9edbc0f43dd82c061a7eb06d25e', '20', 'Alfi Aurora Khoirotun Mazidah, A. Md. Keb', 'perempuan', '23', '2021-10-30', '2023-04-21 02:25:55', '2023-04-21 02:25:55', NULL);
 INSERT INTO `balita` VALUES ('75e8bb218cc5472e9b5323ac2af1fa94', '9', 'Test', 'laki-laki', '5', '2017-11-25', '2023-03-25 03:25:50', '2023-03-25 03:25:50', NULL);
 INSERT INTO `balita` VALUES ('9da83c4b21ca483fb4546171b7befae0', '12', 'LIANA LULU FAUZIAH', 'perempuan', '5', '2017-08-22', '2023-03-25 05:31:43', '2023-03-25 05:31:43', NULL);
 INSERT INTO `balita` VALUES ('a9ef5677e5d54f2a96f093b94d6829e0', '10', 'LIANA LULU FAUZIAH, A. Md. Aktr', 'perempuan', '4', '2018-05-26', '2023-03-25 03:27:15', '2023-03-31 14:37:40', NULL);
@@ -64,11 +68,13 @@ CREATE TABLE `diagnosa`  (
 -- ----------------------------
 INSERT INTO `diagnosa` VALUES ('08654a3ecfd04ba8bfcd308cf5b78a5f', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P02', '2023-04-01 04:46:35', 'gejala', 83, NULL, '2023-04-01 04:46:35', '2023-04-01 04:46:35');
 INSERT INTO `diagnosa` VALUES ('1d74adfa3c7d4cacb7e5a22e1d545750', '9da83c4b21ca483fb4546171b7befae0', 'P07', '2023-04-01 07:39:48', 'penyakit', 20, NULL, '2023-04-01 07:39:48', '2023-04-01 07:39:48');
+INSERT INTO `diagnosa` VALUES ('25619b4f97e342a09ee724cdb86cad9d', '9da83c4b21ca483fb4546171b7befae0', 'P05', '2023-05-01 11:13:35', 'gejala', 29, NULL, '2023-05-01 11:13:35', '2023-05-01 11:13:35');
 INSERT INTO `diagnosa` VALUES ('4bce130649fc4af9beacbe9782001b4c', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P01', '2023-04-01 04:08:22', 'gejala', 37, NULL, '2023-04-01 04:08:22', '2023-04-01 04:08:22');
 INSERT INTO `diagnosa` VALUES ('6789cfa166b44da6b6187889f977e119', '9da83c4b21ca483fb4546171b7befae0', 'P01', '2023-04-01 07:40:34', 'penyakit', 50, NULL, '2023-04-01 07:40:34', '2023-04-01 07:40:34');
 INSERT INTO `diagnosa` VALUES ('69e256c4c8e54e988d91ac40d2cf7fcd', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P01', '2023-04-01 04:12:19', 'gejala', 37, NULL, '2023-04-01 04:12:19', '2023-04-01 04:12:19');
 INSERT INTO `diagnosa` VALUES ('85b71ea2ab0d491089766fe0308f45bd', '9da83c4b21ca483fb4546171b7befae0', 'P01', '2023-04-01 07:18:14', 'gejala', 25, NULL, '2023-04-01 07:18:14', '2023-04-01 07:18:14');
 INSERT INTO `diagnosa` VALUES ('9d1e22879f4840aeb5b0ad0539931c91', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P02', '2023-04-01 04:47:25', 'gejala', 83, NULL, '2023-04-01 04:47:25', '2023-04-01 04:47:25');
+INSERT INTO `diagnosa` VALUES ('afff5070df5e4a33ae1090ae8464e040', '1a011172cd4045f6870fd4d44c302aa9', 'P04', '2023-04-02 01:46:30', 'gejala', 67, NULL, '2023-04-02 01:46:30', '2023-04-02 01:46:30');
 INSERT INTO `diagnosa` VALUES ('b410a1d0d8bc4076bb555941de508514', 'a9ef5677e5d54f2a96f093b94d6829e0', 'P02', '2023-04-01 04:47:48', 'gejala', 83, NULL, '2023-04-01 04:47:48', '2023-04-01 04:47:48');
 
 -- ----------------------------
@@ -204,6 +210,7 @@ CREATE TABLE `penyakit`  (
   `pencegahan` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   `penyebab` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   `pengobatan` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  `gambar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
@@ -213,15 +220,13 @@ CREATE TABLE `penyakit`  (
 -- ----------------------------
 -- Records of penyakit
 -- ----------------------------
-INSERT INTO `penyakit` VALUES ('044c58c2f7904a5aa08eb77cf1b49827', 'P04', 'Stunting', 'test 1', 'test2', 'test34', 'test5', '2023-02-14 14:06:58', '2023-02-17 14:07:32', NULL);
-INSERT INTO `penyakit` VALUES ('08c77376794a4909b1b6b2d01f8fb211', 'P03', 'MaramusKwashiorkor', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
-INSERT INTO `penyakit` VALUES ('1d06af2592da46dbb609bd6a64a116f5', 'P01', 'Kwashiorkor', '12', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Karena anak tidak memeroleh makanan dengan kandungan energi dan protein yang cukup.', 'Memberikan makanan bergizi seimbang yaitu makanan yang mengandung karbohidrat seperti nasi, kentang, jagung, dan makanan yang mengandung protein yaitu telur, ikan, daging, tahu, tempe, dll. Serta memberikan makanan yang mengandung vitamin dan mineral seperti buah-buahan dan sayursayuran.', '2023-02-14 14:06:58', '2023-03-17 12:43:11', NULL);
-INSERT INTO `penyakit` VALUES ('1fc5770aa7db47089b3ca093ee590d43', 'P08', 'Test', 'Test', 'Test', 'Test', 'Test', '2023-04-01 01:54:14', '2023-04-01 04:56:41', '2023-04-01 04:56:41');
-INSERT INTO `penyakit` VALUES ('5f7a15c56f1740b686750462b09b6818', 'P07', 'Anemia', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
-INSERT INTO `penyakit` VALUES ('674c09fe3aeb46e6beb300b118406b4f', 'P08', 'TEst', 'tes', 'test', 'test', 'test', '2023-03-25 03:48:56', '2023-03-25 03:51:06', '2023-03-25 03:51:06');
-INSERT INTO `penyakit` VALUES ('80faccc93cd044019d00c6217ac39d0a', 'P05', 'Beri-beri', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
-INSERT INTO `penyakit` VALUES ('866e0aca8d6249809614566252c0521d', 'P06', 'Skorbut', NULL, NULL, NULL, NULL, '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
-INSERT INTO `penyakit` VALUES ('db347863f15a4c8987ad4848d9b3b2c8', 'P02', 'Marasmus', 'tes', 'tes', 'tes', 'tes', '2023-02-14 14:06:58', '2023-03-25 03:39:55', NULL);
+INSERT INTO `penyakit` VALUES ('044c58c2f7904a5aa08eb77cf1b49827', 'P04', 'Stunting', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian o', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', '1682912727.jpeg', '2023-02-14 14:06:58', '2023-02-17 14:07:32', NULL);
+INSERT INTO `penyakit` VALUES ('08c77376794a4909b1b6b2d01f8fb211', 'P03', 'MaramusKwashiorkor', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian o', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', '1682912727.jpeg', '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `penyakit` VALUES ('1d06af2592da46dbb609bd6a64a116f5', 'P01', 'Kwashiorkor', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian o', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Karena anak tidak memeroleh makanan dengan kandungan energi dan protein yang cukup.', 'Memberikan makanan bergizi seimbang yaitu makanan yang mengandung karbohidrat seperti nasi, kentang, jagung, dan makanan yang mengandung protein yaitu telur, ikan, daging, tahu, tempe, dll. Serta memberikan makanan yang mengandung vitamin dan mineral seperti buah-buahan dan sayursayuran.', '1682912727.jpeg', '2023-02-14 14:06:58', '2023-05-01 03:45:27', NULL);
+INSERT INTO `penyakit` VALUES ('5f7a15c56f1740b686750462b09b6818', 'P07', 'Anemia', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian o', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', '1682912727.jpeg', '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `penyakit` VALUES ('80faccc93cd044019d00c6217ac39d0a', 'P05', 'Beri-beri', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian o', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', '1682912727.jpeg', '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `penyakit` VALUES ('866e0aca8d6249809614566252c0521d', 'P06', 'Skorbut', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian o', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', '1682912727.jpeg', '2023-02-14 14:06:58', '2023-02-14 14:06:58', NULL);
+INSERT INTO `penyakit` VALUES ('db347863f15a4c8987ad4848d9b3b2c8', 'P02', 'Marasmus', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian o', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', 'Kwashiorkor bisa dicegah dengan mengonsumsi cukup kalori dan makanan yang kaya protein. Pedoman pola makan dari Institute of Medicine merekomendasikan bahwa 10 hingga 35persen kalori harian orang dewasa berasal dari protein.', '1682912727.jpeg', '2023-02-14 14:06:58', '2023-03-25 03:39:55', NULL);
 
 -- ----------------------------
 -- Table structure for relasi
@@ -266,7 +271,6 @@ INSERT INTO `relasi` VALUES ('5390ad17d861470aa53b26cab3a4098e', 'P05', 'G30', '
 INSERT INTO `relasi` VALUES ('592db6982f45475c879902fb89d1671f', 'P07', 'G42', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('5a3e50662ccc438b87b67b7f87ac7811', 'P01', 'G03', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('5afb5e3dc7d04616a1244bdebffbe94a', 'P03', 'G14', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
-INSERT INTO `relasi` VALUES ('5b900d008f3f436e9f4160b76252532e', 'P08', 'G51', '2023-04-01 01:54:56', '2023-04-01 04:55:45', '2023-04-01 04:55:45');
 INSERT INTO `relasi` VALUES ('5c2ed482e0f949fb8fa5a51ba9625f4d', 'P07', 'G44', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('5d4814ebcc0f45618855042c270340d9', 'P03', 'G07', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
 INSERT INTO `relasi` VALUES ('60509b5caca045ec8e2f01ce47ea7747', 'P01', 'G04', '2023-02-14 23:20:44', '2023-02-14 23:20:44', NULL);
@@ -329,7 +333,7 @@ CREATE TABLE `users`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
@@ -338,5 +342,8 @@ INSERT INTO `users` VALUES (9, 'admin', 'Admin', 'Laki-Laki', 'admin', '+6282163
 INSERT INTO `users` VALUES (10, 'fanny', 'Fanny Bagus Ramadhan', 'Laki-Laki', 'Jl Tegalan', '+6282338206740', 'user', 'fannybagus9f@gmail.com', NULL, '$2y$10$wslGueXMVo5eKJNbsQF1SO/iaJEJyJLTPe8lMBiRChwXHdBXf1tzq', NULL, '2023-03-25 03:27:15', '2023-03-31 14:49:34');
 INSERT INTO `users` VALUES (12, 'abrinsa', 'Abrinsa Putri', 'Perempuan', 'Gurah', '+6282163213123', 'user', 'abrinsa@gmail.com', NULL, '$2y$10$dWVurz4M/dz84TnRE0c52.P9Umbd2jbUcKzaOiZDeeXw2lxPdoIAC', NULL, '2023-03-25 05:31:43', '2023-03-25 05:31:43');
 INSERT INTO `users` VALUES (16, 'bagus', 'Bagus', 'Laki-Laki', 'Jl Tegalan Ds Ngasem Kec Ngasem Kediri', '+628213621736', 'user', 'bagus@gmail.com', NULL, '$2y$10$Gd2xVOMLmg.9L.fbfmxxheo0lXEL6N6WAHEOwzVv3aYTxZhyLMXyS', NULL, '2023-04-01 01:49:04', '2023-04-01 01:50:17');
+INSERT INTO `users` VALUES (17, 'ramadhana', 'Ramadhana', 'Laki-Laki', 'Opaka', '+62213198237', 'user', 'ramadhan@gmail.com', NULL, '$2y$10$9TzirVbOMNXomjsbhRoIReYH28TbouszrjTzeXBCIktpXdPka0XTm', NULL, '2023-04-02 01:16:30', '2023-04-21 03:51:06');
+INSERT INTO `users` VALUES (18, 'kuro', 'Kuro', 'Perempuan', 'Ngasem', '+6282338206740', 'user', 'kuro@gmail.com', NULL, '$2y$10$b/4Y0QXln8daNhEgA9ZSjuty7w856WfWz6o0E3w8FUgZE7vJqaE9W', NULL, '2023-04-14 11:27:54', '2023-04-14 11:27:54');
+INSERT INTO `users` VALUES (20, 'shiro', 'Shiro', 'Perempuan', 'Rumah', '+6282338206740', 'user', 'shiro@gmail.com', NULL, '$2y$10$1CRAHLTixPJY7p2Cs6Kpvu2qgDPtM2oOh3YOwElZ1Xqfsa7y4DfV2', NULL, '2023-04-21 02:25:55', '2023-04-21 02:25:55');
 
 SET FOREIGN_KEY_CHECKS = 1;
