@@ -41,6 +41,25 @@
                               </div>
                             </div>
                           </form>
+                          <br>
+                          @if($is_filtered)
+                          <div class="row">
+                              <div class="col-md-12 text-left">
+                                  <a href="{{ route('admin.log-konsultasi.print', ['start_date' => $start_date, 'end_date' => $end_date]) }}" class="btn btn-danger" target="_blank">
+                                      Cetak Log Konsultasi
+                                  </a>
+                              </div>
+                          </div>
+                      @else
+                          <div class="row">
+                              <div class="col-md-12 text-left">
+                                  <a href="{{ route('admin.log-konsultasi.print') }}" class="btn btn-danger" target="_blank">
+                                      Cetak Log Konsultasi
+                                  </a>
+                              </div>
+                          </div>
+                      @endif
+
 
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">

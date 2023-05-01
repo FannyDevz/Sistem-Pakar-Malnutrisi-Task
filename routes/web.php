@@ -79,6 +79,9 @@ Route::group(['middleware' => ['auth',  'user.name'], 'prefix' => 'admin', 'name
     Route::get('/home', 'HomeController@index')->name('admin.home');
     Route::get('/kelola', 'MenuController@kelola')->name('admin.kelola');
     Route::get('/log-konsultasi', 'MenuController@logKonsultasi')->name('admin.log-konsultasi');
+    Route::get('admin/log-konsultasi/print', 'MenuController@print')->name('admin.log-konsultasi.print');
+
+
     Route::get('/log-konsultasi/detail/{id}', 'MenuController@detailLog')->name('admin.log-konsultasi.detail');
     Route::get('/informasi', 'MenuController@informasi')->name('admin.informasi');
     Route::get('/reset-password', 'MenuController@resetPassword')->name('admin.reset-password');

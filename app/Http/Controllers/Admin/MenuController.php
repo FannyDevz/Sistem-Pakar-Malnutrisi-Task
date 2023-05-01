@@ -14,6 +14,8 @@ use Validator;
 use Auth;
 use Hash;
 
+use PDF;
+
 
 class MenuController extends Controller
 {
@@ -27,7 +29,7 @@ class MenuController extends Controller
         $start_date = $request->input('start_date');
         $end_date = $request->input('end_date');
 
-        $data = Diagnosa::with('balita.user','penyakit')
+        $data = Diagnosa::with('balita.user', 'penyakit')
             ->when($start_date, function($query, $start_date) {
                 return $query->where('tanggal_konsultasi', '>=', $start_date);
             })
@@ -38,12 +40,43 @@ class MenuController extends Controller
             ->orderBy('created_at', 'DESC')
             ->get();
 
-        if ($request->ajax()) {
-            return view('admin.menu.log-konsultasi-data', compact('data'));
+        // Membuat variabel untuk menampung apakah filter sudah dilakukan atau belum
+        $is_filtered = false;
+
+        if ($start_date && $end_date) {
+            $is_filtered = true;
         }
 
-        return view('admin.menu.log-konsultasi', compact('data'));
+        return view('admin.menu.log-konsultasi', compact('data', 'is_filtered', 'start_date', 'end_date'));
     }
+
+
+    public function print(Request $request)
+{
+    $start_date = $request->input('start_date');
+    $end_date = $request->input('end_date');
+
+    $data = Diagnosa::with('balita.user', 'penyakit')
+        ->when($start_date, function($query, $start_date) {
+            return $query->where('tanggal_konsultasi', '>=', $start_date);
+        })
+        ->when($end_date, function($query, $end_date) {
+            return $query->where('tanggal_konsultasi', '<=', $end_date);
+        })
+        ->orderBy('created_at', 'DESC')
+        ->get();
+
+    // Membuat variabel untuk menampung apakah filter sudah dilakukan atau belum
+    $is_filtered = false;
+
+    if ($start_date && $end_date) {
+        $is_filtered = true;
+    }
+
+    $pdf = PDF::loadView('admin.menu.log-konsultasi-print', compact('data'));
+    return $pdf->download('log-konsultasi.pdf');
+
+}
 
 
     public function detailLog($id)
