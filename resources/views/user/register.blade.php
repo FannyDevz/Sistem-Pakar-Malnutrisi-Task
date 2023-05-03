@@ -48,14 +48,14 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="umur">Umur <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="umur">Umur (Bulan) <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="text" class="form-control"  name="umur" id="umur" placeholder="Masukan Umur Balita (Bulan) ">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-lg-4 col-form-label" for="ttl">Tempat Tanggal Lahir <span class="text-danger">*</span>
+                                    <label class="col-lg-4 col-form-label" for="ttl">Tanggal Lahir <span class="text-danger">*</span>
                                     </label>
                                     <div class="col-lg-6">
                                         <input type="date" class="form-control"  name="ttl" id="ttl" placeholder="">

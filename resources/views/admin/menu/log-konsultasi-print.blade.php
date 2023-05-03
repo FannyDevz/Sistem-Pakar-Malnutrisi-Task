@@ -25,15 +25,16 @@
 </head>
 <body>
     <h1>Log Konsultasi</h1>
+
     <table>
         <thead>
         <tr>
             <th>No.</th>
             <th>Tanggal Konsultasi</th>
             <th>Nama Balita</th>
-            <th>Nama Orang Tua</th>
+            <th>Nama Pengguna</th>
             <th>Usia Balita</th>
-            <th>Jenis Kelamin</th>
+            <th>Jenis Kelamin Balita</th>
             <th>Penyakit</th>
         </tr>
         </thead>
@@ -46,7 +47,7 @@
                 <td>{{ $item->balita->user->name }}</td>
                 <td>{{ $item->balita->umur }} Bulan</td>
                 <td>{{ $item->balita->jenis_kelamin }}</td>
-                <td>{{ $item->penyakit->nama_penyakit}}</td>
+                <td>{{ $item->penyakit->nama_penyakit}} <br> ({{ $item->persen}}%)</td>
             </tr>
         @endforeach
         </tbody>

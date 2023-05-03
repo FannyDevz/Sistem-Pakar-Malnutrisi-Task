@@ -4,7 +4,7 @@
             <li class="nav-label">Home</li>
             <li>
                 <a class="has-arrow" href="{{route('admin.home')}}" aria-expanded="false">
-                    <i class="icon-home menu-icon"></i><span id="user-name" class="nav-text">Beranda {{ $userName }}</span>
+                    <i class="icon-home menu-icon"></i><span id="user-name" class="nav-text">Beranda</span>
                 </a>
             </li>
 
@@ -38,28 +38,12 @@
 
             <li>
                 <a class="has-arrow" href="{{route('admin.log-konsultasi')}}" aria-expanded="false">
-                    <i class="icon-info menu-icon"></i><span class="nav-text">Hasil Diagnosa</span>
+                    <i class="icon-info menu-icon"></i><span class="nav-text">Riwayat Diagnosa</span>
                 </a>
             </li>
 
-            <li>
-                <a class="has-arrow" href="{{route('admin.reset-password')}}" aria-expanded="false">
-                        <i class="icon-key menu-icon"></i><span class="nav-text">Reset Password</span>
-                    </a>
-                </li>
-            <li>
-                <a class="has-arrow" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();" aria-expanded="false" >
-                    <i class="icon-user menu-icon"></i><span class="nav-text"> {{ __('Logout') }}</span>
-
-                </a>
 
 
-             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                 @csrf
-             </form>
-            </li>
 
         </ul>
     </div>

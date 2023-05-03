@@ -125,25 +125,42 @@
                     <br>
                     <H2>Sistem Pakar Malnutrisi</H2>
                 </div>
+                 {{-- --}}
 
-                {{-- <div class="header-right">
-                    <ul class="clearfix">
+            <div class="header-right">
+                <ul class="clearfix">
+                    <li class="icons dropdown">
+                        <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                            <span class="activity active"></span>
+                            <img src="{{asset('images/user.png')}}" height="60" width="60" alt="">
+                        </div>
+                        <div class="drop-down dropdown-profile   dropdown-menu">
+                            <div class="dropdown-content-body">
+                                <ul>
 
-                        <li class="icons dropdown">
-                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
-                                <span class="activity active"></span>
-                                <img src="{{asset('template/images/user/1.png')}}" height="40" width="40" alt="">
+                                    <li> <span class="text-center" id="user-name" >{{ $userName }}</span></li>
+                                    <li><a class="has-arrow" href="{{route('admin.reset-password')}}" aria-expanded="false">
+                                        <i class="icon-user menu-icon"></i>
+                                        <span class="nav-text">Reset Password</span>
+                                    </a> </li>
+                                    <li>
+                                        <a class="has-arrow" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                      document.getElementById('logout-form').submit();" aria-expanded="false" >
+                                            <i class="icon-key menu-icon"></i><span class="nav-text"> {{ __('Logout') }}</span>
+
+                                        </a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                         @csrf
+                                     </form>
+                                    </li>
+
+                                </ul>
                             </div>
-                            <div class="drop-down dropdown-profile   dropdown-menu">
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div> --}}
+                        </div>
+                    </li>
+                </ul>
+            </div>
             </div>
         </div>
         <!--**********************************

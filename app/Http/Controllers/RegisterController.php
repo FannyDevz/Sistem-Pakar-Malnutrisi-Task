@@ -69,7 +69,7 @@ class RegisterController extends Controller
 
 
 
-        return redirect()->route('home-utama')->with('success','Berhasil Registrasi');
+        return redirect()->route('login')->with('success','Berhasil Registrasi');
     }
 
 

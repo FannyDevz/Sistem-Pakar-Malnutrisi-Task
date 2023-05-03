@@ -43,6 +43,9 @@ Route::group(['middleware' => ['auth',  'user.name'], 'prefix' => 'user', 'names
 
     Route::get('/home', 'HomeController@index')->name('user.home');
 
+    Route::get('/penyakit', 'MenuController@infoPenyakit')->name('user.info-penyakit');
+    Route::get('/penyakit/{id}', 'MenuController@show')->name('user.show');
+
     Route::get('/log-konsultasi', 'MenuController@logKonsultasiUser')->name('user.log-konsultasi');
     Route::get('/log-konsultasi/detail/{id}', 'MenuController@detailLog')->name('user.log-konsultasi.detail');
 

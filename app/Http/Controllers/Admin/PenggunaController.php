@@ -16,10 +16,12 @@ class PenggunaController extends Controller
 {
     public function index()
     {
-        $data = DB::table('balita')
-        ->join('users', 'balita.user_id', '=', 'users.id')
-        ->select('balita.*', 'users.*')
-        ->get();
+        $data = DB::table('users')
+    ->leftJoin('balita','users.id', '=', 'balita.user_id')
+    ->select('balita.*', 'users.*')
+    ->where('users.level', '=', 'user')
+    ->get();
+
 
         return view('admin.pengguna.index', compact('data'));
     }
@@ -92,10 +94,10 @@ class PenggunaController extends Controller
     public function detail($id)
     {
         // Cari data Balita dan User yang terkait berdasarkan ID
-        $data = DB::table('balita')
-        ->join('users', 'balita.user_id', '=', 'users.id')
+        $data = DB::table('users')
+        ->leftjoin('balita', 'users.id', '=', 'balita.user_id')
         ->select('balita.id as balita_id', 'balita.jenis_kelamin as bjk', 'balita.nama_lengkap', 'balita.umur', 'balita.ttl', 'balita.user_id', 'users.*')
-        ->where('balita.user_id', $id)
+        ->where('users.id', $id)
         ->first();
 
         if (!$data) {
@@ -109,10 +111,10 @@ class PenggunaController extends Controller
     public function update(request $request, $id)
     {
          // Cari data Balita dan User yang terkait berdasarkan ID
-         $data = DB::table('balita')
-         ->join('users', 'balita.user_id', '=', 'users.id')
+         $data = DB::table('users')
+         ->leftjoin('balita', 'users.id', '=', 'balita.user_id')
          ->select('balita.id as balita_id', 'balita.jenis_kelamin as bjk', 'balita.nama_lengkap', 'balita.umur', 'balita.ttl', 'balita.user_id', 'users.*')
-         ->where('balita.user_id', $id)
+         ->where('users.id', $id)
          ->first();
 
          if (!$data) {

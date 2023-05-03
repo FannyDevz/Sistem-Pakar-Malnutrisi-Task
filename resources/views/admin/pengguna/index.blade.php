@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Daftar Pengguna</h4>
-                            <a href="{{route('admin.pengguna.create')}}"><button type="button" class="btn mb-1 button-tambah">Tambah</button></a>
+                            {{-- <a href="{{route('admin.pengguna.create')}}"><button type="button" class="btn mb-1 button-tambah">Tambah</button></a> --}}
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead class="text-center">

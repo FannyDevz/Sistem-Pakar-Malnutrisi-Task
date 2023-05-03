@@ -20,9 +20,29 @@ class MenuController extends Controller
     {
         return view('admin.menu.kelola');
     }
+    public function infoPenyakit()
+    {
+        $data = Penyakit::orderBy('kd_penyakit', 'ASC')->get();
+
+        return view('user.info-penyakit', compact('data'));
+    }
+
+    public function show($id)
+    {
+        $penyakit = Penyakit::findOrFail($id);
+        return view('user.penyakit-show', compact('penyakit'));
+    }
+
 
     public function logKonsultasiUser()
     {
+
+        $user    = auth()->user();
+        $data   = Balita::where('user_id', $user->id)->first();
+
+        if (!$data) {
+        return redirect()->route('user.register')->with('warning', 'Lengkapi Data Balita Terlebih Dahulu');
+    }
         $user      = auth()->user();
         $balita   = Balita::where('user_id', $user->id)->first();
         $data = Diagnosa::with('balita','penyakit')->where('balita_id', $balita->id)->orderBy('created_at', 'DESC')->get();

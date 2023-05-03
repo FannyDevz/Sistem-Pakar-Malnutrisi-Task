@@ -101,8 +101,8 @@
 
             <!-- Card 4 -->
             <div class="card" id="aturan-card">
-                <h3><b>Jumlah Rules</b></h3>
-                <div class="total">{{ $totalRelasi }}</div>
+                <h3><b>Jumlah Konsultasi</b></h3>
+                <div class="total">{{ $totalDiagnosa }}</div>
             </div>
         </div>
     </div>

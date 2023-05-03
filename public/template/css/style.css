@@ -8064,11 +8064,11 @@ svg.pulse-svg {
       top: 2px; }
     .header-right .icons .user-img {
       position: relative;
-      top: -7px; }
+      top: 10px; }
       .header-right .icons .user-img img {
-        height: 40px;
-        width: 40px;
-        border: 3px solid #fff;
+        height: 60px;
+        width: 60px;
+        border: 3px solid #e1e1e1;
         border-radius: 50%;
         margin: 0;
         padding: 0;
