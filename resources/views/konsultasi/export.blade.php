@@ -202,7 +202,8 @@
     </br></br><h1>
 
             Sistem Pakar Diagnosa Malnutrisi Pada Balita
-            </h1></br></br>
+            </h1></br>
+        <h2>Laporan Diagnosa</h2></br>
     </center>
 
 
@@ -216,35 +217,35 @@
                         <div class="alert alert-success">Berdasarkan diagnosa yang dikumpulkan bahwa sistem meyimpulkan:</div>
                         <table class="table table-striped">
                            <tr>
-                               <th width="140px">Nama</th>
+                               <th style="text-align: left;" width="140px">Nama</th>
                                <th width="30px">:</th>
-                               <th>{{$balita->nama_lengkap}}</th>
+                               <th style="text-align: left;">{{$balita->nama_lengkap}}</th>
                            </tr>
                            <tr>
-                                <th>Jenis Kelamin</th>
+                                <th style="text-align: left;">Jenis Kelamin</th>
                                 <th>:</th>
-                                <th>{{$balita->jenis_kelamin}}</th>
+                                <th style="text-align: left;">{{$balita->jenis_kelamin}}</th>
                             </tr>
                             <tr>
-                                <th>Umur </th>
+                                <th style="text-align: left;">Umur </th>
                                 <th>:</th>
-                                <th>{{$balita->umur}} Bulan</th>
+                                <th style="text-align: left;">{{$balita->umur}} Bulan</th>
                             </tr>
 
                             <tr>
-                                <th>Nama Penyakit</th>
+                                <th style="text-align: left;">Nama Penyakit</th>
                                 <th>:</th>
-                                <th> {{$penyakit->nama_penyakit}}</th>
+                                <th style="text-align: left;"> {{$penyakit->nama_penyakit}}</th>
                             </tr>
                             <tr>
-                                <th>Persentase Penyakit</th>
+                                <th style="text-align: left;">Persentase Penyakit</th>
                                 <th>:</th>
-                                <th> {{$diagnosa->persen}} %</th>
+                                <th style="text-align: left;"> {{$diagnosa->persen}} %</th>
                             </tr>
                             <tr>
-                                <th>Tipe Diagnosa Berdasarkan</th>
+                                <th style="text-align: left;">Tipe Diagnosa Berdasarkan</th>
                                 <th>:</th>
-                                <th> {{$diagnosa->jenis}}</th>
+                                <th style="text-align: left;"> {{$diagnosa->jenis}}</th>
                             </tr>
                        </table>
 
@@ -272,11 +273,6 @@
 
                </p>
 
-                 <h6>Pengobatan/Solusi : </h6>
-              <p>
-                  {{$penyakit->solusi}}
-
-              </p>
 
               <h6>Pengobatan : </h6>
               <p>

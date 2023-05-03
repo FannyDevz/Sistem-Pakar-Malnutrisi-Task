@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-    <h1>Log Konsultasi</h1>
+    <h1>Laporan Diagnosa</h1>
 
     <table>
         <thead>
