@@ -70,7 +70,7 @@
                         </br>
                         </div>
                        <div class="alert alert-alert"></br>
-                            <h3 class="text-center  "><b>LANGKAH KONSULTASI</b></h3></br>
+                            <h3 class="text-center  "><b>LANGKAH DIAGNOSA</b></h3></br>
                             <img class="image-body" src="{{asset('images/Ko.jpg')}}" alt="..." class="img-thumbnail"></br>
 
 

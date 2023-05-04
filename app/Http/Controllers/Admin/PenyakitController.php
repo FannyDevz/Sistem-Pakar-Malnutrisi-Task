@@ -118,7 +118,7 @@ class PenyakitController extends Controller
             'pencegahan'    => 'required',
             'penyebab'      => 'required',
             'pengobatan'    => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg',
  		]);
 
 		if ($validation->fails()) {
