@@ -38,7 +38,7 @@
 
                     <div class="card-body">
                         @if ($penyakit->gambar)
-                        <img  src="{{asset('images/' . $penyakit->gambar)}}" alt="Gambar {{ $ppenyakit->nama_penyakit }}" width="200px"></br></br>
+                        <img  src="{{asset('images/' . $penyakit->gambar)}}" alt="Gambar {{ $penyakit->nama_penyakit }}" width="200px"></br></br>
                         @else
 
                         <img  src="{{asset('images/no_image.png')}}" alt="Gambar Kosong" width="200px"></br></br>
