@@ -82,9 +82,9 @@
                         <h4 class="card-title">Diagnosis Berdasarkan Penyakit</h4>
                         <form class="form-valide" action="{{route('diagnosabc')}}" method="post">
                             @csrf
-                            <div class="col-md-12 text-right">
+                            {{-- <div class="col-md-12 text-right">
                                 <button type="submit" class="btn button-edit">Lanjutkan</button>
-                              </div>
+                              </div> --}}
                             </br>
                      <div class="table-responsive">
                             <table id="table-diagnosa" class="table table-striped table-bordered zero-configuration">

@@ -18,9 +18,9 @@ class PenggunaController extends Controller
     {
         $data = DB::table('users')
     ->leftJoin('balita','users.id', '=', 'balita.user_id')
-    ->select('balita.*', 'users.*')
-    ->where('users.level', '=', 'user')
-    ->get();
+        ->select('balita.*', 'users.*')
+        ->where('users.level', '=', 'user')
+        ->get();
 
 
         return view('admin.pengguna.index', compact('data'));
@@ -178,20 +178,32 @@ class PenggunaController extends Controller
     public function destroy($id)
     {
         // Cari data Balita dan User yang terkait berdasarkan ID
-        $data = DB::table('balita')
-                ->join('users', 'balita.user_id', '=', 'users.id')
-                ->select('balita.*', 'users.*')
-                ->where('balita.user_id', $id)
-                ->first();
+        $data = DB::table('users')
+                    ->leftJoin('balita', 'users.id', '=', 'balita.user_id')
+                    ->select('balita.*', 'users.*')
+                    ->where('users.id', $id)
+                    ->first();
 
         if (!$data) {
             return redirect()->route('admin.pengguna')->with('warning', 'Data tidak ditemukan');
         }
 
-        // Hapus data Balita dan User
-        DB::table('balita')->where('id', $data->id)->delete();
-        DB::table('users')->where('id', $data->user_id)->delete();
+        // Hapus data User
+        $user = User::find($id);
+        $user->delete();
+
+        // Soft delete data Balita jika tersedia
+        if ($data->user_id) {
+            $balita = Balita::where('user_id', $data->user_id)->first();
+            if ($balita) {
+                $balita->delete();
+
+                // Hapus data diagnosa jika tersedia
+                DB::table('diagnosa')->where('balita_id', $balita->id)->delete();
+            }
+        }
 
         return redirect()->route('admin.pengguna')->with('success', 'Berhasil menghapus data');
     }
+
 }

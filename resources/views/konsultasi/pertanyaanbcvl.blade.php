@@ -82,9 +82,9 @@
                         <h4 class="card-title">Diagnosis Penyakit Berdasarkan Gejala</h4>
                         <form class="form-valide" action="{{route('diagnosaakhir')}}" method="post">
                             @csrf
-                            <div class="col-md-12 text-right">
+                            {{-- <div class="col-md-12 text-right">
                                 <button type="submit" class="btn button-hapus">Diagnosa</button>
-                              </div>
+                              </div> --}}
                             </br>
 
                               <input type="hidden" name="penyakit" value="{{$penyakit}}">
