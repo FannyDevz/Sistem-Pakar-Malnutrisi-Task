@@ -43,53 +43,47 @@ class PenyakitController extends Controller
         return view('admin.penyakit.create', compact('kode'));
     }
 
-    public function store(request $request)
+    public function store(Request $request)
     {
-
         $input = $request->except('_token');
 
-        $file = $request->file('gambar');
-        $filename = $file->getClientOriginalName();
-        $path = $file->storeAs('public/images', $filename);
-
-        $validation = Validator::make($input,[
+        $validation = Validator::make($input, [
             'kd_penyakit'   => 'required',
             'nama_penyakit' => 'required',
             'deskripsi'     => 'required',
-            'pencegahan'        => 'required',
-            'penyebab'        => 'required',
-            'pengobatan'        => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
- 		]);
+            'pencegahan'    => 'required',
+            'penyebab'      => 'required',
+            'pengobatan'    => 'required',
+            'gambar'        => 'image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
 
-		if ($validation->fails()) {
-
+        if ($validation->fails()) {
             $errors = $validation->errors();
+            return redirect()->back()->with('warning', implode("\n", $errors->all()));
+        } else {
+            $data                = new Penyakit;
+            $data->id            = Uuid::uuid4()->getHex();
+            $data->kd_penyakit   = $request->kd_penyakit;
+            $data->nama_penyakit = $request->nama_penyakit;
+            $data->deskripsi     = $request->deskripsi;
+            $data->pencegahan    = $request->pencegahan;
+            $data->penyebab      = $request->penyebab;
+            $data->pengobatan    = $request->pengobatan;
 
-            return redirect()->back()->with('warning',implode("\n", $errors->all()));
+            // Upload gambar
+            if ($request->hasFile('gambar')) {
+                $gambar = $request->file('gambar');
+                $filename = time() . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('images'), $filename);
+                $data->gambar = $filename;
+            } else {
+                return redirect()->back()->with('warning', 'Gambar tidak boleh kosong!');
+            }
+
+            $data->save();
+
+            return redirect()->route('admin.penyakit')->with('success', 'Berhasil menambahkan data');
         }
-
-        $data                = new Penyakit;
-        $data->id            = Uuid::uuid4() -> getHex();
-        $data->kd_penyakit   = $request->kd_penyakit;
-        $data->nama_penyakit = $request->nama_penyakit;
-        $data->deskripsi     = $request->deskripsi;
-        $data->pencegahan    = $request->pencegahan;
-        $data->penyebab      = $request->penyebab;
-        $data->pengobatan    = $request->pengobatan;
-
-         // Upload gambar
-         if ($request->hasFile('gambar')) {
-            $gambar = $request->file('gambar');
-            $filename = time() . '.' . $gambar->getClientOriginalExtension();
-            $gambar->move(public_path('images'), $filename);
-            $data->gambar = $filename;
-        }
-
-        $data->save();
-
-        return redirect()->route('admin.penyakit')->with('success','Berhasil menambahkan data');
-
     }
 
     public function edit($id)
