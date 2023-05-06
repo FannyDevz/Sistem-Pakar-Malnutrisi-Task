@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -57,6 +56,13 @@ class HomeController extends Controller
             $counts[$month] = $item->count;
         }
 
+        // Mengambil data diagnosa berdasarkan bulan dan penyakit
+        $diagnosaData = Diagnosa::selectRaw('MONTH(tanggal_konsultasi) as bulan, kd_penyakit, COUNT(*) as jumlah')
+            ->groupBy('bulan', 'kd_penyakit')
+            ->get();
+
+        $penyakitData = Penyakit::pluck('nama_penyakit', 'kd_penyakit')->all();
+
         return view('admin.home', [
             'totalPenyakit' => $totalPenyakit,
             'totalGejala' => $totalGejala,
@@ -65,6 +71,8 @@ class HomeController extends Controller
             'totalDiagnosa' => $totalDiagnosa,
             'bulanIndonesia' => $bulanIndonesia,
             'counts' => $counts,
+            'diagnosaData' => $diagnosaData,
+            'penyakitData' => $penyakitData,
         ]);
     }
 }

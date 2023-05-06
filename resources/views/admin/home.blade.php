@@ -105,10 +105,22 @@
                 <div class="total">{{ $totalDiagnosa }}</div>
             </div>
         </div>
+        <br>
+        <br>
 
-        <div style="width: 800px;">
-            <canvas id="lineChart"></canvas>
-        </div>
+<div style="display: flex; justify-content: space-between;">
+    <div style="width: 800px;">
+        <h3 class="text-center">Grafik Diagnosa perbulan - Line Chart</h3><br>
+
+        <canvas id="lineChart2"></canvas>
+    </div>
+
+    <div style="width: 800px;">
+        <h3 class="text-center">Grafik Diagnosa perbulan - Bar Chart</h3><br>
+
+        <canvas id="barChart2"></canvas>
+    </div>
+</div>
 
 
 <script>
@@ -116,8 +128,8 @@
         var bulanIndonesia = {!! json_encode($bulanIndonesia) !!};
         var counts = {!! json_encode(array_values($counts)) !!};
 
-        var ctx = document.getElementById('lineChart').getContext('2d');
-        var lineChart = new Chart(ctx, {
+        var ctxLine = document.getElementById('lineChart2').getContext('2d');
+        var lineChart = new Chart(ctxLine, {
             type: 'line',
             data: {
                 labels: bulanIndonesia,
@@ -138,8 +150,149 @@
                 }
             }
         });
+
+        var ctxBar = document.getElementById('barChart2').getContext('2d');
+        var barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: bulanIndonesia,
+                datasets: [{
+                    label: 'Jumlah Diagnosa',
+                    data: counts,
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     });
 </script>
+
+<br>
+<br>
+
+        <div style="display: flex; justify-content: space-between;">
+            <div style="width: 800px;">
+                <h3 class="text-center">Grafik Diagnosa Penyakit perbulan - Line Chart</h3><br>
+
+                <canvas id="lineChart"></canvas>
+            </div>
+
+            <div style="width: 800px;">
+                <h3 class="text-center">Grafik Diagnosa Penyakit perbulan - Bar Chart</h3><br>
+
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var bulanIndonesia = {!! json_encode($bulanIndonesia) !!};
+                var counts = {!! json_encode(array_values($counts)) !!};
+
+                var ctx = document.getElementById('lineChart').getContext('2d');
+                var lineChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: bulanIndonesia,
+                        datasets: [
+                            @foreach ($penyakitData as $kd_penyakit => $nama_penyakit)
+                                {
+                                    label: '{{ $nama_penyakit }}',
+                                    data: [
+                                        @foreach ($bulanIndonesia as $index => $bulan)
+                                            @php
+                                                $jumlah = 0;
+                                                foreach ($diagnosaData as $item) {
+                                                    if ($item->kd_penyakit == $kd_penyakit && $item->bulan == ($index + 1)) {
+                                                        $jumlah = $item->jumlah;
+                                                        break;
+                                                    }
+                                                }
+                                            @endphp
+                                            {{ $jumlah }},
+                                        @endforeach
+                                    ],
+                                    backgroundColor: 'rgba({{ rand(0, 255) }}, {{ rand(0, 255) }}, {{ rand(0, 255) }}, 0.5)',
+                                    borderColor: 'rgba({{ rand(0, 255) }}, {{ rand(0, 255) }}, {{ rand(0, 255) }}, 1)',
+                                    borderWidth: 2
+                                },
+                            @endforeach
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var bulanIndonesia = {!! json_encode($bulanIndonesia) !!};
+        var counts = {!! json_encode(array_values($counts)) !!};
+
+        var ctx = document.getElementById('barChart').getContext('2d');
+        var barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: bulanIndonesia,
+                datasets: [
+                    @foreach ($penyakitData as $kd_penyakit => $nama_penyakit)
+                        {
+                            label: '{{ $nama_penyakit }}',
+                            data: [
+                                @foreach ($bulanIndonesia as $index => $bulan)
+                                    @php
+                                        $jumlah = 0;
+                                        foreach ($diagnosaData as $item) {
+                                            if ($item->kd_penyakit == $kd_penyakit && $item->bulan == ($index + 1)) {
+                                                $jumlah = $item->jumlah;
+                                                break;
+                                            }
+                                        }
+                                    @endphp
+                                    {{ $jumlah }},
+                                @endforeach
+                            ],
+                            backgroundColor: 'rgba({{ rand(0, 255) }}, {{ rand(0, 255) }}, {{ rand(0, 255) }}, 0.5)',
+                            borderColor: 'rgba({{ rand(0, 255) }}, {{ rand(0, 255) }}, {{ rand(0, 255) }}, 1)',
+                            borderWidth: 1
+                        },
+                    @endforeach
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        stacked: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
 
 
     </div>
