@@ -14,6 +14,8 @@
     <link href="{{asset('template/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="{{asset('template/plugins/summernote/dist/summernote.css')}}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         table.dataTable tr.even { background-color: #cbe0ff; }
         table.dataTable thead { background-color: #afcefd; }

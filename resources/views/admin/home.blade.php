@@ -105,7 +105,45 @@
                 <div class="total">{{ $totalDiagnosa }}</div>
             </div>
         </div>
+
+        <div style="width: 800px;">
+            <canvas id="lineChart"></canvas>
+        </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var bulanIndonesia = {!! json_encode($bulanIndonesia) !!};
+        var counts = {!! json_encode(array_values($counts)) !!};
+
+        var ctx = document.getElementById('lineChart').getContext('2d');
+        var lineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: bulanIndonesia,
+                datasets: [{
+                    label: 'Jumlah Diagnosa',
+                    data: counts,
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
     </div>
 </div>
+
 
 @endsection
