@@ -49,15 +49,11 @@
                     <div class="card-body">
                         <h4>Kode Penyakit: {{ $penyakit->kd_penyakit }}</h4>
                         <h4>Nama Penyakit: {{ $penyakit->nama_penyakit }}</h4>
-
-                        <div class="rumus-section">
-                            <h5 class="rumus-title">Rumus:</h5>
-                            <p class="rumus-content">{{ $rumus }}</p>
-                        </div>
-
-                        <h5>Data Diagnosa:</h5>
-                        <p>ID Diagnosa: {{ $data->id }}</p>
-                        <p>Tanggal Diagnosa: {{ $data->tanggal_diagnosa }}</p>
+                        <br><br>
+                        <h5>Rumus:</h5>
+                        <p>{{ $rumus }}</p>
+                        <br><br>
+                        <p>Tanggal Diagnosa: {{ $data->tanggal_konsultasi }}</p>
                     </div>
                 </div>
             </div>

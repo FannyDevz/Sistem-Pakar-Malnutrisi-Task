@@ -91,30 +91,31 @@ class MenuController extends Controller
 
     public function rumus($id)
     {
-        $data     = Diagnosa::where('id', $id)->first();
+        $data = Diagnosa::where('id', $id)->first();
         $penyakit = Penyakit::where('kd_penyakit', $data->kd_penyakit)->first();
-        $gejala   = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
-        $rumus    = '';
+        $gejala = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
 
-        // Menambahkan kondisi untuk kd_penyakit p1 hingga p7
-        if ($data->kd_penyakit == 'p1') {
-            $rumus = '(Jumlah Gejala Sesuai/ 8) * 100';
-        } elseif ($data->kd_penyakit == 'p2') {
-            $rumus = '(Jumlah Gejala Sesuai/ 6) * 100';
-        } elseif ($data->kd_penyakit == 'p3') {
-            $rumus = '(Jumlah Gejala Sesuai/ 8) * 100';
-        } elseif ($data->kd_penyakit == 'p4') {
-            $rumus = '(Jumlah Gejala Sesuai/ 6) * 100';
-        } elseif ($data->kd_penyakit == 'p5') {
-            $rumus = '(Jumlah Gejala Sesuai/ 14) * 100';
-        } elseif ($data->kd_penyakit == 'p6') {
-            $rumus = '(Jumlah Gejala Sesuai/ 8) * 100';
-        } elseif ($data->kd_penyakit == 'p7') {
-            $rumus = '(Jumlah Gejala Sesuai/ 15) * 100';
+        // Menyiapkan rumus berdasarkan kondisi penyakit
+        $rumus = '';
+        if ($data->kd_penyakit == 'P01') {
+            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
+        } elseif ($data->kd_penyakit == 'P02') {
+            $rumus = "(Jumlah Gejala Sesuai / 6) * 100";
+        } elseif ($data->kd_penyakit == 'P03') {
+            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
+        } elseif ($data->kd_penyakit == 'P04') {
+            $rumus = "(Jumlah Gejala Sesuai / 6) * 100";
+        } elseif ($data->kd_penyakit == 'P05') {
+            $rumus = "(Jumlah Gejala Sesuai / 14) * 100";
+        } elseif ($data->kd_penyakit == 'P06') {
+            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
+        } elseif ($data->kd_penyakit == 'P07') {
+            $rumus = "(Jumlah Gejala Sesuai / 15) * 100";
         }
 
         return view('admin.menu.detail-rumus', compact('gejala', 'penyakit', 'data', 'rumus'));
     }
+
 
 
     public function informasi()
