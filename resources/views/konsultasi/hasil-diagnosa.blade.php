@@ -27,12 +27,12 @@
                         <h4 class="card-title">Hasil Diagnosa</h4>
                         <div class="alert alert-success">Berdasarkan diagnosa yang dikumpulkan bahwa sistem meyimpulkan:</div>
                         <table class="table table-striped">
-                           <tr>
-                               <th width="150px">Nama</th>
-                               <th width="30px">:</th>
-                               <th>{{$balita->nama_lengkap}}</th>
-                           </tr>
-                           <tr>
+                            <tr>
+                                <th width="150px">Nama</th>
+                                <th width="30px">:</th>
+                                <th>{{$balita->nama_lengkap}}</th>
+                            </tr>
+                            <tr>
                                 <th>Jenis Kelamin</th>
                                 <th>:</th>
                                 <th>{{$balita->jenis_kelamin}}</th>
@@ -42,7 +42,6 @@
                                 <th>:</th>
                                 <th>{{$balita->umur}} Bulan</th>
                             </tr>
-
                             <tr>
                                 <th>Nama Penyakit</th>
                                 <th>:</th>
@@ -51,7 +50,7 @@
                             <tr>
                                 <th>Persentase Penyakit</th>
                                 <th>:</th>
-                                <th> {{$diagnosa->persen}} %</th>
+                                <th> {{$diagnosa->persen}} % <a class="btn button-tambah" href="{{route('admin.rumus', $diagnosa->id)}}"></a></th>
                             </tr>
                             <tr>
                                 <th>Tipe Diagnosa Berdasarkan</th>

@@ -88,6 +88,7 @@ Route::group(['middleware' => ['auth',  'user.name'], 'prefix' => 'admin', 'name
 
 
     Route::get('/log-konsultasi/detail/{id}', 'MenuController@detailLog')->name('admin.log-konsultasi.detail');
+    Route::get('/log-konsultasi/detail/{id}/rumus', 'MenuController@rumus')->name('admin.rumus');
     Route::get('/informasi', 'MenuController@informasi')->name('admin.informasi');
     Route::get('/reset-password', 'MenuController@resetPassword')->name('admin.reset-password');
     Route::post('/reset', 'MenuController@updatePassword')->name('admin.reset-password.store');

@@ -89,6 +89,34 @@ class MenuController extends Controller
         return view('admin.menu.detail-log', compact('gejala','penyakit','balita','data'));
     }
 
+    public function rumus($id)
+    {
+        $data     = Diagnosa::where('id', $id)->first();
+        $penyakit = Penyakit::where('kd_penyakit', $data->kd_penyakit)->first();
+        $gejala   = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
+        $rumus    = '';
+
+        // Menambahkan kondisi untuk kd_penyakit p1 hingga p7
+        if ($data->kd_penyakit == 'p1') {
+            $rumus = '(Jumlah Gejala Sesuai/ 8) * 100';
+        } elseif ($data->kd_penyakit == 'p2') {
+            $rumus = '(Jumlah Gejala Sesuai/ 6) * 100';
+        } elseif ($data->kd_penyakit == 'p3') {
+            $rumus = '(Jumlah Gejala Sesuai/ 8) * 100';
+        } elseif ($data->kd_penyakit == 'p4') {
+            $rumus = '(Jumlah Gejala Sesuai/ 6) * 100';
+        } elseif ($data->kd_penyakit == 'p5') {
+            $rumus = '(Jumlah Gejala Sesuai/ 14) * 100';
+        } elseif ($data->kd_penyakit == 'p6') {
+            $rumus = '(Jumlah Gejala Sesuai/ 8) * 100';
+        } elseif ($data->kd_penyakit == 'p7') {
+            $rumus = '(Jumlah Gejala Sesuai/ 15) * 100';
+        }
+
+        return view('admin.menu.detail-rumus', compact('gejala', 'penyakit', 'data', 'rumus'));
+    }
+
+
     public function informasi()
     {
         return view('admin.menu.informasi');
