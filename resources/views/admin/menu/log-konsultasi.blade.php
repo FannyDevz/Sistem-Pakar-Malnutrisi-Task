@@ -46,7 +46,7 @@
                           <div class="row">
                               <div class="col-md-12 text-left">
                                   <a href="{{ route('admin.log-konsultasi.print', ['start_date' => $start_date, 'end_date' => $end_date]) }}" class="btn btn-danger" target="_blank">
-                                      Cetak Log Konsultasi
+                                    Cetak Laporan Diagnosa
                                   </a>
                               </div>
                           </div>
@@ -54,7 +54,8 @@
                           <div class="row">
                               <div class="col-md-12 text-left">
                                   <a href="{{ route('admin.log-konsultasi.print') }}" class="btn btn-danger" target="_blank">
-                                      Cetak Log Konsultasi
+
+                                    Cetak Laporan Diagnosa
                                   </a>
                               </div>
                           </div>

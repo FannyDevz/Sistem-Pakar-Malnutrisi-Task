@@ -203,7 +203,7 @@
 
             Sistem Pakar Diagnosa Malnutrisi Pada Balita
             </h1></br>
-        <h2>Laporan Diagnosa</h2></br>
+        {{-- <h2>Laporan Diagnosa</h2></br> --}}
     </center>
 
 

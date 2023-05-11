@@ -34,7 +34,7 @@ class MenuController extends Controller
                 return $query->where('tanggal_konsultasi', '>=', $start_date);
             })
             ->when($end_date, function($query, $end_date) {
-                $end_date = Carbon::parse($end_date)->addDays(1)->format('Y-m-d');
+                $end_date = Carbon::parse($end_date)->addDays(1)->format('d-m-Y');
                 return $query->where('tanggal_konsultasi', '<=', $end_date);
             })
             ->orderBy('created_at', 'DESC')
@@ -61,7 +61,7 @@ class MenuController extends Controller
             return $query->where('tanggal_konsultasi', '>=', $start_date);
         })
         ->when($end_date, function($query, $end_date) {
-            return $query->where('tanggal_konsultasi', '<=', $end_date);
+            $end_date = Carbon::parse($end_date)->addDays(1)->format('d-m-Y');
         })
         ->orderBy('created_at', 'DESC')
         ->get();
@@ -72,6 +72,10 @@ class MenuController extends Controller
     if ($start_date && $end_date) {
         $is_filtered = true;
     }
+    $data->transform(function ($item) {
+        $item->tanggal_konsultasi = Carbon::parse($item->tanggal_konsultasi)->format('d-m-Y');
+        return $item;
+    });
 
     $pdf = PDF::loadView('admin.menu.log-konsultasi-print', compact('data'));
     return $pdf->download('log-konsultasi.pdf');

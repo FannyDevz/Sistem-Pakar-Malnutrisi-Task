@@ -109,20 +109,48 @@
         <br>
 
 <div style="display: flex; justify-content: space-between;">
-    <div style="width: 800px;">
-        <h3 class="text-center">Grafik Diagnosa perbulan - Line Chart</h3><br>
 
-        <canvas id="lineChart2"></canvas>
-    </div>
 
     <div style="width: 800px;">
         <h3 class="text-center">Grafik Diagnosa perbulan - Bar Chart</h3><br>
-
         <canvas id="barChart2"></canvas>
     </div>
+    <div style="width: 800px;">
+        <h3 class="text-center">Grafik Diagnosa Penyakit perbulan - Line Chart</h3><br>
+        <canvas id="lineChart"></canvas>
+    </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var bulanIndonesia = {!! json_encode($bulanIndonesia) !!};
+        var counts = {!! json_encode(array_values($counts)) !!};
 
+        var ctxBar = document.getElementById('barChart2').getContext('2d');
+        var barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: bulanIndonesia,
+                datasets: [{
+                    label: 'Jumlah Diagnosa',
+                    data: counts,
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
 
+{{--
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         var bulanIndonesia = {!! json_encode($bulanIndonesia) !!};
@@ -174,24 +202,26 @@
             }
         });
     });
-</script>
+</script> --}}
 
 <br>
 <br>
 
-        <div style="display: flex; justify-content: space-between;">
-            <div style="width: 800px;">
-                <h3 class="text-center">Grafik Diagnosa Penyakit perbulan - Line Chart</h3><br>
+        {{-- <div style="display: flex; justify-content: space-between;"> --}}
 
-                <canvas id="lineChart"></canvas>
-            </div>
 
-            <div style="width: 800px;">
+            {{-- <div style="width: 800px;">
                 <h3 class="text-center">Grafik Diagnosa Penyakit perbulan - Bar Chart</h3><br>
 
                 <canvas id="barChart"></canvas>
+            </div> --}}
+            {{-- <div style="width: 800px;">
+                <h3 class="text-center">Grafik Diagnosa perbulan - Line Chart</h3><br>
+
+                <canvas id="lineChart2"></canvas>
             </div>
-        </div>
+
+        </div> --}}
 
         <script>
             document.addEventListener("DOMContentLoaded", function() {

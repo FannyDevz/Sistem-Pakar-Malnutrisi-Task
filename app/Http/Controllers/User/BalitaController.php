@@ -20,6 +20,8 @@ class BalitaController extends Controller
         if (!$data) {
         return redirect()->route('user.register');
     }
+    // Memformat tanggal_lahir menjadi "dd mm YY"
+    $data->ttl = date_format(date_create($data->ttl), 'd/m/Y');
 
         return view('user.balita', compact('data'));
     }
