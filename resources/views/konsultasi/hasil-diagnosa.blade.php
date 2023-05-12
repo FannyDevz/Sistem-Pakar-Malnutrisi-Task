@@ -50,7 +50,7 @@
                             <tr>
                                 <th>Persentase Penyakit</th>
                                 <th>:</th>
-                                <th> {{$diagnosa->persen}} % </th>
+                                <th> {{$diagnosa->persen}} % <a class="btn-sm button-tambah" href="{{route('user.rumus', $diagnosa->id)}}">Rumus</a> </th>
                             </tr>
                             <tr>
                                 <th>Tipe Diagnosa Berdasarkan</th>

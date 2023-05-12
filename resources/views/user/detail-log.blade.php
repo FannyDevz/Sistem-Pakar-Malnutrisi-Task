@@ -58,7 +58,7 @@
                             <tr>
                                 <th>Persentase Penyakit</th>
                                 <th>:</th>
-                                <th> {{$data->persen}} %</th>
+                                <th> {{$data->persen}} %  <a class="btn-sm button-tambah" href="{{route('user.rumus', $data->id)}}">Rumus</a></th>
                             </tr>
                             <tr>
                                 <th>Tipe Diagnosa Berdasarkan</th>

@@ -48,6 +48,7 @@ Route::group(['middleware' => ['auth',  'user.name'], 'prefix' => 'user', 'names
 
     Route::get('/log-konsultasi', 'MenuController@logKonsultasiUser')->name('user.log-konsultasi');
     Route::get('/log-konsultasi/detail/{id}', 'MenuController@detailLog')->name('user.log-konsultasi.detail');
+    Route::get('/log-konsultasi/detail/{id}/rumus', 'MenuController@rumus')->name('user.rumus');
 
     Route::get('/balita', 'BalitaController@index')->name('user.balita');
     Route::get('/balita/edit/{id}', 'BalitaController@edit')->name('user.balitaedit');

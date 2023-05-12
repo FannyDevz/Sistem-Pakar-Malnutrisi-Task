@@ -60,6 +60,33 @@ class MenuController extends Controller
         return view('user.detail-log', compact('gejala','penyakit','balita','data'));
     }
 
+    public function rumus($id)
+    {
+        $data = Diagnosa::where('id', $id)->first();
+        $penyakit = Penyakit::where('kd_penyakit', $data->kd_penyakit)->first();
+        $gejala = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
+
+        // Menyiapkan rumus berdasarkan kondisi penyakit
+        $rumus = '';
+        if ($data->kd_penyakit == 'P01') {
+            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
+        } elseif ($data->kd_penyakit == 'P02') {
+            $rumus = "(Jumlah Gejala Sesuai / 6) * 100";
+        } elseif ($data->kd_penyakit == 'P03') {
+            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
+        } elseif ($data->kd_penyakit == 'P04') {
+            $rumus = "(Jumlah Gejala Sesuai / 6) * 100";
+        } elseif ($data->kd_penyakit == 'P05') {
+            $rumus = "(Jumlah Gejala Sesuai / 14) * 100";
+        } elseif ($data->kd_penyakit == 'P06') {
+            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
+        } elseif ($data->kd_penyakit == 'P07') {
+            $rumus = "(Jumlah Gejala Sesuai / 15) * 100";
+        }
+
+        return view('user.detail-rumus', compact('gejala', 'penyakit', 'data', 'rumus'));
+    }
+
     public function informasi()
     {
         return view('admin.menu.informasi');

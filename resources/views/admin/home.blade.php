@@ -142,7 +142,10 @@
                 responsive: true,
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0
+                        }
                     }
                 }
             }
@@ -262,13 +265,17 @@
                         responsive: true,
                         scales: {
                             y: {
-                                beginAtZero: true
+                                beginAtZero: true,
+                                ticks: {
+                                    precision: 0
+                                }
                             }
                         }
                     }
                 });
             });
         </script>
+
 
 
 <script>
@@ -314,7 +321,9 @@
                     },
                     y: {
                         beginAtZero: true,
-                        stacked: true
+                        ticks: {
+                            precision: 0
+                        }
                     }
                 }
             }
