@@ -84,6 +84,7 @@ class MenuController extends Controller
             $rumus = "(Jumlah Gejala Sesuai / 15) * 100";
         }
 
+
         return view('user.detail-rumus', compact('gejala', 'penyakit', 'data', 'rumus'));
     }
 

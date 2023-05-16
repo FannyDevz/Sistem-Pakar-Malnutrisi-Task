@@ -56,7 +56,7 @@
                         <h4><b>Rumus:</b></h4>
                         <h6><b>{{ $rumus }}</b></h6>
                         </div><br>
-                        <p>Tanggal Diagnosa: {{ $data->tanggal_konsultasi }}</p>
+                        <p>Tanggal Diagnosa: {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data->tanggal_konsultasi)->format('d/m/Y') }}</p>
                         <br>
                         <h6><b>Gejala Yang Biasanya Terjadi pada Penyakit {{$penyakit->nama_penyakit}} : </b></h6>
                        <p>

@@ -13,6 +13,7 @@
     <link href="{{asset('template/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('template/plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/2d1f726aba.js" crossorigin="anonymous"></script>
     <link href="{{asset('template/plugins/summernote/dist/summernote.css')}}" rel="stylesheet">
     <style>
         table.dataTable tr.even { background-color: #cbe0ff; }

@@ -53,7 +53,6 @@
                 margin-right: 20px;
             }
 
-
             /* Style untuk card terakhir */
             .card:last-child {
                 margin-right: 0;
@@ -79,7 +78,36 @@
                 background-color: #ffeb3b;
                 color: #fff;
             }
+
+            /* Style untuk ikon pada masing-masing card */
+            .card::before {
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                font-size: 48px;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                opacity: 0.2;
+            }
+
+            /* Style untuk ikon pada masing-masing card */
+            #gejala-card::before {
+                content: '\e4a8'; /* Icon untuk gejala */
+            }
+
+            #penyakit-card::before {
+                content: '\f0c3'; /* Icon untuk penyakit */
+            }
+
+            #user-card::before {
+                content: '\f007'; /* Icon untuk user */
+            }
+
+            #aturan-card::before {
+                content: '\f05a'; /* Icon untuk aturan */
+            }
         </style>
+
         <div class="card-container">
             <!-- Card 1 -->
             <div class="card" id="gejala-card">
@@ -112,11 +140,11 @@
 
 
     <div style="width: 800px;">
-        <h3 class="text-center">Grafik Diagnosa perbulan - Bar Chart</h3><br>
+        {{-- <h3 class="text-center">Grafik Diagnosa perbulan - Bar Chart</h3><br> --}}
         <canvas id="barChart2"></canvas>
     </div>
     <div style="width: 800px;">
-        <h3 class="text-center">Grafik Diagnosa Penyakit perbulan - Line Chart</h3><br>
+        {{-- <h3 class="text-center">Grafik Diagnosa Penyakit perbulan - Line Chart</h3><br> --}}
         <canvas id="lineChart"></canvas>
     </div>
 </div>

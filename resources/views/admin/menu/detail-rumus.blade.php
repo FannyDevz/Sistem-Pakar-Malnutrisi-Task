@@ -46,15 +46,28 @@
                 <div class="card">
                     <div class="card-header">Detail Rumus</div>
 
+
                     <div class="card-body">
-                        <h4>Kode Penyakit: {{ $penyakit->kd_penyakit }}</h4>
-                        <h4>Nama Penyakit: {{ $penyakit->nama_penyakit }}</h4>
-                        <br><br>
-                        <h5>Rumus:</h5>
-                        <p>{{ $rumus }}</p>
-                        <br><br>
-                        <p>Tanggal Diagnosa: {{ $data->tanggal_konsultasi }}</p>
-                    </div>
+                        {{-- <h4>Kode Penyakit: {{ $penyakit->kd_penyakit }}</h4> --}}
+
+                        <h4><b>Nama Penyakit: {{ $penyakit->nama_penyakit }}</b></h4>
+                        <br>
+                        <div class="card-body alert-success">
+
+                        <h4><b>Rumus:</b></h4>
+                        <h6><b>{{ $rumus }}</b></h6>
+                        </div><br>
+                        <p>Tanggal Diagnosa: {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data->tanggal_konsultasi)->format('d/m/Y') }}</p>
+                        <br>
+                        <h6><b>Gejala Yang Biasanya Terjadi pada Penyakit {{$penyakit->nama_penyakit}} : </b></h6>
+                       <p>
+                           <div class="bootstrap-label">
+                               @foreach ($gejala as $item)
+                                  <span class="label label-pink"> {{$item->gejala->gejala}}</span>
+                               @endforeach
+                              </div>
+
+                       </p>
                 </div>
             </div>
         </div>

@@ -35,7 +35,6 @@ class MenuController extends Controller
             })
             ->when($end_date, function($query, $end_date) {
                 $end_date = Carbon::parse($end_date)->addDays(1)->format('d-m-Y');
-                return $query->where('tanggal_konsultasi', '<=', $end_date);
             })
             ->orderBy('created_at', 'DESC')
             ->get();
@@ -116,6 +115,7 @@ class MenuController extends Controller
         } elseif ($data->kd_penyakit == 'P07') {
             $rumus = "(Jumlah Gejala Sesuai / 15) * 100";
         }
+
 
         return view('admin.menu.detail-rumus', compact('gejala', 'penyakit', 'data', 'rumus'));
     }
