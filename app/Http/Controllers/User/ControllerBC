@@ -1,0 +1,238 @@
+<!-- Knowlage Saat Ini -->
+<!-- Perhitungan Data Gejala Tertinggi / Jumlah Gejala * 100% -->
+
+ function knowlage($gejala)
+    {
+        $roles = [];
+
+        // Ambil data gejala dari database
+        $relasiGejala = Relasi::whereIn('kd_gejala', $gejala)->get();
+
+        foreach ($relasiGejala as $relasi) {
+            $kd_penyakit = $relasi->kd_penyakit;
+
+            if (!isset($roles[$kd_penyakit])) {
+                $roles[$kd_penyakit] = 0;
+            }
+
+            $roles[$kd_penyakit]++;
+        }
+
+        // Mencari penyakit dengan jumlah gejala tertinggi (kemungkinan penyakit paling tinggi)
+        $kd_penyakitTertinggi = null;
+        $jumlahGejalaTertinggi = 0;
+
+        foreach ($roles as $kd_penyakit => $jumlah) {
+            // Menghitung jumlah gejala penyakit dari tabel relasi
+            $jumlahGejalaPenyakit = Relasi::where('kd_penyakit', $kd_penyakit)->count();
+
+            if ($jumlah > $jumlahGejalaTertinggi) {
+                $kd_penyakitTertinggi = $kd_penyakit;
+                $jumlahGejalaTertinggi = $jumlah;
+
+                // Update jumlah gejala penyakit tertinggi
+                $jumlahGejalaPenyakitTertinggi = $jumlahGejalaPenyakit;
+            }
+        }
+
+        // Menghitung persentase
+        $persentase = ($jumlahGejalaTertinggi / $jumlahGejalaPenyakitTertinggi) * 100;
+
+        // Menyimpan data dalam variabel
+        $hasil = [
+            'kode_penyakit' => $kd_penyakitTertinggi,
+            'persentase' => $persentase
+        ];
+
+        return $hasil;
+    }
+
+
+<!-- Knowlage Gejala Yang Dipilih = 5 Gejala (4 dari 5 Gejala merupakan gejala Marasmus)
+
+Maka Perhitungane maleh 4/5 * 100% = 80%
+
+
+Gejala Yang Dipilih = 10 Gejala (6 dari 10 Gejala merupakan gejala Marasmus, 2 Gejala Kwasido 2 Gejala Stunting)
+
+Maka Perhitungane maleh 6/10 * 100% = 80% -->
+function knowlage($gejala)
+{
+    $roles = [];
+
+    // Ambil data gejala dari database
+    $relasiGejala = Relasi::whereIn('kd_gejala', $gejala)->get();
+
+    foreach ($relasiGejala as $relasi) {
+        $kd_penyakit = $relasi->kd_penyakit;
+
+        if (!isset($roles[$kd_penyakit])) {
+            $roles[$kd_penyakit] = 0;
+        }
+
+        $roles[$kd_penyakit]++;
+    }
+
+    // Menghitung persentase setiap penyakit
+    $jumlahGejala = count($gejala);
+    $hasil = [];
+
+    foreach ($roles as $kd_penyakit => $jumlah) {
+        $persentase = ($jumlah / $jumlahGejala) * 100;
+        $hasil[] = [
+            'kode_penyakit' => $kd_penyakit,
+            'persentase' => $persentase
+        ];
+    }
+
+    // Mengurutkan hasil berdasarkan persentase tertinggi
+    usort($hasil, function ($a, $b) {
+        return $b['persentase'] - $a['persentase'];
+    });
+
+    // Mengembalikan data penyakit dengan persentase tertinggi
+    return $hasil[0];
+}
+
+
+<!-- knowlage Manual -->
+function knowlage($gejala)
+    {
+        $role['P01'] = 0;
+        $role['P02'] = 0;
+        $role['P03'] = 0;
+        $role['P04'] = 0;
+        $role['P05'] = 0;
+        $role['P06'] = 0;
+        $role['P07'] = 0;
+
+        $jumlahP01 = 0;
+        $jumlahP02 = 0;
+        $jumlahP03 = 0;
+        $jumlahP04 = 0;
+        $jumlahP05 = 0;
+        $jumlahP06 = 0;
+        $jumlahP07 = 0;
+
+        for($i=0;$i<count($gejala); $i++) {
+
+            //role 1 (P01)
+            if($gejala[$i] == 'G01' || $gejala[$i] == 'G02'
+            || $gejala[$i] == 'G03' || $gejala[$i] == 'G04'
+            || $gejala[$i] == 'G05'  || $gejala[$i] == 'G06'
+            || $gejala[$i] == 'G07' || $gejala[$i] == 'G08'){
+
+                $jumlahP01++;
+                $persentaseP01 = ($jumlahP01 / 8) * 100;
+                $role['P01'] = $role['P01'] + 1;
+
+            }
+
+
+            //role 2 (P02)
+            if($gejala[$i] == 'G01' || $gejala[$i] == 'G09'
+            || $gejala[$i] == 'G10' || $gejala[$i] == 'G11'
+            || $gejala[$i] == 'G12' || $gejala[$i] == 'G13'){
+
+                $jumlahP02++;
+                $persentaseP02 = ($jumlahP02 / 6) * 100;
+                $role['P02'] = $role['P02'] + 1;
+
+            }
+
+            //role 3 (P03)
+            if($gejala[$i] == 'G01' || $gejala[$i] == 'G07'
+            || $gejala[$i] == 'G08' || $gejala[$i] == 'G09'
+            || $gejala[$i] == 'G11' || $gejala[$i] == 'G14'
+            || $gejala[$i] == 'G15' || $gejala[$i] == 'G16'  ){
+
+                $jumlahP03++;
+                $persentaseP03 = ($jumlahP03 / 8) * 100;
+                $role['P03'] = $role['P03'] + 1;
+            }
+
+            //role 4 (P04)
+            if($gejala[$i] == 'G17' || $gejala[$i] == 'G18'
+            || $gejala[$i] == 'G19' || $gejala[$i] == 'G20'
+            || $gejala[$i] == 'G21' || $gejala[$i] == 'G22' ){
+
+                $jumlahP04++;
+                $persentaseP04 = ($jumlahP04 / 6) * 100;
+                $role['P04'] = $role['P04'] + 1;
+
+            }
+
+            //role 5 (P05)
+            if($gejala[$i] == 'G23' || $gejala[$i] == 'G24'
+            || $gejala[$i] == 'G25' || $gejala[$i] == 'G26'
+            || $gejala[$i] == 'G27' || $gejala[$i] == 'G28'
+            || $gejala[$i] == 'G29' || $gejala[$i] == 'G30'
+            || $gejala[$i] == 'G31' || $gejala[$i] == 'G32'
+            || $gejala[$i] == 'G33' || $gejala[$i] == 'G34'
+            || $gejala[$i] == 'G35' || $gejala[$i] == 'G36'){
+
+                $jumlahP05++;
+                $persentaseP05 = ($jumlahP05 / 14) * 100;
+                $role['P05'] = $role['P05'] + 1;
+
+            }
+
+            //role 6 (P06)
+            if($gejala[$i] == 'G06' || $gejala[$i] == 'G27'
+            || $gejala[$i] == 'G28' || $gejala[$i] == 'G37'
+            || $gejala[$i] == 'G38' || $gejala[$i] == 'G39'
+            || $gejala[$i] == 'G40' || $gejala[$i] == 'G41'){
+
+                $jumlahP06++;
+                $persentaseP06 = ($jumlahP06 / 8) * 100;
+                $role['P06'] = $role['P06'] + 1;
+
+            }
+
+
+            //role 7 (P07)
+            if($gejala[$i] == 'G12' || $gejala[$i] == 'G24'
+            || $gejala[$i] == 'G25' || $gejala[$i] == 'G26'
+            || $gejala[$i] == 'G27' || $gejala[$i] == 'G39'
+            || $gejala[$i] == 'G42' || $gejala[$i] == 'G43'
+            || $gejala[$i] == 'G44' || $gejala[$i] == 'G45'
+            || $gejala[$i] == 'G46' || $gejala[$i] == 'G47'
+            || $gejala[$i] == 'G48' || $gejala[$i] == 'G49'
+            || $gejala[$i] == 'G50' ){
+
+                $jumlahP07++;
+                $persentaseP07 = ($jumlahP07 / 15) * 100;
+                $role['P07'] = $role['P07'] + 1;
+
+            }
+
+        }
+
+         // mencari kode penyakit tertinggi
+    arsort($role);
+    $highestKey = key($role);
+
+    // menyimpan persentase dari kode penyakit tertinggi
+    $persentase = 0;
+    if ($highestKey == 'P01') {
+        $persentase = $persentaseP01;
+    } elseif ($highestKey == 'P02') {
+        $persentase = $persentaseP02;
+    } elseif ($highestKey == 'P03') {
+        $persentase = $persentaseP03;
+    }elseif ($highestKey == 'P04') {
+        $persentase = $persentaseP04;
+    }elseif ($highestKey == 'P05') {
+        $persentase = $persentaseP05;
+    }elseif ($highestKey == 'P06') {
+        $persentase = $persentaseP06;
+    }elseif ($highestKey == 'P07') {
+        $persentase = $persentaseP07;
+    }
+
+    // menyimpan kedua data dalam variabel
+    $hasil['kode_penyakit'] = $highestKey;
+    $hasil['persentase'] = $persentase;
+
+    return $hasil;
+    }
