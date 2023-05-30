@@ -129,7 +129,7 @@
 
             <!-- Card 4 -->
             <div class="card" id="aturan-card">
-                <h3><b>Jumlah Konsultasi</b></h3>
+                <h3><b>Jumlah Diagnosa</b></h3>
                 <div class="total">{{ $totalDiagnosa }}</div>
             </div>
         </div>
@@ -140,11 +140,11 @@
 
 
     <div style="width: 800px;">
-        {{-- <h3 class="text-center">Grafik Diagnosa perbulan - Bar Chart</h3><br> --}}
+        <h3 class="text-center">Grafik Data Jumlah Diagnosa</h3><br>
         <canvas id="barChart2"></canvas>
     </div>
     <div style="width: 800px;">
-        {{-- <h3 class="text-center">Grafik Diagnosa Penyakit perbulan - Line Chart</h3><br> --}}
+        <h3 class="text-center">Grafik Data Jumlah Diagnosa Berdasar Penyakit</h3><br>
         <canvas id="lineChart"></canvas>
     </div>
 </div>

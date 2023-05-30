@@ -11,7 +11,7 @@
                         <br>
                         <div class="alert alert-alert">
                             <div class="alert alert-alert">
-                            <h1 class="text-center "><b>SELAMAT DATANG DI SISTEM PAKAR DIAGNOSA MALNUTRISI PADA ANAK</b></h1></br>
+                            <h1 class="text-center "><b>SELAMAT DATANG DI SISTEM PAKAR DIAGNOSA MALNUTRISI PADA BALITA</b></h1></br>
                             <img class="image-body" src="{{asset('images/cOBA.jpg')}}" alt="..." class="img-thumbnail"></br>
                         </br>
                         <p class="text-center">Aplikasi <b>Sistem Pakar</b> ini meniru cara berfikir seorang ahli kesehatan dalam melakukan

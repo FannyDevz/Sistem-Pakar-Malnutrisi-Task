@@ -79,7 +79,7 @@
             <div class="alert alert-success">Hallo, Silahkan Pilih Gejala sesuai yang anda rasakan, terimakasih.</div>
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Diagnosis Penyakit Berdasarkan Gejala</h4>
+                        <h4 class="card-title">Diagnosis Penyakit Berdasarkan Penyakit</h4>
                         <form class="form-valide" action="{{route('diagnosaakhir')}}" method="post">
                             @csrf
                             {{-- <div class="col-md-12 text-right">

@@ -89,7 +89,7 @@
                         </p>
 
                         <div class="col-md-12 text-right">
-                            <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit, 'diagnosa' => $diagnosa])}}"> <button type="submit" class="btn btn-outline-pink">Export PDF</button></a>
+                            <a href="{{route('export', ['balita' => $balita, 'penyakit' => $penyakit, 'diagnosa' => $diagnosa])}}"> <button type="submit" class="btn btn-outline-pink">Cetak</button></a>
                           </div>
 
                     </div>

@@ -95,7 +95,7 @@
                         </p>
 
                         <div class="col-md-12 text-right">
-                            <a href="{{route('export',  ['balita' => $balita, 'penyakit' => $penyakit, 'diagnosa' => $data])}}"> <button type="submit" class="btn button-hapus">Export PDF</button></a>
+                            <a href="{{route('export',  ['balita' => $balita, 'penyakit' => $penyakit, 'diagnosa' => $data])}}"> <button type="submit" class="btn button-hapus">Cetak</button></a>
                         </div>
 
                     </div>

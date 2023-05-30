@@ -29,7 +29,7 @@
                            3. Setelah berhasil login silakan pilih menu diagnosa berdasarkan penyakit atau gejala,<br>
                            4. Ikuti dan berikan jawaban sesuai dengan apa yang dirasakan, <br>
                            4. Klik tombol diagnosa,  <br>
-                           5. Hasil diagnosa, pada halaman ini anda bisa export hasil dalam format PDF
+                           5. Hasil diagnosa, pada halaman ini anda bisa Cetak hasil dalam format PDF
                             </p>
                              <hr>
                              <p>Terimakasih</p>
