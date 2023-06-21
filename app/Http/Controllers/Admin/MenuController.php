@@ -97,25 +97,16 @@ class MenuController extends Controller
         $data = Diagnosa::where('id', $id)->first();
         $penyakit = Penyakit::where('kd_penyakit', $data->kd_penyakit)->first();
         $gejala = Relasi::with('gejala')->where('kd_penyakit', $data->kd_penyakit)->get();
-
-        // Menyiapkan rumus berdasarkan kondisi penyakit
         $rumus = '';
-        if ($data->kd_penyakit == 'P01') {
-            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
-        } elseif ($data->kd_penyakit == 'P02') {
-            $rumus = "(Jumlah Gejala Sesuai / 6) * 100";
-        } elseif ($data->kd_penyakit == 'P03') {
-            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
-        } elseif ($data->kd_penyakit == 'P04') {
-            $rumus = "(Jumlah Gejala Sesuai / 6) * 100";
-        } elseif ($data->kd_penyakit == 'P05') {
-            $rumus = "(Jumlah Gejala Sesuai / 14) * 100";
-        } elseif ($data->kd_penyakit == 'P06') {
-            $rumus = "(Jumlah Gejala Sesuai / 8) * 100";
-        } elseif ($data->kd_penyakit == 'P07') {
-            $rumus = "(Jumlah Gejala Sesuai / 15) * 100";
-        }
+        // Mengambil jumlah data kd_gejala pada tabel relasi yang memiliki kd_penyakit sesuai
+        $kdGejalaCount = Relasi::where('kd_penyakit', $data->kd_penyakit)->count();
 
+        if ($kdGejalaCount) {
+            $rumus = "(Jumlah Gejala Sesuai / $kdGejalaCount) * 100";
+        } else {
+            // Penanganan jika tidak ada data kd_gejala yang sesuai
+            $rumus = 'Rumus tidak tersedia';
+        }
 
         return view('admin.menu.detail-rumus', compact('gejala', 'penyakit', 'data', 'rumus'));
     }
