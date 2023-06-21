@@ -14,13 +14,13 @@
             </li>
             <li>
                 <a class="has-arrow" href="{{route('user.log-konsultasi')}}" aria-expanded="false">
-                    <i class="icon-info menu-icon"></i><span class="nav-text">Riwayat Diagnosa</span>
+                    <i class="icon-list menu-icon"></i><span class="nav-text">Riwayat Diagnosa</span>
                 </a>
             </li>
 
             <li>
                 <a class="has-arrow" href="{{route('user.balita')}}" aria-expanded="false">
-                    <i class="icon-globe menu-icon"></i><span class="nav-text">Data Balita</span>
+                    <i class="icon-user menu-icon"></i><span class="nav-text">Data Balita</span>
                 </a>
             </li>
 

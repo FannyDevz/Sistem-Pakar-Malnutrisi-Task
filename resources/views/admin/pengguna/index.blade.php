@@ -28,7 +28,7 @@
                                         <th>Nama Pengguna</th>
                                         <th>Nama Balita</th>
                                         <th>Umur Balita</th>
-                                        <th>Jenis Kelamin</th>
+                                        <th>Jenis Kelamin Pengguna</th>
                                         <th>Alamat</th>
                                         <th>No HP</th>
                                         <th>Aksi</th>

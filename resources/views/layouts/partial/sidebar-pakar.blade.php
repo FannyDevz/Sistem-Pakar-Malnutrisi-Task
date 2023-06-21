@@ -10,23 +10,23 @@
 
             <li>
                 <a class="drpodown-menu has-arrow" href="{{route('admin.penyakit')}}" aria-expanded="false">
-                        <i class="icon-globe menu-icon"></i><span class="nav-text">Data Penyakit</span>
+                        <i class="icon-list menu-icon"></i><span class="nav-text">Data Penyakit</span>
                 </a>
             </li>
             <li>
                 <a class="drpodown-menu has-arrow" href="{{route('admin.gejala')}}" aria-expanded="false">
-                        <i class="icon-globe menu-icon"></i><span class="nav-text">Data Gejala</span>
+                        <i class="icon-layers menu-icon"></i><span class="nav-text">Data Gejala</span>
                 </a>
             </li>
             <li>
                 <a class="drpodown-menu has-arrow" href="{{route('admin.relasi')}}" aria-expanded="false">
-                        <i class="icon-globe menu-icon"></i><span class="nav-text">Rules</span>
+                        <i class="icon-question menu-icon"></i><span class="nav-text">Rules</span>
                 </a>
             </li>
 
             <li>
                 <a class="drpodown-menu has-arrow" href="{{route('admin.pengguna')}}" aria-expanded="false">
-                        <i class="icon-globe menu-icon"></i><span class="nav-text">Data Pengguna</span>
+                        <i class="icon-user menu-icon"></i><span class="nav-text">Data Pengguna</span>
                 </a>
             </li>
             {{-- <li>

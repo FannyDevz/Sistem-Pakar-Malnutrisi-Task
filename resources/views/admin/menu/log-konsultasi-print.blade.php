@@ -32,7 +32,8 @@
             <th>No.</th>
             <th>Tanggal Konsultasi</th>
             <th>Nama Balita</th>
-            <th>Nama Pengguna</th>
+            <th>Diagnosa</th>
+{{--            <th>Nama Pengguna</th>--}}
             <th>Usia Balita</th>
             <th>Jenis Kelamin Balita</th>
             <th>Penyakit</th>
@@ -44,7 +45,8 @@
                 <td>{{ $index + 1 }}</td>
                 <td>{{ $item->tanggal_konsultasi }}</td>
                 <td>{{ $item->balita->nama_lengkap }}</td>
-                <td>{{ $item->balita->user->name }}</td>
+                <td>{{ $item->jenis }}</td>
+{{--                <td>{{ $item->balita->user->name }}</td>--}}
                 <td>{{ $item->balita->umur }} Bulan</td>
                 <td>{{ $item->balita->jenis_kelamin }}</td>
                 <td>{{ $item->penyakit->nama_penyakit}} <br> ({{ $item->persen}}%)</td>
