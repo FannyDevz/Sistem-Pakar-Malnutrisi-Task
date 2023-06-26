@@ -52,9 +52,13 @@
                             diagnosis suatu kasus penyakit. Aplikasi ini membantu dalam mecari kesimpulan akan penyakit yang diderira beserta pencegahan dan pengobatan yang sesuai
                             . Program aplikasi ini menganalisa data penyakit malnutrisi, anamnesis awal serta gejala-gejala dari suatu penyakit.</p></br>
                         <div class="text-center ">
-                        <a  type="button" class="btn btn-danger col-md-5" href="{{route('diagnosa.list')}}">DIAGNOSA BERDASARKAN GEJALA [FORWARD CHAINING]</a>
-                        <a  type="button" class="btn btn-primary col-md-5" href="{{route('diagnosabc.list')}}">DIAGNOSA BERDASARKAN PERSENTASE PENYAKIT [BACKWARD CHAINING]</a>
-                            </div>
+{{--                            <p>Validasi Value: {{ $validasi }}</p>--}}
+                            @if($validasi == 0)
+                                <a  type="button" class="btn btn-danger col-lg-5 " href="{{route('diagnosa.list')}}">DIAGNOSA BERDASARKAN GEJALA [FORWARD CHAINING]</a>
+                            @else
+                                <a  type="button" class="btn btn-primary col-lg-5 " href="{{route('diagnosabc.list')}}">DIAGNOSA BERDASARKAN PERSENTASE PENYAKIT [BACKWARD CHAINING]</a>
+                            @endif
+                        </div>
                         </br>
                         </div>
                         <div class="alert alert-alert"></br>
