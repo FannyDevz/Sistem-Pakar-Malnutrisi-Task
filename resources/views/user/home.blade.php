@@ -53,8 +53,10 @@
                             . Program aplikasi ini menganalisa data penyakit malnutrisi, anamnesis awal serta gejala-gejala dari suatu penyakit.</p></br>
                         <div class="text-center ">
 {{--                            <p>Validasi Value: {{ $validasi }}</p>--}}
-                            @if($validasi == 0)
-                                <a  type="button" class="btn btn-danger col-lg-5 " href="{{route('diagnosa.list')}}">DIAGNOSA BERDASARKAN GEJALA [FORWARD CHAINING]</a>
+                            @if($validasi == 'a')
+                                <a  type="button" class="btn btn-danger col-lg-5 " href="{{route('diagnosa.list')}}">DAFTAR KAN BAYI TERLEBIH DAHULU</a>
+                            @elseif($validasi == 0)
+                                    <a  type="button" class="btn btn-danger col-lg-5 " href="{{route('diagnosa.list')}}">DIAGNOSA BERDASARKAN GEJALA [FORWARD CHAINING]</a>
                             @else
                                 <a  type="button" class="btn btn-primary col-lg-5 " href="{{route('diagnosabc.list')}}">DIAGNOSA BERDASARKAN PERSENTASE PENYAKIT [BACKWARD CHAINING]</a>
                             @endif
