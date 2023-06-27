@@ -13,12 +13,15 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         $data   = Balita::where('user_id', $user->id)->first();
+
+        $validasi2 = 0;
+        $validasi = 0;
         if ($data == null){
-            $validasi = 'a';
-        } else{
+            $validasi2 = 1;
+        } elseif ($data != null){
             $validasi = Diagnosa::where('balita_id', $data->id)->count();
         }
-        return view('user.home', compact('validasi'));
+        return view('user.home', compact('validasi','validasi2'));
     }
 
     public function registrasi()
