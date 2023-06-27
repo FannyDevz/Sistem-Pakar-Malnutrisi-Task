@@ -54,11 +54,11 @@
                         <div class="text-center ">
 {{--                            <p>Validasi Value: {{ $validasi }}</p>--}}
                             @if($validasi2 == 1)
-                                <a  type="button" class="btn btn-danger col-lg-5 " href="{{route('diagnosa.list')}}">DAFTAR KAN BAYI TERLEBIH DAHULU</a>
+                                <a  type="button" class="btn btn-success col-lg-5 " href="{{route('diagnosa.list')}}">DAFTAR KAN BAYI TERLEBIH DAHULU</a>
                             @elseif($validasi == 0 && $validasi2 == 0)
-                                <a  type="button" class="btn btn-danger col-lg-5 " href="{{route('diagnosa.list')}}">DIAGNOSA BERDASARKAN GEJALA [FORWARD CHAINING]</a>
+                                <a  type="button" class="btn btn-danger col-lg-5 " href="{{route('diagnosa.list')}}">DIAGNOSA BERDASARKAN GEJALA</a>
                             @else
-                                <a  type="button" class="btn btn-primary col-lg-5 " href="{{route('diagnosabc.list')}}">DIAGNOSA BERDASARKAN PERSENTASE PENYAKIT [BACKWARD CHAINING]</a>
+                                <a  type="button" class="btn btn-primary col-lg-5 " href="{{route('diagnosabc.list')}}">DIAGNOSA BERDASARKAN PENYAKIT</a>
                             @endif
                         </div>
                         </br>
