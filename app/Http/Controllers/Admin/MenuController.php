@@ -34,7 +34,8 @@ class MenuController extends Controller
                 return $query->where('tanggal_konsultasi', '>=', $start_date);
             })
             ->when($end_date, function($query, $end_date) {
-                $end_date = Carbon::parse($end_date)->addDays(1)->format('d-m-Y');
+                $end_date = Carbon::parse($end_date)->addDays(1);
+                return $query->where('tanggal_konsultasi', '<=', $end_date);
             })
             ->orderBy('created_at', 'DESC')
             ->get();
@@ -51,7 +52,7 @@ class MenuController extends Controller
 
 
     public function print(Request $request)
-{
+    {
     $start_date = $request->input('start_date');
     $end_date = $request->input('end_date');
 
@@ -60,7 +61,8 @@ class MenuController extends Controller
             return $query->where('tanggal_konsultasi', '>=', $start_date);
         })
         ->when($end_date, function($query, $end_date) {
-            $end_date = Carbon::parse($end_date)->addDays(1)->format('d-m-Y');
+            $end_date = Carbon::parse($end_date)->addDays(1);
+            return $query->where('tanggal_konsultasi', '<=', $end_date);
         })
         ->orderBy('created_at', 'DESC')
         ->get();
